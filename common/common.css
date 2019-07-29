@@ -1,0 +1,33 @@
+/* 设置全局样式 */
+/*  */
+page {
+	height: 100%;
+	font-size: 28upx;
+	line-height: 1.8;
+	/* background: #3333; */
+	color: #FFFFFF;
+}
+
+/* 图片的宽度 */
+image {
+	width: 100%;
+}
+
+/* 主色调 */
+/* 主背景颜色(橙色) */
+.main-ba-color {
+	background: #fd6801;
+}
+
+.main-bs-hover-color {
+	rgb(253, 104, 1, 0.85);
+}
+
+.main-text-color {
+	color: #FD6801;
+}
+
+/* 边框 */
+.main-border-color {
+	border-color: 1px solid #eee;
+}
