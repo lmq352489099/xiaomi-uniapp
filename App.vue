@@ -18,4 +18,5 @@
 	@import url("/common/animate.css");
 	@import url("/common/icon.css");
 	@import url("/common/common.css");
+	@import url("/common/zcm-main.css");
 </style>

@@ -1,6 +1,10 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/my/aaaaaaa/aaaaaaa",
+    "pages/my/my",
+    "pages/class/class",
+    "pages/cart/cart"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -11,7 +15,7 @@
   "tabBar": {
     "color": "#b1b1b1",
     "selectedColor": "#FD6801",
-    "borderStyle": "#ffffff",
+    "borderStyle": "black",
     "list": [
       {
         "pagePath": "pages/index/index",
