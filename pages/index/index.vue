@@ -4,70 +4,64 @@
 		<!-- 轮播图 -->
 		<swiper-image :resdata="swipers" />
 
-		<view class="row">
-			<view class="span4">
-				<image src="../../static/images/indexnav/1.png" 
-				       style="width: 60upx;" 
-							 mode="widthFix"></image>
-				1
-			</view>
-			<view class="span4">2</view>
-			<view class="span4">3</view>
-			<view class="span4">4</view>
-			<view class="span4">5</view>
-			<view class="span4">6</view>
-			<view class="span4">7</view>
-			<view class="span4">8</view>
-			<view class="span4">9</view>
-			<view class="span4">10</view>
-		</view>
+		<!-- 首页分类 -->
+		<index-nav :resdata="indexnavs"></index-nav>
+		<!-- 全局分割线 -->
 
-		<view class="d-flex bg-white border-top position-fixed bottom-0 left-0 right-0" style="height: 99upx;box-sizing: border-box;">
-			<view class="flex-1 d-flex j-center a-center flex-column line-h">
-				<view class="iconfont icon-xihuan line-h"></view>
-				收藏
-			</view>
+		<divider></divider>
 
-			<view class="flex-1 d-flex j-center a-center flex-column line-h">
-				<view class="iconfont icon-gouwuche line-h"></view>
-				购物车
-			</view>
-			<view hover-class="main-bg-hover-color" style="flex:2.5;height: 100%;" class="text-white main-bg-color d-flex j-center a-center">加入购物车</view>
-		</view>
+		<!-- 三图广告 -->
+		<thress-adv :resdata="threeAdv"></thress-adv>
 
-		<view class="span-1"></view>
 	</view>
 </template>
 
 <script>
-import swiperImage from '@/components/index/swiper-Image.vue';
-export default {
-	components: {
-		swiperImage
-	},
-	data() {
-		return {
-			title: 'Hello',
-			show: true,
-			swipers: [
-				{
-					src: '../../static/images/demo/demo4.jpg'
+	import swiperImage from '@/components/index/swiper-Image.vue';
+	import indexNav from "@/components/index/index-nav.vue"
+	import thressAdv from "@/components/index/thress-adv.vue"
+	export default {
+		components: {
+			swiperImage,
+			indexNav,
+			thressAdv
+		},
+		data() {
+			return {
+				title: 'Hello',
+				show: true,
+				threeAdv: {
+					big: { src: "/static/images/demo/demo4.jpg" },
+					smalltop: { src: "/static/images/demo/demo4.jpg" },
+					smalltop2: { src: "/static/images/demo/demo4.jpg" }
 				},
-				{
-					src: '../../static/images/demo/demo4.jpg'
-				},
-				{
-					src: '../../static/images/demo/demo4.jpg'
-				},
-				{
-					src: '../../static/images/demo/demo4.jpg'
-				}
-			]
-		};
-	},
-	onLoad() {},
-	methods: {}
-};
+				swipers: [{
+						src: '../../static/images/demo/demo4.jpg'
+					},
+					{
+						src: '../../static/images/demo/demo4.jpg'
+					},
+					{
+						src: '../../static/images/demo/demo4.jpg'
+					},
+				],
+				indexnavs: [
+					{ src: "/static/images/indexnav/1.png", text: "新品发布" },
+					{ src: "/static/images/indexnav/2.gif", text: "小米众筹" },
+					{ src: "/static/images/indexnav/3.gif", text: "以旧换新" },
+					{ src: "/static/images/indexnav/4.gif", text: "一分换团" },
+					{ src: "/static/images/indexnav/5.gif", text: "超值特卖" },
+					{ src: "/static/images/indexnav/6.gif", text: "小米秒杀" },
+					{ src: "/static/images/indexnav/7.gif", text: "真心想要" },
+					{ src: "/static/images/indexnav/8.gif", text: "电视热卖" },
+					{ src: "/static/images/indexnav/9.gif", text: "家电热卖" },
+					{ src: "/static/images/indexnav/10.gif", text: "米粉卡" }
+				]
+			};
+		},
+		onLoad() {},
+		methods: {}
+	};
 </script>
 
 <style></style>
