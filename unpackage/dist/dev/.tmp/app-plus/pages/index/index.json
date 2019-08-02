@@ -33,6 +33,8 @@
     "divider": "/components/common/divider",
     "swiper-image": "/components/index/swiper-Image",
     "index-nav": "/components/index/index-nav",
-    "thress-adv": "/components/index/thress-adv"
+    "thress-adv": "/components/index/thress-adv",
+    "card": "/components/common/card",
+    "price": "/components/common/price"
   }
 }

@@ -1,8 +1,8 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["common/vendor"],[
 /* 0 */
-/*!*******************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/uniapp/xiaomi-uniapp/main.js ***!
-  \*******************************************************************/
+/*!********************************************!*\
+  !*** F:/UNIAPP最新版本的/uniapp-xiaomi/main.js ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -43,9 +43,9 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(f
 
 /***/ }),
 /* 4 */
-/*!**********************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/uniapp/xiaomi-uniapp/pages.json ***!
-  \**********************************************************************/
+/*!***********************************************!*\
+  !*** F:/UNIAPP最新版本的/uniapp-xiaomi/pages.json ***!
+  \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -70,9 +70,9 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 /* 11 */
-/*!****************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/uniapp/xiaomi-uniapp/main.js?{"page":"pages%2Findex%2Findex"} ***!
-  \****************************************************************************************************/
+/*!*****************************************************************************!*\
+  !*** F:/UNIAPP最新版本的/uniapp-xiaomi/main.js?{"page":"pages%2Findex%2Findex"} ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -86,9 +86,9 @@ eval("/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! 
 /* 15 */,
 /* 16 */,
 /* 17 */
-/*!*************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/uniapp/xiaomi-uniapp/main.js?{"page":"pages%2Fmy%2Faaaaaaa%2Faaaaaaa"} ***!
-  \*************************************************************************************************************/
+/*!**************************************************************************************!*\
+  !*** F:/UNIAPP最新版本的/uniapp-xiaomi/main.js?{"page":"pages%2Fmy%2Faaaaaaa%2Faaaaaaa"} ***!
+  \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -102,9 +102,9 @@ eval("/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! 
 /* 21 */,
 /* 22 */,
 /* 23 */
-/*!**********************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/uniapp/xiaomi-uniapp/main.js?{"page":"pages%2Fmy%2Fmy"} ***!
-  \**********************************************************************************************/
+/*!***********************************************************************!*\
+  !*** F:/UNIAPP最新版本的/uniapp-xiaomi/main.js?{"page":"pages%2Fmy%2Fmy"} ***!
+  \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -118,9 +118,9 @@ eval("/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! 
 /* 27 */,
 /* 28 */,
 /* 29 */
-/*!****************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/uniapp/xiaomi-uniapp/main.js?{"page":"pages%2Fclass%2Fclass"} ***!
-  \****************************************************************************************************/
+/*!*****************************************************************************!*\
+  !*** F:/UNIAPP最新版本的/uniapp-xiaomi/main.js?{"page":"pages%2Fclass%2Fclass"} ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -134,9 +134,9 @@ eval("/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! 
 /* 33 */,
 /* 34 */,
 /* 35 */
-/*!**************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/uniapp/xiaomi-uniapp/main.js?{"page":"pages%2Fcart%2Fcart"} ***!
-  \**************************************************************************************************/
+/*!***************************************************************************!*\
+  !*** F:/UNIAPP最新版本的/uniapp-xiaomi/main.js?{"page":"pages%2Fcart%2Fcart"} ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
