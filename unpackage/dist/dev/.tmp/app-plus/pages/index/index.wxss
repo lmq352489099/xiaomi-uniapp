@@ -1,0 +1,15 @@
+
+.tabitems {
+	display: inline-block;
+	width: 75rpx;
+	border-bottom: 5rpx solid #FFFFFF;
+}
+.active .tabitems {
+	border-bottom-color: #fd6801;
+}
+.uni-tab-bar-loading {
+	text-align: center;
+	font-size: 28rpx;
+	color: #999;
+}
+

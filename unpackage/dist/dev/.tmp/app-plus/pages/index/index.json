@@ -35,6 +35,6 @@
     "index-nav": "/components/index/index-nav",
     "thress-adv": "/components/index/thress-adv",
     "card": "/components/common/card",
-    "price": "/components/common/price"
+    "common-list": "/components/common/common"
   }
 }
