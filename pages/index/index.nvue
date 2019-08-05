@@ -1,0 +1,16 @@
+<template>
+	<div>
+		<div style="height: 100px; background-color: #007AFF;width: 740px; " > <text>1</text></div>
+				<div style="height: 100px; background-color: #09BB07;width: 50wx; " ><text>2</text></div>
+	</div>
+</template>
+
+<script>
+	export default {
+		
+	}
+</script>
+
+<style>
+
+</style>

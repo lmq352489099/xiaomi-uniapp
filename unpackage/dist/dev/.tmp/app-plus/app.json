@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/my/aaaaaaa/aaaaaaa",
     "pages/my/my",
     "pages/class/class",
@@ -42,6 +41,46 @@
         "text": "我的"
       }
     ]
+  },
+  "nvue": {
+    "pages": {
+      "pages/index/index.html": {
+        "window": {
+          "usingComponents": {},
+          "navigationBarTitleText": "uni-app",
+          "scrollIndicator": "none",
+          "titleNView": {
+            "searchInput": {
+              "align": "left",
+              "backgroundColor": "#f7f7f7",
+              "borderRadius": "4px",
+              "disabled": true,
+              "placeholder": "智能积木,越野四驱车",
+              "placeholderColor": "#cccccc"
+            },
+            "buttons": [
+              {
+                "color": "#989898",
+                "colorPressed": "#fd6801",
+                "float": "left",
+                "fontSize": "22px",
+                "fontSrc": "/static/font/iconfont.ttf",
+                "text": ""
+              },
+              {
+                "color": "#989898",
+                "colorPressed": "#fd6801",
+                "float": "right",
+                "fontSize": "22px",
+                "fontSrc": "/static/font/iconfont.ttf",
+                "text": ""
+              }
+            ]
+          }
+        }
+      }
+    },
+    "entryPagePath": "pages/index/index"
   },
   "nvueCompiler": "weex",
   "splashscreen": {

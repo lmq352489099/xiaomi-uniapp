@@ -90,14 +90,6 @@
       "compilerVersion": "2.1.4",
       "control": "v8",
       "nvueCompiler": "weex"
-    },
-    "secondwebview": {
-      "id": "1",
-      "launch_path": "__uniappview.html",
-      "kernel": "WKWebview",
-      "mode": "child",
-      "top": 0,
-      "bottom": 56
     }
   }
 }
