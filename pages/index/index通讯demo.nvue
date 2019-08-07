@@ -1,0 +1,121 @@
+<template>
+	<div>
+		<list>
+			<refresh style="height: 80px;"
+			 @refresh="refresh" @pullingdown="pullingdown" :display="show">
+				<text>{{refreshtext}}</text>
+			</refresh>
+			<cell>
+				<div style="height: 300px;border-width: 2px; border-style: solid;border-color: #007AFF;background: #4CD964;margin: 50px;"
+				 @click="openCeshi"><text style="font-size: 50px;">{{ceshiText}}</text></div>
+			</cell>
+			<header>
+				<div style="height: 150px;background-color: #333333;"></div>
+			</header>
+			<cell v-for="(num,index) in lists" :key="index">
+				<div style="height: 300px;border-width: 2px; border-style: solid;border-color: #007AFF;background: #4CD964;margin: 50px;"
+				 @click="postMessage(num)"><text>{{num}}</text></div>
+			</cell>
+
+			<loading @loading="onLoading" :display="loadingShow">
+				<text style="display: flex;justify-content: center;width: 720px;">
+					Loading...
+				</text>
+			</loading>
+
+		</list>
+
+
+	</div>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				ceshiText: "index",
+				loadingShow: "hide",
+				show: 'hide',
+				refreshtext: "下拉可以刷新",
+				lists: ['A', 'B', 'C', 'D', 'E']
+			}
+		},
+		created() {
+			// 监听导航栏事件
+			uni.onNavigationBarButtonTap((e) => {
+				console.log("监听到原生标题栏按钮点击事件");
+				console.log(e);
+				if (e.index == 1) {
+					return console.log("dianji左边");
+				}
+				console.log("点击右边");
+
+				// 监听点击导航栏输入框事件
+				uni.onNavigationBarSearchInputChanged((e) => {
+					console.log("输入内容：" + e.text);
+				})
+				// 监听点击了搜索框
+				uni.onNavigationBarSearchInputClicked(() => {
+					console.log("点击输入框");
+				})
+			})
+			// vue页面向nvue发送消息,并在nvue页面接受
+			const globalEvent = weex.requireModule('globalEvent');
+			globalEvent.addEventListener('plusMessage', e => {
+				this.ceshiText = e.data.res;
+			})
+			// 存储
+			uni.setStorage({
+				key: "index",
+				data: "indexdata"
+			})
+		},
+		methods: {
+			// 打开测试页
+			openCeshi() {
+				uni.navigateTo({
+					url: '../ceshi/ceshi'
+				});
+			},
+			// nvue与vue之间的通讯
+			postMessage(num) {
+				// 修改全局变量
+				getApp().globalData.text = num;
+				uni.postMessage({
+					data: num,
+					from: 'index'
+				})
+			},
+			// 上拉加载事件
+			onLoading() {
+				this.loadingShow = 'show';
+				setTimeout(() => {
+					this.lists = [...this.lists, ...['a', 'b', 'c']];
+					this.loadingShow = 'hide';
+				}, 2000)
+			},
+			// 执行刷新
+			refresh(e) {
+				this.show = 'show';
+				this.refreshtext = '正在刷新...';
+				setTimeout(() => {
+					this.show = 'hide';
+					this.refreshtext = '下拉可以刷新';
+				}, 1200)
+			},
+			// 判断下拉刷新状态
+			pullingdown(e) {
+				if (e.pullingDistance > e.viewHeight) {
+					this.refreshtext = '释放就能刷新咯';
+				} else {
+					this.refreshtext = '下拉可以刷新';
+				}
+			}
+		}
+	}
+</script>
+
+
+<style>
+
+</style>

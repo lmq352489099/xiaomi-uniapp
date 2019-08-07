@@ -1,16 +1,82 @@
 <template>
 	<div>
-		<div style="height: 100px; background-color: #007AFF;width: 740px; " > <text>1</text></div>
-				<div style="height: 100px; background-color: #09BB07;width: 50wx; " ><text>2</text></div>
+		<list>
+			<cell>
+				<!-- 轮播图组件 -->
+				<sumSlider :swipers="swipers"></sumSlider>
+
+				<!-- 图标分类组件 
+		* 750
+		*每一个图标分类: 142px * 5 = 710
+		* 图标 58 * 58
+		*
+		-->
+				<indexNav :indexnavs="indexnavs"></indexNav>
+				<!-- 封装全分割线组件 -->
+				<divider />
+
+				<!-- 三图广告组件 -->
+				<sumThreeAdv></sumThreeAdv>
+				
+				<divider />
+				<!-- 大图广告 -->
+			</cell>
+		</list>
 	</div>
 </template>
 
 <script>
+	import sumSlider from "@/components/index/nvue/sum-slider.nvue"
+	import indexNav from "@/components/index/nvue/indexnavs"
+	import divider from "@/components/common/divider.nvue"
+	import sumThreeAdv from "@/components/index/nvue/sum-three-adv.nvue"
+	// 监听当前窗口显示 1)解决Nvue页面没有ONshow的问题
+	const currentWebview = plus.webview.currentWebview()
 	export default {
-		
+		components: {
+			sumSlider,
+			indexNav,
+			divider,
+			sumThreeAdv
+		},
+		data() {
+			return {
+				swipers: [
+					{ src: "../../static/images/demo/demo4.jpg" },
+					{ src: "../../static/images/demo/demo4.jpg" },
+					{ src: "../../static/images/demo/demo4.jpg" }
+				],
+				indexnavs: [
+					{ src: '/static/images/indexnav/1.png', text: '新品发布' },
+					{ src: '/static/images/indexnav/2.gif', text: '小米众筹' },
+					{ src: '/static/images/indexnav/3.gif', text: '以旧换新' },
+					{ src: '/static/images/indexnav/4.gif', text: '一分换团' },
+					{ src: '/static/images/indexnav/5.gif', text: '超值特卖' },
+					{ src: '/static/images/indexnav/6.gif', text: '小米秒杀' },
+					{ src: '/static/images/indexnav/7.gif', text: '真心想要' },
+					{ src: '/static/images/indexnav/8.gif', text: '电视热卖' },
+					{ src: '/static/images/indexnav/9.gif', text: '家电热卖' },
+					{ src: '/static/images/indexnav/10.gif', text: '米粉卡' }
+				]
+			}
+		},
+		created() {
+			// console.log(currentWebview);
+			// const currentWebview = this.$mp.page.$getAppWebview();
+			currentWebview.addEventListener('show', e => {
+				console.log(e);
+				console.log("indexshow");
+			})
+		},
+		beforeDestroy() {
+			currentWebview.removeEventListener('show', e => {
+
+			})
+		}
+
 	}
 </script>
 
-<style>
+<style src="@/common/zcm-main-nvue.css">
 
 </style>

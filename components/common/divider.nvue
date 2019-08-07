@@ -1,0 +1,15 @@
+<template>
+	<div>
+				<div class="w-100" style="height: 18px;background-color: red;"> </div>
+	</div>
+</template>
+
+<script>
+	export default {
+		
+	}
+</script>
+
+<style>
+
+</style>

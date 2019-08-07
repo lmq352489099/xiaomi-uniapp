@@ -57,6 +57,10 @@
 		}
 	   
       
+        ,{
+            "path" : "pages/ceshi/ceshi",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

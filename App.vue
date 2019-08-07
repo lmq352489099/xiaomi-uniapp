@@ -1,5 +1,18 @@
 <script>
 	export default {
+				// 全局变量
+		globalData:{
+			text:""
+		},
+		onUniNViewMessage(e){
+			let data = e.data;
+			console.log(e.data)
+			// 处理
+			if(data.from && data.from === 'index'){
+				// 通知分类页修改数据
+				uni.$emit('index',data)
+			}
+		},
 		onLaunch: function() {
 			console.log('App Launch')
 		},

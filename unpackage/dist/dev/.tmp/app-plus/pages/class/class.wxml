@@ -1,1 +1,1 @@
-<view></view>
+<view><view style="display:flex;justify-content:center;font-size:100rpx;">{{''+text+''}}</view></view>

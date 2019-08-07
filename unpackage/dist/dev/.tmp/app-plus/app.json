@@ -3,7 +3,8 @@
     "pages/my/aaaaaaa/aaaaaaa",
     "pages/my/my",
     "pages/class/class",
-    "pages/cart/cart"
+    "pages/cart/cart",
+    "pages/ceshi/ceshi"
   ],
   "window": {
     "navigationBarTextStyle": "black",

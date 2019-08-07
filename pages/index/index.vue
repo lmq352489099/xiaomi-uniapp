@@ -238,6 +238,7 @@
 			commonList
 		},
 		data() {
+		
 			return {
 				scrollLeft: 0,
 				isClickChange: false,

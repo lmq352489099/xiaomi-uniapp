@@ -1076,12 +1076,18 @@ function gz$gwx_3(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_3)return __WXML_GLOBAL__.ops_cached.$gwx_3
 __WXML_GLOBAL__.ops_cached.$gwx_3=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
+Z([3,'__e'])
+Z([[4],[[5],[[4],[[5],[[5],[1,'tap']],[[4],[[5],[[4],[[5],[[5],[1,'ceshi']],[[4],[[5],[1,'$event']]]]]]]]]]])
+Z([3,'primary'])
+Z([3,'修改首页数据'])
 })(__WXML_GLOBAL__.ops_cached.$gwx_3);return __WXML_GLOBAL__.ops_cached.$gwx_3
 }
 function gz$gwx_4(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_4)return __WXML_GLOBAL__.ops_cached.$gwx_4
 __WXML_GLOBAL__.ops_cached.$gwx_4=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
+Z([3,'display:flex;justify-content:center;font-size:100rpx;'])
+Z([a,[[2,'+'],[[2,'+'],[1,''],[[7],[3,'text']]],[1,'']]])
 })(__WXML_GLOBAL__.ops_cached.$gwx_4);return __WXML_GLOBAL__.ops_cached.$gwx_4
 }
 function gz$gwx_5(){
@@ -1090,11 +1096,17 @@ __WXML_GLOBAL__.ops_cached.$gwx_5=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 })(__WXML_GLOBAL__.ops_cached.$gwx_5);return __WXML_GLOBAL__.ops_cached.$gwx_5
 }
+function gz$gwx_6(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_6)return __WXML_GLOBAL__.ops_cached.$gwx_6
+__WXML_GLOBAL__.ops_cached.$gwx_6=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
+})(__WXML_GLOBAL__.ops_cached.$gwx_6);return __WXML_GLOBAL__.ops_cached.$gwx_6
+}
 __WXML_GLOBAL__.ops_set.$gwx=z;
 __WXML_GLOBAL__.ops_init.$gwx=true;
 var nv_require=function(){var nnm={};var nom={};return function(n){return function(){if(!nnm[n]) return undefined;try{if(!nom[n])nom[n]=nnm[n]();return nom[n];}catch(e){e.message=e.message.replace(/nv_/g,'');var tmp = e.stack.substring(0,e.stack.lastIndexOf(n));e.stack = tmp.substring(0,tmp.lastIndexOf('\n'));e.stack = e.stack.replace(/\snv_/g,' ');e.stack = $gstack(e.stack);e.stack += '\n    at ' + n.substring(2);console.error(e);}
 }}}()
-var x=['./components/common/divider.wxml','./pages/cart/cart.wxml','./pages/class/class.wxml','./pages/my/aaaaaaa/aaaaaaa.wxml','./pages/my/my.wxml'];d_[x[0]]={}
+var x=['./components/common/divider.wxml','./pages/cart/cart.wxml','./pages/ceshi/ceshi.wxml','./pages/class/class.wxml','./pages/my/aaaaaaa/aaaaaaa.wxml','./pages/my/my.wxml'];d_[x[0]]={}
 var m0=function(e,s,r,gg){
 var z=gz$gwx_1()
 var oB=_n('view')
@@ -1115,6 +1127,10 @@ d_[x[2]]={}
 var m2=function(e,s,r,gg){
 var z=gz$gwx_3()
 var cF=_n('view')
+var hG=_mz(z,'button',['bindtap',0,'data-event-opts',1,'type',1],[],e,s,gg)
+var oH=_oz(z,3,e,s,gg)
+_(hG,oH)
+_(cF,hG)
 _(r,cF)
 return r
 }
@@ -1122,19 +1138,32 @@ e_[x[2]]={f:m2,j:[],i:[],ti:[],ic:[]}
 d_[x[3]]={}
 var m3=function(e,s,r,gg){
 var z=gz$gwx_4()
-var oH=_n('view')
-_(r,oH)
+var oJ=_n('view')
+var lK=_n('view')
+_rz(z,lK,'style',0,e,s,gg)
+var aL=_oz(z,1,e,s,gg)
+_(lK,aL)
+_(oJ,lK)
+_(r,oJ)
 return r
 }
 e_[x[3]]={f:m3,j:[],i:[],ti:[],ic:[]}
 d_[x[4]]={}
 var m4=function(e,s,r,gg){
 var z=gz$gwx_5()
-var oJ=_n('view')
-_(r,oJ)
+var eN=_n('view')
+_(r,eN)
 return r
 }
 e_[x[4]]={f:m4,j:[],i:[],ti:[],ic:[]}
+d_[x[5]]={}
+var m5=function(e,s,r,gg){
+var z=gz$gwx_6()
+var oP=_n('view')
+_(r,oP)
+return r
+}
+e_[x[5]]={f:m5,j:[],i:[],ti:[],ic:[]}
 if(path&&e_[path]){
 window.__wxml_comp_version__=0.02
 return function(env,dd,global){$gwxc=0;var root={"tag":"wx-page"};root.children=[]
@@ -1254,9 +1283,9 @@ style.childNodes[0].nodeValue = css;
 }
 return rewritor;
 }
-setCssToHead([])();setCssToHead([[2,0]],"Some selectors are not allowed in component wxss, including tag name selectors, ID selectors, and attribute selectors.(./app.wxss:5161:1)",{path:"./app.wxss"})();
+setCssToHead([])();setCssToHead([[2,0]],"Some selectors are not allowed in component wxss, including tag name selectors, ID selectors, and attribute selectors.(./app.wxss:5174:1)",{path:"./app.wxss"})();
 
-__wxAppCode__['app.wxss']=setCssToHead([[2,0]],"Some selectors are not allowed in component wxss, including tag name selectors, ID selectors, and attribute selectors.(./app.wxss:5161:1)",{path:"./app.wxss"});    
+__wxAppCode__['app.wxss']=setCssToHead([[2,0]],"Some selectors are not allowed in component wxss, including tag name selectors, ID selectors, and attribute selectors.(./app.wxss:5174:1)",{path:"./app.wxss"});    
 __wxAppCode__['app.wxml']=$gwx('./app.wxml');
 
 __wxAppCode__['components/common/divider.wxss']=setCssToHead([".",[1],"divider { height: ",[0,18],"; background: #f5f5f5; }\n",],undefined,{path:"./components/common/divider.wxss"});    
@@ -1264,6 +1293,9 @@ __wxAppCode__['components/common/divider.wxml']=$gwx('./components/common/divide
 
 __wxAppCode__['pages/cart/cart.wxss']=undefined;    
 __wxAppCode__['pages/cart/cart.wxml']=$gwx('./pages/cart/cart.wxml');
+
+__wxAppCode__['pages/ceshi/ceshi.wxss']=undefined;    
+__wxAppCode__['pages/ceshi/ceshi.wxml']=$gwx('./pages/ceshi/ceshi.wxml');
 
 __wxAppCode__['pages/class/class.wxss']=undefined;    
 __wxAppCode__['pages/class/class.wxml']=$gwx('./pages/class/class.wxml');
