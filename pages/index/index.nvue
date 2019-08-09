@@ -1,46 +1,127 @@
 <template>
-	<div>
-		<list>
-			<cell>
-				<!-- 轮播图组件 -->
-				<sumSlider :swipers="swipers"></sumSlider>
+	<div class="display:flex;flex-direction:column;">
+		<!-- 横向滚动顶部选项卡 -->
+		<sum-tabbar :tabIndex="tabIndex" :tabBars="tabBars"
+		 @tabchange="tabchange"></sum-tabbar>
+		<!-- end.... -->
+		<!-- 横向滚动条 -->
+		<slider class="flex-1" :index="tabIndex" :infinite="false"
+		 @change="sliderChange">
+			<list :show-scrollbar="false" v-for="(list,listIndex) in tabBars"
+			 :key="listIndex">
+				<!-- 下拉刷新 -->
+				<refresh class="w-100 flex-row j-center a-center"  style="height: 80px;"
+				 :display="refreshShow"
+				 @pullingdown="pullingdown" @refresh="refresh">
 
-				<!-- 图标分类组件 
+					<text class="font-md text-muted"> {{refreshtext}}</text>
+				</refresh>
+
+				<cell>
+					<!-- 轮播图组件 -->
+					<sumSlider :swipers="swipers"></sumSlider>
+
+					<!-- 图标分类组件 
 		* 750
 		*每一个图标分类: 142px * 5 = 710
 		* 图标 58 * 58
 		*
 		-->
-				<indexNav :indexnavs="indexnavs"></indexNav>
-				<!-- 封装全分割线组件 -->
-				<divider />
+					<indexNav :indexnavs="indexnavs"></indexNav>
+					<!-- 封装全分割线组件 -->
+					<divider />
 
-				<!-- 三图广告组件 -->
-				<sumThreeAdv></sumThreeAdv>
-				
-				<divider />
-				<!-- 大图广告 -->
-			</cell>
-		</list>
+					<!-- 三图广告组件 -->
+					<sumThreeAdv :resdata="threeAdv"></sumThreeAdv>
+
+					<divider />
+					<!-- 大图广告 -->
+					<sumOneAdv :item="oneAdv"></sumOneAdv>
+
+					<!-- 公告列表组件
+				 * 间隙 5px
+				 * 每列占:375px
+				 -->
+					<div class="row w-100">
+						<block v-for="(item,index) in commlist" :key="index">
+							<commonList :index="index" :item="item"></commonList>
+						</block>
+					</div>
+				</cell>
+				<loading @loading="onLoading" :display="loadingShow">
+					<text style="display: flex;justify-content: center;width: 720px;">
+						Loading...
+					</text>
+				</loading>
+			</list>
+		</slider>
 	</div>
 </template>
 
 <script>
+	import sumTabbar from "@/components/index/nvue/sum-tabbar.nvue"
 	import sumSlider from "@/components/index/nvue/sum-slider.nvue"
-	import indexNav from "@/components/index/nvue/indexnavs"
+	import indexNav from "@/components/index/nvue/indexnavs.nvue"
 	import divider from "@/components/common/divider.nvue"
 	import sumThreeAdv from "@/components/index/nvue/sum-three-adv.nvue"
+	import sumOneAdv from "@/components/index/nvue/sum-one-adv.nvue"
+	import commonList from "@/components/common/common.nvue"
+	const dom = weex.requireModule('dom')
 	// 监听当前窗口显示 1)解决Nvue页面没有ONshow的问题
 	const currentWebview = plus.webview.currentWebview()
 	export default {
 		components: {
+			sumTabbar,
 			sumSlider,
 			indexNav,
 			divider,
-			sumThreeAdv
+			sumThreeAdv,
+			sumOneAdv,
+			commonList
 		},
 		data() {
 			return {
+				refreshtext: "下拉刷新",
+				refreshShow: "hide",
+				loadingShow: 'hide',
+				tabIndex: 0,
+				tabBars: [{
+					name: '关注',
+					id: 'guanzhu',
+					template: "index"
+				}, {
+					name: '推荐',
+					id: 'tuijian',
+					template: "special"
+				}, {
+					name: '体育',
+					id: 'tiyu',
+					template: "special"
+				}, {
+					name: '热点',
+					id: 'redian',
+					template: "special"
+				}, {
+					name: '财经',
+					id: 'caijing',
+					template: "special"
+				}, {
+					name: '娱乐',
+					id: 'yule',
+					template: "special"
+				}, {
+					name: '军事',
+					id: 'junshi',
+					template: "special"
+				}, {
+					name: '历史',
+					id: 'lishi',
+					template: "special"
+				}, {
+					name: '本地',
+					id: 'bendi',
+					template: "special"
+				}],
 				swipers: [
 					{ src: "../../static/images/demo/demo4.jpg" },
 					{ src: "../../static/images/demo/demo4.jpg" },
@@ -57,8 +138,93 @@
 					{ src: '/static/images/indexnav/8.gif', text: '电视热卖' },
 					{ src: '/static/images/indexnav/9.gif', text: '家电热卖' },
 					{ src: '/static/images/indexnav/10.gif', text: '米粉卡' }
-				]
+				],
+				oneAdv: {
+					cover: "/static/images/demo/demo4.jpg",
+					title: "每日精选"
+				},
+				threeAdv: [
+					{ src: '/static/images/demo/demo1.jpg' },
+					{ src: '/static/images/demo/demo2.jpg' },
+					{ src: "/static/images/demo/demo3.jpg" }
+				],
+				commlist: [{
+					cover: "/static/images/demo/list/1.jpg",
+					title: "米家空调",
+					oprice: "2699",
+					desc: "1.5匹变频",
+					pprice: "1399"
+				}, {
+					cover: "/static/images/demo/list/1.jpg",
+					title: "米家空调",
+					oprice: "2699",
+					desc: "1.5匹变频",
+					pprice: "1399"
+				}, {
+					cover: "/static/images/demo/list/1.jpg",
+					title: "米家空调",
+					oprice: "2699",
+					desc: "1.5匹变频",
+					pprice: "1399"
+				}, ]
 			}
+		},
+
+		methods: {
+			tabchange(index) {
+				this.tabIndex = index
+			},
+			// 监听横向列表事件
+			sliderChange(e) {
+				console.log(e.index);
+				this.tabIndex = e.index
+				console.log(this.tabIndex);
+				// this.change()
+			},
+			// 上拉加载事件
+			onLoading() {
+				this.loadingShow = 'show';
+				setTimeout(() => {
+					// 加载数据
+					this.loadingShow = 'hide';
+				}, 2000)
+			},
+			// 执行刷新
+			refresh(e) {
+				console.log("wanchengle ");
+				// return;
+				console.log(e);
+				this.refreshShow = "show"
+				console.log("zhixingle");
+				this.refreshtext = "正在刷新中"
+				console.log("zhixingle");
+				// return
+				setTimeout(() => {
+					this.refreshShow = "hide"
+					this.refreshtext = "下拉可以刷新"
+				}, 2500);
+			},
+			// 判断下刷刷新状态 
+			pullingdown(e) {
+				// console.log(-e.pullingDistance,e.viewHeight) ;
+				// if (-e.pullingDistance > e.viewHeight) {
+				// 	// console.log(111);
+				// 	this.refreshtext = "釋放即可刷新了"
+				// 	this.refresh()
+				// } else {
+				// 	this.refreshtext = "下拉可以刷新"
+				// }
+				// console.log("zhixingle");
+								console.log(e.pullingDistance,e.viewHeight) ;
+				if (e.pullingDistance > e.viewHeight) {
+					// console.log(111);
+					this.refreshtext = "釋放即可刷新了"
+					// this.refresh()
+				} else {
+					this.refreshtext = "下拉可以刷新"
+				}
+			}
+
 		},
 		created() {
 			// console.log(currentWebview);
@@ -73,10 +239,8 @@
 
 			})
 		}
-
 	}
 </script>
-
 <style src="@/common/zcm-main-nvue.css">
-
+	<style>
 </style>

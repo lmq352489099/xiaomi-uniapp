@@ -2,11 +2,11 @@
 	<div>
 			<div class="w-100 row">
 			<div class="col-6">
-				<image style="width: 373px;height: 530px;" src="../../static/images/demo/demo1.jpg" mode=""></image>
+				<image style="width: 373px;height: 530px;" :src="resdata[0].src" mode=""></image>
 			</div>
 			<div style="height: 530px;" class="col-6 j-sb ">
-				<image style="width: 375px;height: 263.5px;" src="../../static/images/demo/demo2.jpg" mode=""></image>
-				<image style="width: 375px;height: 263.5px;" src="../../static/images/demo/demo3.jpg" mode=""></image>
+				<image style="width: 375px;height: 263.5px;" :src="resdata[1].src" mode=""></image>
+				<image style="width: 375px;height: 263.5px;" :src="resdata[2].src" mode=""></image>
 			</div>
 		</div>
 	</div>

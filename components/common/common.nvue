@@ -1,0 +1,36 @@
+<template>
+	<div>
+		<div class="col-6 mb-1"
+		 style="padding-left:2.5px;padding-right: 2.5px;">
+			<image style="width: 370px;height: 370px;"
+			 :src="item.cover"></image>
+			<text class="font-md text-dark px-2 py-1"
+			 style="lines: 1;">{{item.title}}
+			</text>
+			<text class="font px-2 text-light-muted"
+			 style="lines: 1;">{{item.desc}}</text>
+			<div class="px-2 pt-1 row a-end">
+				<price>{{item.pprice}}</price>
+				<text class="line-through text-light-muted ml-1 " style="font-size: 24px;">¥{{item.oprice}}</text>
+			</div>
+		</div>
+	</div>
+
+	</div>
+</template>
+
+<script>
+	import price from "@/components/common/price.nvue"
+	export default {
+		components: {
+			price
+		},
+		props: {
+			item: Object,
+			index: Number
+		},
+	}
+</script>
+<style src="@/common/zcm-main-nvue.css">
+	<style>
+</style>

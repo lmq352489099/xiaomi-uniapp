@@ -238,7 +238,7 @@
 			commonList
 		},
 		data() {
-		
+
 			return {
 				scrollLeft: 0,
 				isClickChange: false,
@@ -401,7 +401,7 @@
 					this.addData(tabIndex)
 				}
 				if (this.tabIndex === tabIndex) {
-							console.log("111111111");
+					console.log("111111111");
 					return false;
 				} else {
 					console.log("11111111111");

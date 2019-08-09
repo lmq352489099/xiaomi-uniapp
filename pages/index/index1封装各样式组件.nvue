@@ -1,0 +1,126 @@
+<template>
+	<div>
+		<list>
+			<cell>
+				<!-- 轮播图组件 -->
+				<sumSlider :swipers="swipers"></sumSlider>
+
+				<!-- 图标分类组件 
+		* 750
+		*每一个图标分类: 142px * 5 = 710
+		* 图标 58 * 58
+		*
+		-->
+				<indexNav :indexnavs="indexnavs"></indexNav>
+				<!-- 封装全分割线组件 -->
+				<divider />
+
+				<!-- 三图广告组件 -->
+				<sumThreeAdv :resdata="threeAdv"></sumThreeAdv>
+
+				<divider />
+				<!-- 大图广告 -->
+				<sumOneAdv :item="oneAdv"></sumOneAdv>
+
+				<!-- 公告列表组件
+				 * 间隙 5px
+				 * 每列占:375px
+				 -->
+				<div class="row w-100">
+					<block v-for="(item,index) in commlist" :key="index">
+						<commonList :index="index" :item="item"></commonList>
+					</block>
+				</div>
+			</cell>
+		</list>
+	</div>
+</template>
+
+<script>
+	import sumSlider from "@/components/index/nvue/sum-slider.nvue"
+	import indexNav from "@/components/index/nvue/indexnavs"
+	import divider from "@/components/common/divider.nvue"
+	import sumThreeAdv from "@/components/index/nvue/sum-three-adv.nvue"
+	import sumOneAdv from "@/components/index/nvue/sum-one-adv.nvue"
+
+	import commonList from "@/components/common/common.nvue"
+	// 监听当前窗口显示 1)解决Nvue页面没有ONshow的问题
+	const currentWebview = plus.webview.currentWebview()
+	export default {
+		components: {
+			sumSlider,
+			indexNav,
+			divider,
+			sumThreeAdv,
+			sumOneAdv,
+			commonList
+		},
+		data() {
+			return {
+				swipers: [
+					{ src: "../../static/images/demo/demo4.jpg" },
+					{ src: "../../static/images/demo/demo4.jpg" },
+					{ src: "../../static/images/demo/demo4.jpg" }
+				],
+				indexnavs: [
+					{ src: '/static/images/indexnav/1.png', text: '新品发布' },
+					{ src: '/static/images/indexnav/2.gif', text: '小米众筹' },
+					{ src: '/static/images/indexnav/3.gif', text: '以旧换新' },
+					{ src: '/static/images/indexnav/4.gif', text: '一分换团' },
+					{ src: '/static/images/indexnav/5.gif', text: '超值特卖' },
+					{ src: '/static/images/indexnav/6.gif', text: '小米秒杀' },
+					{ src: '/static/images/indexnav/7.gif', text: '真心想要' },
+					{ src: '/static/images/indexnav/8.gif', text: '电视热卖' },
+					{ src: '/static/images/indexnav/9.gif', text: '家电热卖' },
+					{ src: '/static/images/indexnav/10.gif', text: '米粉卡' }
+				],
+				oneAdv: {
+					cover: "/static/images/demo/demo4.jpg",
+					title: "每日精选"
+				},
+				threeAdv: [
+					{ src: '/static/images/demo/demo1.jpg' },
+					{ src: '/static/images/demo/demo2.jpg' },
+					{ src: "/static/images/demo/demo3.jpg" }
+				],
+				commlist: [{
+					cover: "/static/images/demo/list/1.jpg",
+					title: "米家空调",
+					oprice: "2699",
+					desc: "1.5匹变频",
+					pprice: "1399"
+				}, {
+					cover: "/static/images/demo/list/1.jpg",
+					title: "米家空调",
+					oprice: "2699",
+					desc: "1.5匹变频",
+					pprice: "1399"
+				}, {
+					cover: "/static/images/demo/list/1.jpg",
+					title: "米家空调",
+					oprice: "2699",
+					desc: "1.5匹变频",
+					pprice: "1399"
+				}, ]
+			}
+		},
+		created() {
+			// console.log(currentWebview);
+			// const currentWebview = this.$mp.page.$getAppWebview();
+			currentWebview.addEventListener('show', e => {
+				console.log(e);
+				console.log("indexshow");
+			})
+		},
+		beforeDestroy() {
+			currentWebview.removeEventListener('show', e => {
+
+			})
+		}
+
+	}
+</script>
+
+<style src="@/common/zcm-main-nvue.css">
+	<style>
+</style>
