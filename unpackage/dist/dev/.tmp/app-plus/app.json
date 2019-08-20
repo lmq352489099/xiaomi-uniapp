@@ -78,18 +78,20 @@
               }
             ]
           }
-        }
+        },
+        "nvue": true
       }
     },
     "entryPagePath": "pages/index/index"
   },
   "nvueCompiler": "weex",
+  "renderer": "auto",
   "splashscreen": {
     "alwaysShowBeforeRender": true,
     "autoclose": false
   },
   "appname": "uniapp-xiaomi",
-  "compilerVersion": "2.1.4",
+  "compilerVersion": "2.2.1",
   "usingComponents": {
     "divider": "/components/common/divider"
   }
