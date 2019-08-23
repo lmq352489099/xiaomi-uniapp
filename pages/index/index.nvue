@@ -78,15 +78,27 @@
 							<divider />
 						</template>
 
-						<!-- 公告列表组件
-							* 间隙 5px
-							* 每列占:375px
-							-->
-						<div class="row w-100" v-if="listItem.type === 'list'">
-							<block v-for="(item,index) in listItem.data" :key="index">
-								<commonList :index="index" :item="item"></commonList>
-							</block>
+						<!-- 公告列表组件卡片 -->
+						<div class="w-100" v-if="listItem.type === 'list'">
+							<div class="p-2 border-bottom border-top p-2">
+								<text class="text-dark font-md font-weight">热卖爆品</text>
+							</div>
+							<div>
+								<!-- 公告列表组件
+			* 间隙 5px
+			* 每列占:375px
+			-->
+								<div class="row w-100" >
+									<block v-for="(item,index) in listItem.data" :key="index">
+										<commonList :index="index" :item="item"></commonList>
+									</block>
+								</div>
+							</div>
 						</div>
+
+
+
+
 					</cell>
 				</template>
 				<loading class="w-100 flex-row j-center a-center"
@@ -106,6 +118,7 @@
 	import sumThreeAdv from "@/components/index/nvue/sum-three-adv.nvue"
 	import sumOneAdv from "@/components/index/nvue/sum-one-adv.nvue"
 	import commonList from "@/components/common/common.nvue"
+	// import card from "@/components/common/card.nvue"
 	const dom = weex.requireModule('dom')
 	// 监听当前窗口显示 1)解决Nvue页面没有ONshow的问题
 	const currentWebview = plus.webview.currentWebview()
@@ -117,7 +130,8 @@
 			divider,
 			sumThreeAdv,
 			sumOneAdv,
-			commonList
+			commonList,
+			// card
 		},
 		data() {
 			return {
@@ -213,7 +227,8 @@
 
 		methods: {
 			// 模拟加载数据
-			addData(e) {
+			addData() {
+				let e = this.tabIndex
 				if (this.newsitems[e].data.length > 30) {
 					this.newsitems[e].loadingText = '没有更多了';
 					return;
@@ -267,7 +282,7 @@
 				]
 				this.newsitems[e].data = [...this.newsitems[e].data, ...arr]
 				console.log(this.newsitems);
-			
+
 			},
 			// 生成随机数据
 			randomfn() {
@@ -362,20 +377,35 @@
 			},
 			tabchange(index) {
 				this.tabIndex = index
+				setTimeout(() => {
+					// 加载数据
+					this.addData();
+					// this.newsitems[index].loadingShow = 'hide' 
+				}, 100)
 			},
 			// 监听横向列表事件
 			sliderChange(e) {
 				console.log(e.index);
 				this.tabIndex = e.index
-				console.log(this.tabIndex);
+				setTimeout(() => {
+					// 加载数据
+					this.addData();
+					// this.newsitems[index].loadingShow = 'hide' 
+				}, 100)
 				// this.change()
+
 			},
 			// 上拉加载事件
 			onLoading() {
-				this.loadingShow = 'show';
+				// 存储当前索引
+				var index = this.tabIndex
+				this.newsitems[index].loadingShow = 'show'
+
+				// this.loadingShow = 'show';
 				setTimeout(() => {
 					// 加载数据
-					this.loadingShow = 'hide';
+					this.addData();
+					this.newsitems[index].loadingShow = 'hide'
 				}, 2000)
 			},
 			// 执行刷新
@@ -383,14 +413,20 @@
 				console.log("wanchengle ");
 				// return;
 				console.log(e);
-				this.refreshShow = "show"
-				console.log("zhixingle");
-				this.refreshtext = "正在刷新中"
-				console.log("zhixingle");
+
+				// 存储当前索引
+				var index = this.tabIndex
+				this.newsitems[index].refreshShow = 'show'
+				this.newsitems[index].refreshtext = '正在刷新中'
+				// this.refreshShow = "show"
+				// console.log("zhixingle");
+				// this.refreshtext = "正在刷新中"
+				// console.log("zhixingle");
 				// return
 				setTimeout(() => {
-					this.refreshShow = "hide"
-					this.refreshtext = "下拉可以刷新"
+					this.randomfn()
+					this.newsitems[index].refreshShow = 'hide'
+					this.newsitems[index].refreshtext = '下拉可以刷新'
 				}, 2500);
 			},
 			// 判断下刷刷新状态 
@@ -421,7 +457,15 @@
 			currentWebview.addEventListener('show', e => {
 				console.log(e);
 				console.log("indexshow");
+		
 			})
+			// 监听点击搜索框
+			 uni.onNavigationBarSearchInputClicked(() => {
+			            console.log("点击输入框");
+									uni.navigateTo({
+										url:'../search/search',
+									})
+			        })
 			// 生成随机数据
 			this.newsitems = this.randomfn()
 		},

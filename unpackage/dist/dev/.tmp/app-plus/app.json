@@ -4,7 +4,8 @@
     "pages/my/my",
     "pages/class/class",
     "pages/cart/cart",
-    "pages/ceshi/ceshi"
+    "pages/ceshi/ceshi",
+    "pages/search/search"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -91,7 +92,7 @@
     "autoclose": false
   },
   "appname": "uniapp-xiaomi",
-  "compilerVersion": "2.2.1",
+  "compilerVersion": "2.2.3",
   "usingComponents": {
     "divider": "/components/common/divider"
   }
