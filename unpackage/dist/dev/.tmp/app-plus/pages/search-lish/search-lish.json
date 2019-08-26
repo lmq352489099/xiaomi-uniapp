@@ -20,10 +20,5 @@
       }
     ]
   },
-  "usingComponents": {
-    "divider": "/components/common/divider",
-    "card": "/components/common/card",
-    "color-tag": "/components/search/color-tag",
-    "uni-list-item": "/components/uni-ui/uni-list-item/uni-list-item"
-  }
+  "usingComponents": {}
 }

@@ -5,7 +5,8 @@
     "pages/class/class",
     "pages/cart/cart",
     "pages/ceshi/ceshi",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/search-lish/search-lish"
   ],
   "window": {
     "navigationBarTextStyle": "black",
