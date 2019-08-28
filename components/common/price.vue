@@ -1,6 +1,6 @@
 <template>
 	<view class="d-flex main-text-color font-md line-h">
-		<text class="font-sm a-self-start">¥</text>  <slot></slot><slot/>
+		<text class="font-sm a-self-start">¥</text>  <slot></slot>
 	</view>
 </template>
 

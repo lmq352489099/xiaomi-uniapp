@@ -5,7 +5,9 @@
 		 :class="getHeadClass"
 		 class="p-2">
 			<slot name="title">
-				<text v-if="headTitle" class="font-md font-weight ">{{ headTitle }}</text>
+				<text v-if="headTitle" class="font-md" 
+				:class="headTitleWeight? 'font-weight' : ''    "
+				>{{ headTitle }}</text>
 			</slot>
 		</view>
 		<!-- body -->
@@ -38,6 +40,11 @@
 			bodyPadding: {
 				type: Boolean,
 				default: false
+			},
+			// 标题是否是否加粗
+			headTitleWeight:{
+				type:Boolean,
+				default:true
 			}
 		},
 		computed: {

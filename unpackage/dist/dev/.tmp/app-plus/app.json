@@ -93,7 +93,7 @@
     "autoclose": false
   },
   "appname": "uniapp-xiaomi",
-  "compilerVersion": "2.2.3",
+  "compilerVersion": "2.2.2",
   "usingComponents": {
     "divider": "/components/common/divider"
   }

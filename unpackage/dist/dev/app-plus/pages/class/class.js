@@ -1,1 +1,2 @@
+setCssToHead([".",[1],"class-active { border-left: ",[0,8]," solid #FD6801; color: #FD6801 !important; }\n",],undefined,{path:"./pages/class/class.wxss"})();
 document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/class/class.wxml') } }));
