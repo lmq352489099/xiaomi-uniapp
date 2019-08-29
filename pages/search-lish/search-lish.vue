@@ -50,7 +50,7 @@
 		<uni-drawer :visible="showRight" mode="right" @close="showRight = false">
 			<card headTitle="服务" :headBorderBottom='false' :headTitleWeight="false">
 				<!-- 单选按钮租 -->
-				<zcmadioGroup :selected.sync='label.selected' :label='label'></zcmadioGroup>
+				<zcmadioGroup :selected111.sync='label.selected' :label='label'></zcmadioGroup>
 			</card>
 			<!--按钮 -->
 			<view class="d-flex position-fixed bottom-0 right-0 w-100">

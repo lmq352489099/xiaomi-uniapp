@@ -21,7 +21,7 @@
 		methods: {
 			changeRadio(index) {
 				console.log(index);
-				this.$emit('update:selected',index)
+				this.$emit('update:selected111',index)
 				
 			}
 		},
