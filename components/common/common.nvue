@@ -1,12 +1,12 @@
 <template>
 	<div>
 		<div class="col-6 mb-1"
+		 @click="openDetail"
 		 style="padding-left:2.5px;padding-right: 2.5px;">
 			<image style="width: 370px;height: 370px;"
 			 :src="item.cover"></image>
 			<text class="font-md text-dark px-2 py-1"
-			 style="lines: 1;">{{item.title}}
-			</text>
+			 style="lines: 1;">{{item.title}}</text>
 			<text class="font px-2 text-light-muted"
 			 style="lines: 1;">{{item.desc}}</text>
 			<div class="px-2 pt-1 row a-end">
@@ -29,6 +29,15 @@
 			item: Object,
 			index: Number
 		},
+		methods: {
+			openDetail() {
+				
+				uni.navigateTo({
+					url: '/pages/detail/detail'
+				})
+				
+			}
+		}
 	}
 </script>
 <style src="@/common/zcm-main-nvue.css">

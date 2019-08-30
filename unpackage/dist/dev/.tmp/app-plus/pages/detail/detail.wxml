@@ -1,0 +1,1 @@
+<view><swiper-image vue-id="1" resdata="{{banners}}" height="750" preview="{{true}}" bind:__l="__l"></swiper-image></view>

@@ -1,7 +1,10 @@
 <template>
 	<view class="d-flex border-top border-light-secondary" style="height: 100%;box-sizing: border-box;">
-		<scroll-view scroll-y style="flex: 1;height: 100%;"
-		 class="border-right border-light-secondary">
+
+		<loading :show="showLoading"></loading>
+		<scroll-view id="leftScroll" scroll-y style="flex: 1;height: 100%;"
+		 class="border-right border-light-secondary"
+		 :scroll-top="leftScrollTop">
 			<!-- <view v-for="i in 50" key=" i">{{i}}</view> -->
 			<view
 			 class="border-bottom border-light-secondary py-1 left-scroll-item"
@@ -12,11 +15,11 @@
 				<view
 				 :class=" activeIndex==index ? 'class-active' : ''"
 				 class="py-1 font-md text-muted text-center "
-				 style="">分类一</view>
+				 style="">{{item.name}}</view>
 			</view>
 		</scroll-view>
 		<scroll-view scroll-y
-		 @scoll="onRightScoll"
+		 @scroll="onRightScroll"
 		 style="flex: 3.5;height: 100%;" :scroll-with-animation="true" :scroll-top="rightScrollTop">
 			<view>
 				<view class="row right-scroll-item" v-for="(item,index) in list" :key='index'>
@@ -36,13 +39,18 @@
 	export default {
 		data() {
 			return {
+				showLoading: true,
 				// 当前选中的分类
 				activeIndex: 0,
 				cate: [],
 				list: [],
 				leftDomsTop: '',
 				rigtDomsTop: [],
-				rightScrollTop:0
+				rightScrollTop: 0,
+				// 左边类目的高度
+				cateItemHeight: 0,
+				// 右边滑动监听左边的类目的样式
+				leftScrollTop: 0,
 			}
 		},
 		onLoad() {
@@ -50,32 +58,82 @@
 			// console.log(this.list);
 		},
 		onReady() {
-			const query = uni.createSelectorQuery().in(this);
-			query.selectAll('.left-scroll-item').boundingClientRect(data => {
-				// console.log("得到布局位置信息" + JSON.stringify(data));
+			// 左右边的每个top
+			this.getElInfo({
+				all: 'left',
+				size: true,
+				rect: true
+			}).then(data => {
 				this.leftDomsTop = data.map(v => {
+
+					this.cateItemHeight = v.height
 					return v.top
 				})
-				console.log(this.leftDomsTop);
-				// console.log("节点离页面顶部的距离为" + data.top);
-			}).exec();
-			query.selectAll('.right-scroll-item').boundingClientRect(data => {
-				// console.log("得到布局位置信息" + JSON.stringify(data));
+				console.log("this.leftDomsTop ", this.leftDomsTop);
+			})
+
+
+			this.getElInfo({
+				all: 'right',
+				size: false,
+				rect: true
+			}).then(data => {
 				this.rightDomsTop = data.map(v => {
 					return v.top
 				})
+				console.log("this.rightDomsTop", this.rightDomsTop);
+			})
 
-				console.log(this.rightDomsTop);
+
+		},
+		watch: {
+			async activeIndex(newValue, oldValue) {
+				// 获取scoll-view 高度,scroolTop 
+				console.log(newValue);
+				let data = await this.getElInfo({
+					size: true,
+					scrollOffset: true
+				})
 
 
-				// console.log("节点离页面顶部的距离为" + data.top);
-			}).exec();
+				let H = data.height
+				console.log("H", H);
+				let ST = data.scrollTop
+				console.log(ST);
+				// 下边
+				// 523 + 47.5 > 572.5 + 0(如果超出了左边你的高度就是45)
+				if ((this.leftDomsTop[newValue] + this.cateItemHeight) > (H + ST)) {
+					//570.5 + 47.5 - 572 = 45.5
+					console.log("560.8", this.leftScrollTop = this.leftDomsTop[newValue] + this.cateItemHeight - H);
+					return this.leftScrollTop = this.leftDomsTop[newValue] + this.cateItemHeight - H
+				}
+				// 上边
+				if (ST > this.cateItemHeight) {
+					this.leftScrollTop = this.leftDomsTop[newValue]
+				}
+
+			}
 		},
 		methods: {
+			// 获取节点信息
+			getElInfo(obj = {}) {
+				return new Promise((res, rej) => {
+					let options = {
+						size: obj.size ? true : false,
+						rect: obj.rect ? true : false,
+						scrollOffset: obj.scrollOffset ? true : false
+					}
+					const query = uni.createSelectorQuery().in(this);
+					let q = obj.all ? query.selectAll(`.${obj.all}-scroll-item`) : query.select('#leftScroll')
+					q.fields(options, data => {
+						res(data)
+					}).exec();
+				})
+			},
 			getData() {
 				for (var i = 0; i < 20; i++) {
 					this.cate.push({
-						name: "分类" + "i"
+						name: "分类" + i
 					})
 					this.list.push({
 						list: []
@@ -91,6 +149,10 @@
 
 
 				}
+				this.$nextTick(function(){
+							this.showLoading = false
+				})
+		
 			},
 			// 点击左边分类
 			changeCate(index) {
@@ -99,8 +161,21 @@
 				this.rightScrollTop = this.rightDomsTop[index]
 
 			},
-			async onRightScoll(e){
-				
+			// 监听右边滚动
+			// 顶部到滚动的距离
+			async onRightScroll(e) {
+
+				console.log(e.detail.scrollTop);
+				// 匹配到当前的scrollTop所处的索引
+				// 如果右边的滚动距离大于 右边的每个DOOM节点的固定TOP
+				//就重新复制index,使左边动态改变
+				this.rightDomsTop.forEach((v, k) => {
+					if (v < e.detail.scrollTop) {
+						this.activeIndex = k
+						return false
+					}
+
+				})
 			}
 		},
 		onShow() {

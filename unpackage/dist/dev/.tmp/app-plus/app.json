@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/detail/detail",
     "pages/my/aaaaaaa/aaaaaaa",
     "pages/my/my",
     "pages/class/class",
@@ -83,8 +84,7 @@
         },
         "nvue": true
       }
-    },
-    "entryPagePath": "pages/index/index"
+    }
   },
   "nvueCompiler": "weex",
   "renderer": "auto",
@@ -95,6 +95,7 @@
   "appname": "uniapp-xiaomi",
   "compilerVersion": "2.2.2",
   "usingComponents": {
-    "divider": "/components/common/divider"
+    "divider": "/components/common/divider",
+    "loading": "/components/common/loading"
   }
 }
