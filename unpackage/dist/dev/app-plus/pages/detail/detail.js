@@ -1,1 +1,2 @@
+setCssToHead(["@charset \x22UTF-8\x22;\n.",[1],"uparse .",[1],"p { padding: 0 !important; }\n.",[1],"uparse .",[1],"_div { line-height: 0 !important; }\n",],undefined,{path:"./pages/detail/detail.wxss"})();
 document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/detail/detail.wxml') } }));
