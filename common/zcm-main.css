@@ -137,7 +137,8 @@ body{
 .flex-row{ flex-direction: row; }
 .flex-wrap{ flex-wrap: wrap; }
 .flex-nowrap{ flex-wrap: nowrap; }
-.flex-shrink{flex-shrink: 0;}
+
+.flex-shrink{flex-shrink: 0;}  /* //不能解压 */
 .j-start{ justify-content: flex-start; }
 .j-center{ justify-content: center; }
 .j-end{ justify-content: flex-end; }
@@ -256,6 +257,7 @@ body{
 .ml-5 { margin-left: 50upx;}
 
 .mr-0 { margin-right: 0;}
+.mr-auto { margin-right: auto;}
 .mr { margin-right: 5upx;}
 .mr-1 { margin-right: 10upx;}
 .mr-2 { margin-right: 20upx;}

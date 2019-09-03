@@ -1,23 +1,22 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-		{
-			"path": "pages/detail/detail",
-			"style": {
-				"app-plus": {
-					"scrollIndicator": "none",
-					"bounce": "none",
-					"titleNView": {
-						"type": "transparent",
-						"buttons": [{
-							"type": "menu"
-						}]
-					}
+	
+
+	{
+	      "path" : "pages/detail-comment/detail-comment",
+	      "style" : {
+					"navigationBarTextStyle":"black",
+					"navigationBarTitleText":"商品评价",
+					"app-plus":{
+						"scrollIndicator":"none",
+						"bounce":"none"
+						}
 				}
-			}
-		}, {
+	  },
+		{
 			"path": "pages/search-lish/search-lish",
 			"style": {
-
+		
 				"navigationBarTitleText": "uni-app",
 				"app-plus": {
 					"scrollIndicator": "none",
@@ -39,8 +38,23 @@
 						}]
 					}
 				}
-
-
+		
+		
+			}
+		},
+		{
+			"path": "pages/detail/detail",
+			"style": {
+				"app-plus": {
+					"scrollIndicator": "none",
+					"bounce": "none",
+					"titleNView": {
+						"type": "transparent",
+						"buttons": [{
+							"type": "menu"
+						}]
+					}
+				}
 			}
 		},
 		{
@@ -156,17 +170,7 @@
 			}
 		}
 
-	    ,{
-            "path" : "pages/detail-comment/detail-comment",
-            "style" : {
-							"navigationBarTextStyle":"black",
-							"navigationBarTitleText":"商品评价",
-							"app-plus":{
-								"scrollIndicator":"none",
-								"bounce":"none"
-								}
-						}
-        }
+	
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
