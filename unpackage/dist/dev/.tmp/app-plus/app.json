@@ -1,14 +1,14 @@
 {
   "pages": [
-    "pages/detail/detail",
+    "pages/detail-comment/detail-comment",
     "pages/search-lish/search-lish",
+    "pages/detail/detail",
     "pages/class/class",
     "pages/my/aaaaaaa/aaaaaaa",
     "pages/my/my",
     "pages/cart/cart",
     "pages/ceshi/ceshi",
-    "pages/search/search",
-    "pages/detail-comment/detail-comment"
+    "pages/search/search"
   ],
   "window": {
     "navigationBarTextStyle": "black",
