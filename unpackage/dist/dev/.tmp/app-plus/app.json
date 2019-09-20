@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/search-lish/search-lish",
+    "pages/greenhand/greenhard",
     "pages/detail-comment/detail-comment",
     "pages/search-lish/search-lish",
     "pages/detail/detail",
@@ -85,7 +87,8 @@
         },
         "nvue": true
       }
-    }
+    },
+    "entryPagePath": "pages/index/index"
   },
   "nvueCompiler": "weex",
   "renderer": "auto",

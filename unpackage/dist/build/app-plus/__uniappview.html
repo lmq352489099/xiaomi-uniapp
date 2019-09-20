@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+    <head>
+        <meta charset="UTF-8" />
+        <script>
+            var coverSupport = 'CSS' in window && typeof CSS.supports === 'function' && (CSS.supports('top: env(a)') ||
+                CSS.supports('top: constant(a)'))
+            document.write(
+                '<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0' +
+                (coverSupport ? ', viewport-fit=cover' : '') + '" />')
+        </script>
+        <title>View</title>
+        <style>
+            * {
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            input[type="search"i]::-webkit-search-cancel-button {
+                display: none;
+            }
+        </style>
+        <script>
+            var __wxConfig = {"debug":false,"appname":"uniapp-xiaomi","entryPagePath":"pages/index/index","page":{"pages/detail-comment/detail-comment.html":{"window":{"navigationBarTextStyle":"black","navigationBarTitleText":"商品评价","scrollIndicator":"none","bounce":"none","usingComponents":{"divider":"/components/common/divider"}}},"pages/search-lish/search-lish.html":{"window":{"navigationBarTitleText":"uni-app","scrollIndicator":"none","titleNView":{"searchInput":{"align":"left","backgroundColor":"#f7f7f7","borderRadius":"4px","disabled":false,"placeholder":"智能积木,越野四驱车","placeholderColor":"#cccccc"},"buttons":[{"color":"#989898","colorPressed":"#fd6801","float":"right","fontSize":"16px","text":"搜索"}]},"usingComponents":{"uni-drawer":"/components/uni-ui/uni-drawer/uni-drawer","card":"/components/common/card","zcmadio-group":"/components/common/radio-group","search-list":"/components/search-list/search-list"}}},"pages/detail/detail.html":{"window":{"scrollIndicator":"none","bounce":"none","titleNView":{"type":"transparent","buttons":[{"type":"menu"}]},"usingComponents":{"swiper-image":"/components/index/swiper-Image","uni-list-item":"/components/uni-ui/uni-list-item/uni-list-item","base-info":"/components/detail/base-info","scrolll-comments":"/components/detail/scrolll-comments","scroll-attrs":"/components/detail/scroll-attrs","u-parse":"/components/uni-ui/uParse/src/wxParse","card":"/components/common/card","common-list":"/components/common/common","bottom-btn":"/components/detail/bottom-btn","common-popup":"/components/common/common-popup","price":"/components/common/price","zcm-rradio-group":"/components/common/radio-group","uni-number-box":"/components/uni-ui/uni-number-box/uni-number-box"}}},"pages/class/class.html":{"window":{"navigationBarTitleText":"uni-app","scrollIndicator":"none","bounce":"none","titleNView":{"searchInput":{"align":"left","backgroundColor":"#f7f7f7","borderRadius":"4px","disabled":true,"placeholder":"智能积木,越野四驱车","placeholderColor":"#cccccc"},"buttons":[{"color":"#989898","colorPressed":"#fd6801","float":"right","fontSize":"22px","fontSrc":"/static/font/iconfont.ttf","text":""}]},"usingComponents":{"loading":"/components/common/loading"}}},"pages/my/aaaaaaa/aaaaaaa.html":{"window":{"usingComponents":{}}},"pages/my/my.html":{"window":{"navigationBarTitleText":"我的","usingComponents":{}}},"pages/cart/cart.html":{"window":{"titleNView":false,"scrollIndicator":"none","bounce":"none","usingComponents":{"uni-nav-bar":"/components/uni-ui/uni-nav-bar/uni-nav-bar","price":"/components/common/price","number-box":"/components/uni-ui/uni-number-box/uni-number-box"}}},"pages/ceshi/ceshi.html":{"window":{"usingComponents":{}}},"pages/search/search.html":{"window":{"navigationBarTitleText":"uni-app","scrollIndicator":"none","titleNView":{"searchInput":{"align":"left","backgroundColor":"#f7f7f7","borderRadius":"4px","disabled":false,"placeholder":"智能积木,越野四驱车","placeholderColor":"#cccccc"},"buttons":[{"color":"#989898","colorPressed":"#fd6801","float":"right","fontSize":"16px","text":"搜索"}]},"usingComponents":{"divider":"/components/common/divider","card":"/components/common/card","color-tag":"/components/search/color-tag","uni-list-item":"/components/uni-ui/uni-list-item/uni-list-item"}}}},"global":{"window":{"navigationBarTextStyle":"black","navigationBarTitleText":"uni-app","navigationBarBackgroundColor":"#FFFFFF","backgroundColor":"#FFFFFF"}},"tabBar":{"color":"#b1b1b1","selectedColor":"#FD6801","backgroundColor":"","borderStyle":"black","list":[{"pagePath":"pages/index/index.html","iconPath":"static/tabbar/index.png","selectedIconPath":"static/tabbar/indexSelected.png","text":"首页"},{"pagePath":"pages/class/class.html","iconPath":"static/tabbar/class.png","selectedIconPath":"static/tabbar/classSelected.png","text":"分类"},{"pagePath":"pages/cart/cart.html","iconPath":"static/tabbar/cart.png","selectedIconPath":"static/tabbar/cartSelected.png","text":"购物车"},{"pagePath":"pages/my/my.html","iconPath":"static/tabbar/my.png","selectedIconPath":"static/tabbar/mySelected.png","text":"我的"}],"position":"bottom"},"networkTimeout":{"request":60000,"connectSocket":60000,"uploadFile":60000,"downloadFile":60000},"platform":"devtools","pages":["pages/detail-comment/detail-comment","pages/search-lish/search-lish","pages/detail/detail","pages/class/class","pages/my/aaaaaaa/aaaaaaa","pages/my/my","pages/cart/cart","pages/ceshi/ceshi","pages/search/search","pages/index/index","pages/index/index"],"nvue":{"pages":{"pages/index/index.html":{"window":{"usingComponents":{},"navigationBarTitleText":"uni-app","scrollIndicator":"none","titleNView":{"searchInput":{"align":"left","backgroundColor":"#f7f7f7","borderRadius":"4px","disabled":true,"placeholder":"智能积木,越野四驱车","placeholderColor":"#cccccc"},"buttons":[{"color":"#989898","colorPressed":"#fd6801","float":"left","fontSize":"22px","fontSrc":"/static/font/iconfont.ttf","text":""},{"color":"#989898","colorPressed":"#fd6801","float":"right","fontSize":"22px","fontSrc":"/static/font/iconfont.ttf","text":""}]}},"nvue":true}},"entryPagePath":"pages/index/index"},"nvueCompiler":"weex","renderer":"auto","splashscreen":{"alwaysShowBeforeRender":true,"autoclose":false},"compilerVersion":"2.2.2","usingComponents":{"divider":"/components/common/divider","loading":"/components/common/loading"}}
+        </script>
+        <script>
+            var __id__ = '';
+            window.__dispatchGenerateFunc__ = function(page) {
+                __id__ = page;
+                document.title = page;
+                // window.history.pushState('', '', page);
+                var wxss = page.replace('.html', '.wxss')
+                if (
+                    typeof __wxAppCode__ !== 'undefined' &&
+                    __wxAppCode__.hasOwnProperty(wxss)
+                ) {
+                    var setCssToHead = __wxAppCode__[wxss]
+                    typeof setCssToHead === 'function' && setCssToHead()
+                    document.dispatchEvent(new CustomEvent("generateFuncReady", {
+                        detail: {
+                            generateFunc: $gwx(page.replace('.html', '.wxml'))
+                        }
+                    }));
+                } else {
+                    plus.webview.currentWebview().setJsFile('_www/' + page.replace('.html', '.js'));
+                }
+            };
+        </script>
+        <script src="__uniappes6.js"></script>
+        <script src="uniapp://ready"></script>
+    </head>
+
+    <body>
+        <div></div>
+    </body>
+
+</html>

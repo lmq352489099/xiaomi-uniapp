@@ -1,0 +1,28 @@
+{
+  "navigationBarTitleText": "uni-app",
+  "scrollIndicator": "none",
+  "bounce": "none",
+  "titleNView": {
+    "searchInput": {
+      "align": "left",
+      "backgroundColor": "#f7f7f7",
+      "borderRadius": "4px",
+      "disabled": true,
+      "placeholder": "智能积木,越野四驱车",
+      "placeholderColor": "#cccccc"
+    },
+    "buttons": [
+      {
+        "color": "#989898",
+        "colorPressed": "#fd6801",
+        "float": "right",
+        "fontSize": "22px",
+        "fontSrc": "/static/font/iconfont.ttf",
+        "text": ""
+      }
+    ]
+  },
+  "usingComponents": {
+    "loading": "/components/common/loading"
+  }
+}

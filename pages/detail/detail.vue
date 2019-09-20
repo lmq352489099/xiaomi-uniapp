@@ -59,7 +59,7 @@
 		<!-- 站位 -->
 		<view style="height: 100rpx;"></view>
 		<!-- 底部操作条 -->
-		<bottomBtn></bottomBtn>
+		<bottomBtn @show="show('attr')"></bottomBtn>
 		<!-- 弹出框 -->
 		<commonPopup :popupClass="popup.attr" @hide="hide('attr')">
 
@@ -88,7 +88,7 @@
 			</scroll-view>
 			<!-- anniu 100rpx -->
 			<view class="main-bg-color text-white font-md d-flex a-center j-center "
-			 @tap.stop="hide('attr')"
+			 @tap.stop="addCart"
 			 hover-class="main-bg-hover-color"
 			 style="height: 100rpx;margin: 0 -30rpx;">
 				加入购物车
@@ -186,6 +186,7 @@
 			<img src="http://cdn.cnbj1.fds.api.mi-img.com/mi-mall/fc88fd153c1da1138fd621e00137d3e2.png">
 	</p>
 	    `
+			import { mapState, mapGetters, mapActions, mapMutations } from "vuex"
 	export default {
 		components: {
 			swiperImage,
@@ -318,7 +319,15 @@
 					max: 100
 				},
 
-				hotList: [{
+				hotList: [
+					{
+					cover: "/static/images/demo/list/1.jpg",
+					title: "米家空调",
+					oprice: "2699",
+					desc: "1.5匹变频",
+					pprice: "1399"
+				},
+				{
 					cover: "/static/images/demo/list/1.jpg",
 					title: "米家空调",
 					oprice: "2699",
@@ -336,16 +345,27 @@
 					oprice: "2699",
 					desc: "1.5匹变频",
 					pprice: "1399"
-				}, {
-					cover: "/static/images/demo/list/1.jpg",
-					title: "米家空调",
-					oprice: "2699",
-					desc: "1.5匹变频",
-					pprice: "1399"
-				}]
+				}, ]
 			};
 		},
 		methods: {
+			
+			...mapMutations(['addGoodsToCart']),
+			// 加入购物车
+			addCart(){
+				let goods = this.detail
+				goods['checked'] = false
+				goods['attrs'] = this.selects
+				// 加入购物车
+		  this.addGoodsToCart(goods)
+			
+				// 隐藏筛选框
+				this.hide('attr')
+				// 成功提示
+				uni.showToast({
+					title:'加入成功'
+				})
+			},
 			hide(key) {
 				this.popup[key] = 'hide'
 				setTimeout(() => {

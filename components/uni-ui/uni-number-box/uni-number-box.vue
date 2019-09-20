@@ -42,7 +42,6 @@
 			inputValue(newVal, oldVal) {
 				if (+newVal !== +oldVal) {
 					this.$emit('change', newVal)
-							// this.$emit('update:selected111',newVal)
 				}
 			}
 		},

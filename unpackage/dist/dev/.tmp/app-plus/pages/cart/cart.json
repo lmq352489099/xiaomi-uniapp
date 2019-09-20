@@ -1,4 +1,13 @@
 {
-  "navigationBarTitleText": "购物车",
-  "usingComponents": {}
+  "titleNView": false,
+  "scrollIndicator": "none",
+  "bounce": "none",
+  "usingComponents": {
+    "uni-nav-bar": "/components/uni-ui/uni-nav-bar/uni-nav-bar",
+    "price": "/components/common/price",
+    "number-box": "/components/uni-ui/uni-number-box/uni-number-box",
+    "card": "/components/common/card",
+    "zcm-rradio-group": "/components/common/radio-group",
+    "common-popup": "/components/common/common-popup"
+  }
 }

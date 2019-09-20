@@ -170,7 +170,7 @@
 				// 如果右边的滚动距离大于 右边的每个DOOM节点的固定TOP
 				//就重新复制index,使左边动态改变
 				this.rightDomsTop.forEach((v, k) => {
-					if (v < e.detail.scrollTop) {
+					if (v < e.detail.scrollTop + 3) {
 						this.activeIndex = k
 						return false
 					}

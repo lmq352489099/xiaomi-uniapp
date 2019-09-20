@@ -1,22 +1,95 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+			{
+			  "path": "pages/index/index",
+			  "style": {
+			    "navigationBarTitleText": "uni-app",
+			    "app-plus": {
+			      "scrollIndicator": "none",
+			      "titleNView": {
+			        "searchInput": {
+			          "align": "left",
+			          "backgroundColor": "#f7f7f7",
+			          "borderRadius": "4px",
+			          "disabled": true,
+			          "placeholder": "智能积木,越野四驱车",
+			          "placeholderColor": "#cccccc"
+			        },
+			        "buttons": [{
+			          "color": "#989898",
+			          "colorPressed": "#fd6801",
+			          "float": "left",
+			          "fontSize": "22px",
+			          "fontSrc": "/static/font/iconfont.ttf",
+			          "text": "\ue67a"
+			        }, {
+			          "color": "#989898",
+			          "colorPressed": "#fd6801",
+			          "float": "right",
+			          "fontSize": "22px",
+			          "fontSrc": "/static/font/iconfont.ttf",
+			          "text": "\ue67a"
+			        }]
+			      }
+			    }
+			  }
+			},
+			{
+			  "path": "pages/search-lish/search-lish",
+			  "style": {
+
+			    "navigationBarTitleText": "uni-app",
+			    "app-plus": {
+			      "scrollIndicator": "none",
+			      "titleNView": {
+			        "searchInput": {
+			          "align": "left",
+			          "backgroundColor": "#f7f7f7",
+			          "borderRadius": "4px",
+			          "disabled": false,
+			          "placeholder": "智能积木,越野四驱车",
+			          "placeholderColor": "#cccccc"
+			        },
+			        "buttons": [{
+			          "color": "#989898",
+			          "colorPressed": "#fd6801",
+			          "float": "right",
+			          "fontSize": "16px",
+			          "text": "搜索"
+			        }]
+			      }
+			    }
+
+
+			  }
+			},
+	
+		 {
+		   "path": "pages/greenhand/greenhard",
+		   "style": {
+		     // "navigationBarTitleText": "hello",
+		     "app-plus": {
+		       "titleNView": false
+		     }
+		   }
+		 },
 	
 
-	{
-	      "path" : "pages/detail-comment/detail-comment",
-	      "style" : {
-					"navigationBarTextStyle":"black",
-					"navigationBarTitleText":"商品评价",
-					"app-plus":{
-						"scrollIndicator":"none",
-						"bounce":"none"
-						}
+		{
+			"path": "pages/detail-comment/detail-comment",
+			"style": {
+				"navigationBarTextStyle": "black",
+				"navigationBarTitleText": "商品评价",
+				"app-plus": {
+					"scrollIndicator": "none",
+					"bounce": "none"
 				}
-	  },
+			}
+		},
 		{
 			"path": "pages/search-lish/search-lish",
 			"style": {
-		
+
 				"navigationBarTitleText": "uni-app",
 				"app-plus": {
 					"scrollIndicator": "none",
@@ -38,8 +111,8 @@
 						}]
 					}
 				}
-		
-		
+
+
 			}
 		},
 		{
@@ -86,40 +159,7 @@
 			}
 		},
 
-		{
-			"path": "pages/index/index",
-			"style": {
-				"navigationBarTitleText": "uni-app",
-				"app-plus": {
-					"scrollIndicator": "none",
-					"titleNView": {
-						"searchInput": {
-							"align": "left",
-							"backgroundColor": "#f7f7f7",
-							"borderRadius": "4px",
-							"disabled": true,
-							"placeholder": "智能积木,越野四驱车",
-							"placeholderColor": "#cccccc"
-						},
-						"buttons": [{
-							"color": "#989898",
-							"colorPressed": "#fd6801",
-							"float": "left",
-							"fontSize": "22px",
-							"fontSrc": "/static/font/iconfont.ttf",
-							"text": "\ue67a"
-						}, {
-							"color": "#989898",
-							"colorPressed": "#fd6801",
-							"float": "right",
-							"fontSize": "22px",
-							"fontSrc": "/static/font/iconfont.ttf",
-							"text": "\ue67a"
-						}]
-					}
-				}
-			}
-		},
+
 
 		{
 			"path": "pages/my/aaaaaaa/aaaaaaa",
@@ -128,19 +168,28 @@
 		{
 			"path": "pages/my/my",
 			"style": {
-				"navigationBarTitleText": "我的"
+				"app-plus": {
+					"titleNView": false,
+					"bounce":"none"
+				}
+
 			}
 		},
 
 		{
 			"path": "pages/cart/cart",
 			"style": {
-				"navigationBarTitleText": "购物车"
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none",
+					"bounce": "none"
+				}
 			}
-		}
+		},
+		
 
 
-		, {
+		 {
 			"path": "pages/ceshi/ceshi",
 			"style": {}
 		}, {
@@ -170,8 +219,8 @@
 			}
 		}
 
-	
-    ],
+
+	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",

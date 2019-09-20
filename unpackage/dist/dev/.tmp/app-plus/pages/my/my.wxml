@@ -1,1 +1,1 @@
-<view></view>
+<view><view class="position-relative d-flex a-center" style="height:320rpx;"><view class="iconfont icon-xiaoxi" style="font-size:50rpx;"></view><image style="height:320rpx;width:100%;" src="../../static/images/bg.jpg" mode></image></view></view>
