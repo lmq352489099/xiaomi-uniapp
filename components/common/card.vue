@@ -1,17 +1,18 @@
 <template>
-	<view class="card">
+	<view class="card" :style="carStyle">
 		<!-- 标题 -->
 		<view v-if="showHead"
 		 :class="getHeadClass"
 		 class="p-2">
-			<slot name="title">
+		 <!-- //有插槽,里面消失,没插槽,默认里面显示 -->
+			<slot name="title">  
 				<text v-if="headTitle" class="font-md" 
 				:class="headTitleWeight? 'font-weight' : ''    "
 				>{{ headTitle }}</text>
 			</slot>
 		</view>
 		<!-- body -->
-		<view :class="getBodyClass">
+		<view :class="getBodyClass" :style="bodyStyle">
 			<image v-if="bodyCover" :src="bodyCover" mode="widthFix"></image>
 			<slot></slot>
 		</view>
@@ -24,6 +25,7 @@
 		props: {
 			// 头部标题
 			headTitle: String,
+			bodyStyle:String,
 			// 封面图
 			bodyCover: String,
 			// 是否显示头部
@@ -45,6 +47,10 @@
 			headTitleWeight:{
 				type:Boolean,
 				default:true
+			},
+			carStyle:{
+				type:String,
+				default:""
 			}
 		},
 		computed: {

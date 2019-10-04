@@ -413,8 +413,10 @@ export default {
         return false;
       } else {
         console.log("11111111111");
-        let tabBar = await this.getElSize("tab-bar"),
-          tabBarScrollLeft = tabBar.scrollLeft; //点击的时候记录并设置scrollLeft
+        let tabBar = await this.getElSize("tab-bar");
+        console.log(tabBar);
+        
+      let    tabBarScrollLeft = tabBar.scrollLeft; //点击的时候记录并设置scrollLeft
         this.scrollLeft = tabBarScrollLeft;
         this.isClickChange = true;
         this.tabIndex = tabIndex;

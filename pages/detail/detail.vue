@@ -137,16 +137,16 @@
 			</view>
 			<!-- 表单部分 660rpx -->
 			<scroll-view scroll-y class="w-100" style="height: 835rpx;">
-				<uniListItem v-for="(item,index) in 10" :key="index">
+				<uniListItem v-for="(item,index) in pathList" :key="index">
 					<view class="iconfont icon-dingwei font-weight font-md">
-						初棉
+						{{item.name}}
 					</view>
-					<view class="font text-light-muted"> 福建省福州市银河湾</view>
+					<view class="font text-light-muted">{{item.path}} {{item.detailPath}}</view>
 				</uniListItem>
 			</scroll-view>
 			<!-- 按钮 100rpx -->
 			<view class="main-bg-color text-white font-md d-flex a-center j-center "
-			 @tap.stop="hide('express')"
+			 @tap.stop="openCreatePath"
 			 hover-class="main-bg-hover-color"
 			 style="height: 100rpx;margin: 0 -30rpx;">
 				选择新的地址
@@ -186,7 +186,7 @@
 			<img src="http://cdn.cnbj1.fds.api.mi-img.com/mi-mall/fc88fd153c1da1138fd621e00137d3e2.png">
 	</p>
 	    `
-			import { mapState, mapGetters, mapActions, mapMutations } from "vuex"
+	import { mapState, mapGetters, mapActions, mapMutations } from "vuex"
 	export default {
 		components: {
 			swiperImage,
@@ -217,6 +217,9 @@
 
 			}
 
+		},
+		computed: {
+			...mapState({ pathList: state => state.path.list })
 		},
 		data() {
 			return {
@@ -319,51 +322,57 @@
 					max: 100
 				},
 
-				hotList: [
+				hotList: [{
+						cover: "/static/images/demo/list/1.jpg",
+						title: "米家空调",
+						oprice: "2699",
+						desc: "1.5匹变频",
+						pprice: "1399"
+					},
 					{
-					cover: "/static/images/demo/list/1.jpg",
-					title: "米家空调",
-					oprice: "2699",
-					desc: "1.5匹变频",
-					pprice: "1399"
-				},
-				{
-					cover: "/static/images/demo/list/1.jpg",
-					title: "米家空调",
-					oprice: "2699",
-					desc: "1.5匹变频",
-					pprice: "1399"
-				}, {
-					cover: "/static/images/demo/list/1.jpg",
-					title: "米家空调",
-					oprice: "2699",
-					desc: "1.5匹变频",
-					pprice: "1399"
-				}, {
-					cover: "/static/images/demo/list/1.jpg",
-					title: "米家空调",
-					oprice: "2699",
-					desc: "1.5匹变频",
-					pprice: "1399"
-				}, ]
+						cover: "/static/images/demo/list/1.jpg",
+						title: "米家空调",
+						oprice: "2699",
+						desc: "1.5匹变频",
+						pprice: "1399"
+					}, {
+						cover: "/static/images/demo/list/1.jpg",
+						title: "米家空调",
+						oprice: "2699",
+						desc: "1.5匹变频",
+						pprice: "1399"
+					}, {
+						cover: "/static/images/demo/list/1.jpg",
+						title: "米家空调",
+						oprice: "2699",
+						desc: "1.5匹变频",
+						pprice: "1399"
+					},
+				]
 			};
 		},
 		methods: {
-			
+
 			...mapMutations(['addGoodsToCart']),
+			openCreatePath() {
+				uni.navigateTo({
+					url: "../user-path-edit/user-path-edit"
+				})
+				this.hide('express')
+			},
 			// 加入购物车
-			addCart(){
+			addCart() {
 				let goods = this.detail
 				goods['checked'] = false
 				goods['attrs'] = this.selects
 				// 加入购物车
-		  this.addGoodsToCart(goods)
-			
+				this.addGoodsToCart(goods)
+
 				// 隐藏筛选框
 				this.hide('attr')
 				// 成功提示
 				uni.showToast({
-					title:'加入成功'
+					title: '加入成功'
 				})
 			},
 			hide(key) {

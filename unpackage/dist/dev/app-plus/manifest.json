@@ -35,9 +35,7 @@
       "delay": 0
     },
     "popGesture": "close",
-    "launchwebview": {
-      "render": "always"
-    },
+    "launchwebview": {},
     "statusbar": {
       "immersed": "supportedDevice",
       "style": "dark",
@@ -46,6 +44,9 @@
     "usingComponents": true,
     "distribute": {
       "google": {
+        "schemes": [
+          "yxb"
+        ],
         "permissions": [
           "<uses-feature android:name=\"android.hardware.camera\"/>",
           "<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
@@ -94,7 +95,7 @@
       }
     },
     "uni-app": {
-      "compilerVersion": "2.2.2",
+      "compilerVersion": "2.3.3",
       "control": "v8",
       "nvueCompiler": "weex",
       "renderer": "auto"

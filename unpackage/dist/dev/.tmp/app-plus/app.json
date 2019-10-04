@@ -1,16 +1,22 @@
 {
   "pages": [
-    "pages/search-lish/search-lish",
+    "pages/detail/detail",
+    "pages/greenhand/skip/skip",
     "pages/greenhand/greenhard",
+    "pages/search-lish/search-lish",
     "pages/detail-comment/detail-comment",
     "pages/search-lish/search-lish",
-    "pages/detail/detail",
     "pages/class/class",
     "pages/my/aaaaaaa/aaaaaaa",
     "pages/my/my",
     "pages/cart/cart",
     "pages/ceshi/ceshi",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/user-set/user-set",
+    "pages/user-userinfo/user-userinfo",
+    "pages/user-path-list/user-path-list",
+    "pages/user-path-edit/user-path-edit",
+    "pages/order/order"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -97,7 +103,7 @@
     "autoclose": false
   },
   "appname": "uniapp-xiaomi",
-  "compilerVersion": "2.2.2",
+  "compilerVersion": "2.3.3",
   "usingComponents": {
     "divider": "/components/common/divider",
     "loading": "/components/common/loading"

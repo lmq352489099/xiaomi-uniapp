@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/greenhand/greenhard",
+    "pages/search-lish/search-lish",
     "pages/detail-comment/detail-comment",
     "pages/search-lish/search-lish",
     "pages/detail/detail",
@@ -85,8 +87,7 @@
         },
         "nvue": true
       }
-    },
-    "entryPagePath": "pages/index/index"
+    }
   },
   "nvueCompiler": "weex",
   "renderer": "auto",
@@ -95,7 +96,7 @@
     "autoclose": false
   },
   "appname": "uniapp-xiaomi",
-  "compilerVersion": "2.2.2",
+  "compilerVersion": "2.3.3",
   "usingComponents": {
     "divider": "/components/common/divider",
     "loading": "/components/common/loading"

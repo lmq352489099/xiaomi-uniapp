@@ -22,7 +22,5 @@
       }
     ]
   },
-  "usingComponents": {
-    "loading": "/components/common/loading"
-  }
+  "usingComponents": {}
 }

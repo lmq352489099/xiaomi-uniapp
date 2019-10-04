@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "增加收货地址",
+  "scrollIndicator": "none",
+  "bounce": "none",
+  "usingComponents": {
+    "mpvue-city-picker": "/components/uni-ui/mpvue-citypicker/mpvueCityPicker"
+  }
+}

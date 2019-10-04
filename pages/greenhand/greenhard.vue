@@ -3,7 +3,7 @@
     <!-- <view class="status_bar"> -->
       <!-- 这里是状态栏 -->
     <!-- </view> -->
-    <web-view src="http://192.168.1.128:8082/"></web-view>
+    <web-view src="http://192.168.1.128:8080/"></web-view>
   </div>
 </template>
 
@@ -19,24 +19,24 @@ export default {
     // uni.setNavigationBarTitle({
     //   title: '新手教程'
     // });
-    plus.navigator.setStatusBarBackground("#FF6666");
-    let aa = plus.navigator.getStatusBarBackground();
-    console.log(aa);
+    // plus.navigator.setStatusBarBackground("#FF6666");
+    // let aa = plus.navigator.getStatusBarBackground();
+    // console.log(aa);
     
   },
-  onReady() {
+  // onReady() {
 
-    // #ifdef APP-PLUS
-    var currentWebview = this.$mp.page.$getAppWebview() //获取当前页面的webview对象
-    setTimeout(function () {
-      plus.navigator.setStatusBarBackground("#FF6666");
-        let aa = plus.navigator.getStatusBarBackground();
-      console.log(aa);
-      wv = currentWebview.children()[0]
-      wv.setStyle({ top: statusHeight })
-    }, 1000); //如果是页面初始化调用时，需要延时一下
-    // #endif
-  }
+  //   // #ifdef APP-PLUS
+  //   var currentWebview = this.$mp.page.$getAppWebview() //获取当前页面的webview对象
+  //   setTimeout(function () {
+  //     plus.navigator.setStatusBarBackground("#FF6666");
+  //       let aa = plus.navigator.getStatusBarBackground();
+  //     console.log(aa);
+  //     wv = currentWebview.children()[0]
+  //     wv.setStyle({ top: statusHeight })
+  //   }, 1000); //如果是页面初始化调用时，需要延时一下
+  //   // #endif
+  // }
 }
 </script>
 
