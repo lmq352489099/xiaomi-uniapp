@@ -49,6 +49,18 @@
 				}
 			}
 		},
+		{
+			"path": "pages/msg-list/msg-list",
+			"style": {
+				"navigationBarTitleText": "消息列表"
+			}
+		},
+		{
+			"path": "pages/msg-detail/msg-detail",
+			"style": {
+				"navigationBarTitleText": "消息列表详情"
+			}
+		},
 
 		{
 			"path": "pages/greenhand/skip/skip",
@@ -315,6 +327,30 @@
 					"bounce": "none",
 					"scrollIndicator": "none",
 					"titleNView": false
+				}
+			}
+		}, {
+			"path": "pages/pay-methods/pay-methods",
+			"style": {
+				"navigationBarTitleText": "选择支付"
+			}
+		}, {
+			"path": "pages/pay-result/pay-result",
+			"style": {
+				"navigationBarTitleText": "支付成功"
+			}
+		}, {
+			"path": "pages/order-coupon/order-coupon",
+			"style": {
+				"navigationBarTitleText": "优惠券"
+			}
+		}, {
+			"path": "pages/order-detail/order-detail",
+			"style": {
+				"app-plus": {
+					"titleNView": {
+						"type": "transparent"
+					}
 				}
 			}
 		}

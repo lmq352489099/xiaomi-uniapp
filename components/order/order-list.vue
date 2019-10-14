@@ -1,5 +1,5 @@
 <template>
-	<view class="bg-white">
+	<view class="bg-white" @click.stop="openDetail">
 		
 		<divider></divider>
 		<!-- 头部 -->
@@ -50,6 +50,13 @@
 			item: Object,
 			index:Number
 		},
+		methods:{
+			openDetail(){
+				uni.navigateTo({
+					url:'../../pages/order-detail/order-detail'
+				})
+			}
+		}
 	}
 </script>
 

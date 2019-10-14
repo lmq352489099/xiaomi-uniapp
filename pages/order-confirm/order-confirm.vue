@@ -55,11 +55,13 @@
 						包邮
 					</view>
 				</uniListItem>
+				<navigator url="../order-coupon/order-coupon">
 				<uniListItem title="优惠券">
 					<view slot="rightContent" class="text-light-muted">
 						<text color="text-dark">无可用</text>
 					</view>
 				</uniListItem>
+				</navigator>
 				<uniListItem title="" :showArrowIcon="false">
 					<text class="main-text-color">小计</text>
 					<view slot="rightContent">
@@ -82,7 +84,7 @@
 				<price>24.00</price>
 			</view>
 
-			<view style="border-radius: 80rpx;" class="px-2 py-1 ml-2  main-bg-color text-white" hover-class="main-bg-hover-color">
+			<view @click="openPayMethods" style="border-radius: 80rpx;" class="px-2 py-1 ml-2  main-bg-color text-white" hover-class="main-bg-hover-color">
 				去支付
 			</view>
 		</view>
@@ -125,6 +127,12 @@
 			};
 		},
 		methods: {
+			openPayMethods(){
+				uni.navigateTo({
+					url: '../pay-methods/pay-methods',
+				
+				});
+			},
 			openPathList() {
 				uni.navigateTo({
 					url: "../user-path-list/user-path-list?type=choose"
