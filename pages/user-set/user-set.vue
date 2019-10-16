@@ -19,6 +19,19 @@
 			card,
 			uniListItem
 		},
+		methods: {
+			navigate(path) {
+				if(!path) return
+				
+				
+				uni.navigateTo({
+					url: `/pages/${path}/${path}`,
+					success: res => {},
+					fail: () => {},
+					complete: () => {}
+				});
+			}
+		},
 		data() {
 			return {
 				list: [{
@@ -31,7 +44,7 @@
 					{
 						label: "关于",
 						value: [
-							{ title: "关于商城", path: "" },
+							{ title: "关于商城", path: "about" },
 							{ title: "意见反馈", path: "" },
 							{ title: "协议规则", path: "" },
 							{ title: "资质证件", path: "" },

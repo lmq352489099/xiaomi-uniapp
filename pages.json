@@ -354,7 +354,23 @@
 				}
 			}
 		}
-	],
+	    ,{
+            "path" : "pages/logistics-detail/logistics-detail",
+            "style" : {
+								"navigationBarTitleText": "物流信息"
+						}
+        }
+        ,{
+            "path" : "pages/after-sale/after-sale",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/about/about",
+            "style" : {
+							"navigationBarTitleText":"关于xxx商城"
+						}
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",

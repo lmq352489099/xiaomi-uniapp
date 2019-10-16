@@ -32,8 +32,18 @@
 			</text>
 		</view>
 		<view class="d-flex j-end p-2">
+			
 			<view class="  border border-light-secondary py-1 px-2 text-secondary"
-			 hover-class="bg-light-secondary">
+			 hover-class="bg-light-secondary"
+			 @click.stop="openAfterSale"
+			 >
+			申请售后
+			</view>
+			
+			<view class="ml-2  border border-light-secondary py-1 px-2 text-secondary"
+			 hover-class="bg-light-secondary"
+			 @click.stop="openLogistics"
+			 >
 				查看物流
 			</view>
 			<view class="ml-2  border border-light-secondary py-1 px-2 text-secondary"
@@ -55,6 +65,18 @@
 				uni.navigateTo({
 					url:'../../pages/order-detail/order-detail'
 				})
+			},
+			openLogistics(){
+				uni.navigateTo({
+					url: '../../pages/logistics-detail/logistics-detail',
+				
+				});
+			},
+			openAfterSale(){
+				uni.navigateTo({
+					url: '../../pages/after-sale/after-sale',
+				
+				});
 			}
 		}
 	}

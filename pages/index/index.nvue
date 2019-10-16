@@ -88,7 +88,7 @@
 			* 间隙 5px
 			* 每列占:375px
 			-->
-								<div class="row w-100" >
+								<div class="row w-100">
 									<block v-for="(item,index) in listItem.data" :key="index">
 										<commonList :index="index" :item="item"></commonList>
 									</block>
@@ -226,6 +226,35 @@
 		},
 
 		methods: {
+			// 初始化
+			async __init() {
+				let [error, result] = await uni.request({
+					url: "http://ceshi3.dishait.cn/api/index_category/data",
+					method: "GET",
+				})
+				//错误
+				if (error) {
+					return uni.showToast({
+						title: error.errMsg,
+						icon: "none"
+					})
+				}
+
+				// 失败
+				if (result.statusCode !== 200) {
+					return uni.showToast({
+						title: result.data.msg,
+						icon: "none"
+					})
+				}
+				// 成功
+				let data = result.data.data
+				// 初始化tabbars
+				this.tabBars = data.category
+				// 初始化页面
+				this.newsitems = this.setNewsitems(data)
+
+			},
 			// 模拟加载数据
 			addData() {
 				let e = this.tabIndex
@@ -284,8 +313,8 @@
 				console.log(this.newsitems);
 
 			},
-			// 生成随机数据
-			randomfn() {
+			// 初始化页面
+			setNewsitems(e) {
 				let ary = [];
 				// 拿到tabbars的长度,根据长度生成页面
 				let tablength = this.tabBars.length
@@ -305,6 +334,10 @@
 					// }
 					// 给页面添加数据
 					if (this.tabBars[i].template === "index") {
+						aryItem.data = e.data
+
+						/**
+					
 						aryItem.data = [{
 								type: "swiper",
 								data: [
@@ -368,6 +401,8 @@
 								}]
 							}
 						]
+					
+					 */
 					}
 					// console.log();
 					ary.push(aryItem);
@@ -457,17 +492,18 @@
 			currentWebview.addEventListener('show', e => {
 				console.log(e);
 				console.log("indexshow");
-		
+
 			})
 			// 监听点击搜索框
-			 uni.onNavigationBarSearchInputClicked(() => {
-			            console.log("点击输入框");
-									uni.navigateTo({
-										url:'../search/search',
-									})
-			        })
-			// 生成随机数据
-			this.newsitems = this.randomfn()
+			uni.onNavigationBarSearchInputClicked(() => {
+				console.log("点击输入框");
+				uni.navigateTo({
+					url: '../search/search',
+				})
+			})
+			// 初始化数据
+			this.__init()
+
 		},
 		beforeDestroy() {
 			currentWebview.removeEventListener('show', e => {

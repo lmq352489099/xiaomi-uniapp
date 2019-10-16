@@ -43,7 +43,7 @@
 		<uni-list-item showExtraIcon leftIconStyle="color:#FE8B42;" leftIcon="icon-home" title="小米之家"></uni-list-item>
 		<uni-list-item showExtraIcon leftIconStyle="color:#9ED45A;" leftIcon="icon-gengduo" title="更多功能"></uni-list-item>
 		<divider></divider>
-		<uni-list-item @tap="navigate('user-path-list')" showExtraIcon leftIconStyle="color:#808C98;" leftIcon="icon-icon_set_up"
+		<uni-list-item @tap="navigate('user-set')" showExtraIcon leftIconStyle="color:#808C98;" leftIcon="icon-icon_set_up"
 		 title="更多设置"></uni-list-item>
 	</view>
 </template>
