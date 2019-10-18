@@ -3,7 +3,5 @@
   "navigationBarTitleText": "商品评价",
   "scrollIndicator": "none",
   "bounce": "none",
-  "usingComponents": {
-    "divider": "/components/common/divider"
-  }
+  "usingComponents": {}
 }

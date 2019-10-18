@@ -18,7 +18,7 @@
 			return {};
 		},
 		props: {
-			resdata: Array,
+			resdata: [Array, Object],
 			height: {
 				type: String,
 				default: '350'
@@ -32,9 +32,16 @@
 			getStyle() {
 				return `height:${this.height}rpx`
 			},
-			getUrls() {
-				return this.resdata.map((v) => v.src)
+			// getUrls() {
+			// 	return this.resdata.map((v) => v.src)
 
+			// },
+			getUrls() {
+				var urls = []
+				for (let v in this.resdata) {
+					urls.push(this.resdata[v].src)
+				}
+				return urls
 			}
 		},
 		methods: {

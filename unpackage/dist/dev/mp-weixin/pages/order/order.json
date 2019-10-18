@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "我的订单",
+  "usingComponents": {
+    "common-list": "/components/common/common",
+    "no-thing": "/components/common/no-thing",
+    "order-list": "/components/order/order-list"
+  }
+}
