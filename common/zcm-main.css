@@ -149,6 +149,9 @@ body{
 .a-stretch{ align-items: stretch; }
 .a-self-start{ align-self: flex-start; }
 .a-self-auto{ align-self: auto; }
+.a-self-center {
+  align-self: center;
+}
 .a-self-end{ align-self: flex-end; }
 .a-self-stretch{ align-self:stretch; }
 .a-self-baseline{ align-self:baseline; }

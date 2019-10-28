@@ -278,7 +278,7 @@ console.log(data);
 				}
 
 
-				console.log(result);
+				// console.log(result);
 
 				// 成功
 				if (data) {

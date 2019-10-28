@@ -4,7 +4,7 @@
 		<!-- 商品详情大图 -->
 		<swiperImage :resdata="banners" height="750" :preview="true"></swiperImage>
 		<!-- 基础详情 -->
-		<baseInfo :detail="detail"></baseInfo>
+		<baseInfo :detail="detail" :show-price="showPrice"></baseInfo>
 		<!-- 滚动商品特性 w170*h10 -->
 		<scrollAttrs :baseAttrs='baseAttrs'></scrollAttrs>
 		<!-- 属性选择 -->
@@ -172,20 +172,6 @@
 	import zcmRradioGroup from '@/components/common/radio-group.vue';
 	import uniNumberBox from '@/components/uni-ui/uni-number-box/uni-number-box.vue';
 
-	var htmlString =
-		`
-	<p>
-			<img src="http://cdn.cnbj1.fds.api.mi-img.com/mi-mall/eec2e38c06ca4747e5640a4d21332b6b.jpg">
-			<img src="http://cdn.cnbj1.fds.api.mi-img.com/mi-mall/bf8e8e88b858d3ff49436538987d4801.jpg">
-			<img src="http://cdn.cnbj1.fds.api.mi-img.com/mi-mall/eec2e38c06ca4747e5640a4d21332b6b.jpg">
-			<img src="http://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4ab1fa03f3eccd7a94c85838b37ea19d.jpg">
-			<img src="http://cdn.cnbj1.fds.api.mi-img.com/mi-mall/546795e0c2f27dc9c1ab747ebd421a9a.jpg">
-			<img src="http://cdn.cnbj1.fds.api.mi-img.com/mi-mall/19e8e24c4b1b5b65ebb18056f4d4b774.jpg">
-			<img src="http://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c965d19e02c5d73f171d9df72ae8e963.jpg">
-			<img src="http://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f4b78bb87aab6fcc9ee522eafb7cd94c.jpg">
-			<img src="http://cdn.cnbj1.fds.api.mi-img.com/mi-mall/fc88fd153c1da1138fd621e00137d3e2.png">
-	</p>
-	    `
 	import { mapState, mapGetters, mapActions, mapMutations } from "vuex"
 	export default {
 		components: {
@@ -219,7 +205,17 @@
 
 		},
 		computed: {
-			...mapState({ pathList: state => state.path.list })
+			...mapState({ pathList: state => state.path.list }),
+			showPrice() {
+				return this.detail.min_price || 0.00
+			}
+		},
+		onLoad(e) {
+			if (e.detail) {
+
+				this.__init(JSON.parse(e.detail))
+			}
+
 		},
 		data() {
 			return {
@@ -230,88 +226,12 @@
 					express: 'none',
 					service: "none"
 				},
-				context: htmlString,
-				selects: [{
-						title: "颜色",
-						selected: 0,
-						list: [{ name: "黄色" }, { name: "黑色" }, { name: "黄色" }]
-					},
-					{
-						title: "容量",
-						selected: 0,
-						list: [{ name: "64GB" }, { name: "128GB" }]
-					},
-					{
-						title: "套餐",
-						selected: 0,
-						list: [{ name: "标配套餐一" }, { name: "标配套餐二" }, { name: "标配套餐三" }]
-					}
-				],
+				context: '',
+				selects: [],
 
-				comments: [{
-						userpic: "/static/images/demo/demo6.jpg",
-						username: "初棉",
-						create_time: '2018/08/02',
-						goods_num: '12',
-						context: "啊啊啊",
-						imgList: [
-							"/static/images/demo/demo6.jpg", "/static/images/demo/demo6.jpg", "/static/images/demo/demo6.jpg"
-						]
-					},
-					{
-						userpic: "/static/images/demo/demo6.jpg",
-						username: "初棉",
-						create_time: '2018/08/02',
-						goods_num: '12',
-						context: "啊啊啊",
-						imgList: [
-							"/static/images/demo/demo6.jpg", "/static/images/demo/demo6.jpg", "/static/images/demo/demo6.jpg"
-						]
-					},
-					{
-						userpic: "/static/images/demo/demo6.jpg",
-						username: "初棉",
-						create_time: '2018/08/02',
-						goods_num: '12',
-						context: "啊啊啊",
-						imgList: [
-							"/static/images/demo/demo6.jpg", "/static/images/demo/demo6.jpg", "/static/images/demo/demo6.jpg"
-						]
-					},
-					{
-						userpic: "/static/images/demo/demo6.jpg",
-						username: "初棉",
-						create_time: '2018/08/02',
-						goods_num: '12',
-						context: "啊啊啊",
-						imgList: [
-							"/static/images/demo/demo6.jpg", "/static/images/demo/demo6.jpg", "/static/images/demo/demo6.jpg"
-						]
-					},
-					{
-						userpic: "/static/images/demo/demo6.jpg",
-						username: "初棉",
-						create_time: '2018/08/02',
-						goods_num: '12',
-						context: "啊啊啊",
-						imgList: [
-							"/static/images/demo/demo6.jpg", "/static/images/demo/demo6.jpg", "/static/images/demo/demo6.jpg"
-						]
-					},
-				],
-				banners: [
-					{ src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/13c41ccd1bd8b38f9017c6faf569fb24.jpg' },
-					{ src: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0ce61b71e2f81df62bd0c05aaa901d22.jpg' }
-				],
-				baseAttrs: [
-					{ icon: "icon-cpu", title: "CPU", desc: "蛟龙845八核" },
-					{ icon: "icon-cpu", title: "CPU", desc: "蛟龙845八核" },
-					{ icon: "icon-cpu", title: "CPU", desc: "蛟龙845八核" },
-					{ icon: "icon-cpu", title: "CPU", desc: "蛟龙845八核" },
-					{ icon: "icon-cpu", title: "CPU", desc: "蛟龙845八核" },
-					{ icon: "icon-cpu", title: "CPU", desc: "蛟龙845八核" },
-					{ icon: "icon-cpu", title: "CPU", desc: "蛟龙845八核" },
-				],
+				comments: [],
+				banners: [],
+				baseAttrs: [],
 				detail: {
 					id: 20,
 					title: "小米MIX3 6GB+128GB",
@@ -322,38 +242,101 @@
 					max: 100
 				},
 
-				hotList: [{
-						cover: "/static/images/demo/list/1.jpg",
-						title: "米家空调",
-						oprice: "2699",
-						desc: "1.5匹变频",
-						pprice: "1399"
-					},
-					{
-						cover: "/static/images/demo/list/1.jpg",
-						title: "米家空调",
-						oprice: "2699",
-						desc: "1.5匹变频",
-						pprice: "1399"
-					}, {
-						cover: "/static/images/demo/list/1.jpg",
-						title: "米家空调",
-						oprice: "2699",
-						desc: "1.5匹变频",
-						pprice: "1399"
-					}, {
-						cover: "/static/images/demo/list/1.jpg",
-						title: "米家空调",
-						oprice: "2699",
-						desc: "1.5匹变频",
-						pprice: "1399"
-					},
-				]
+				hotList: []
 			};
 		},
 		methods: {
 
 			...mapMutations(['addGoodsToCart']),
+			// 初始化页面
+			__init(data) {
+				this.$H.get('/goods/' + data.id).then(res => {
+					// 轮播图
+					this.banners = res.goodsBanner.map(v => {
+						return { src: v.url }
+					})
+					// 初始化基本信息
+					this.detail = res
+
+					// b标题
+					uni.setNavigationBarTitle({
+						title: res.title
+					})
+
+					// 滚动商品属性
+					this.baseAttrs = res.goodsAttrs.map(v => {
+						return { icon: "icon-cpu", title: v.name, desc: v.value }
+					})
+					// 热门评论
+					// {
+					// 						userpic: "/static/images/demo/demo6.jpg",
+					// 						username: "初棉",
+					// 						create_time: '2018/08/02',
+					// 						goods_num: '12',
+					// 						context: "啊啊啊",
+					// 						imgList: [
+					// 							"/static/images/demo/demo6.jpg", "/static/images/demo/demo6.jpg", "/static/images/demo/demo6.jpg"
+					// 						]
+					// 					},
+					this.comments = res.hotComments.map(v => {
+						var imglist = []
+						for (let k in v.imglist) {
+							imglist.push(v.imglist[k].src)
+						}
+						return {
+							id: v.id,
+							userpic: v.user.avatar,
+							username: v.user.nickname,
+							create_time: v.create_time,
+							goods_num: v.goods_num,
+							context: v.context,
+							imgList: imglist
+						}
+					})
+					// 商品详情
+					this.context = res.content
+					// 热门推荐
+					// {
+					// 		cover: "/static/images/demo/list/1.jpg",
+					// 		title: "米家空调",
+					// 		oprice: "2699",
+					// 		desc: "1.5匹变频",
+					// 		pprice: "1399"
+					// 	},
+					this.hotList = res.hotList.map(v => {
+						return {
+							id: v.id,
+							cover: v.cover,
+							title: v.title,
+							oprice: v.min_oprice,
+							desc: v.desc,
+							pprice: v.min_price
+						}
+					})
+					// 商品规格
+					// {
+					// 		title: "颜色",
+					// 		selected: 0,
+					// 		list: [{ name: "黄色" }, { name: "黑色" }, { name: "黄色" }]
+					// 	},
+					this.selects = res.goodsSkusCard.map(v => {
+						let list = v.goodsSkusCardValue.map(v1 => {
+							return {
+								id: v1.id,
+								name: v1.value
+							}
+						})
+				
+						return {
+							id: v.id,
+							title: v.name,
+							selected: 0,
+							list: list
+						}
+					})
+
+				})
+			},
 			openCreatePath() {
 				uni.navigateTo({
 					url: "../user-path-edit/user-path-edit"
