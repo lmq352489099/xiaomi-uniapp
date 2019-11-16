@@ -18,6 +18,9 @@ Vue.component("loading", loading)
 import $H from '@/common/lib/request.js';
 Vue.prototype.$H = $H
 
+
+
+
 App.mpType = 'app'
 
 const app = new Vue({

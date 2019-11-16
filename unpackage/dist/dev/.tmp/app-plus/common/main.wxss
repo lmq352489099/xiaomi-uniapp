@@ -5338,6 +5338,11 @@ page{
 }
 .a-self-auto{ -webkit-align-self: auto; -ms-flex-item-align: auto; align-self: auto;
 }
+.a-self-center {
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+}
 .a-self-end{ -webkit-align-self: flex-end; -ms-flex-item-align: end; align-self: flex-end;
 }
 .a-self-stretch{ -webkit-align-self:stretch; -ms-flex-item-align:stretch; align-self:stretch;

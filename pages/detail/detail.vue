@@ -13,7 +13,7 @@
 				<uni-list-item @click="show('attr')">
 					<view class="d-flex">
 						<text class="mr-2 text-muted">已选</text>
-						<text>火焰红 64G 标配</text>
+						<text>{{checkedSkus}}</text>
 					</view>
 				</uni-list-item>
 				<uni-list-item @click="show('express')">
@@ -42,7 +42,7 @@
 			</view>
 		</view>
 		<!-- 横向滚动评论 -->
-		<scrolllComments :comments="comments"></scrolllComments>
+		<scrolllComments :goods_id="detail.id" :comments="comments"></scrolllComments>
 		<!-- 商品详情 -->
 
 		<view class="py-4 px-2">
@@ -67,9 +67,9 @@
 				<image src="../../static/images/demo/list/1.jpg"
 				 style="height: 180rpx;width: 180rpx;" mode="widthFix" class="border rounded"></image>
 				<view class="pl-2">
-					<price priceSize="font-lg" unitSize="font">2365</price>
+					<price priceSize="font-lg" unitSize="font">{{showPrice}}</price>
 					<text class="d-block">
-						火焰红 64GB 标配
+						{{ checkedSkus }}
 					</text>
 				</view>
 			</view>
@@ -83,7 +83,7 @@
 					<text>购买数量</text>
 					<!-- -->
 					<!-- :selected711.sync= 'detail.num' -->
-					<uni-number-box :min='1' @change="detail.num = $event" :value="detail.num"></uni-number-box>
+					<uni-number-box :min='1' :max="maxStock" @change="detail.num = $event" :value="detail.num"></uni-number-box>
 				</view>
 			</scroll-view>
 			<!-- anniu 100rpx -->
@@ -173,6 +173,8 @@
 	import uniNumberBox from '@/components/uni-ui/uni-number-box/uni-number-box.vue';
 
 	import { mapState, mapGetters, mapActions, mapMutations } from "vuex"
+
+
 	export default {
 		components: {
 			swiperImage,
@@ -206,8 +208,35 @@
 		},
 		computed: {
 			...mapState({ pathList: state => state.path.list }),
+			// 选择的sku 
+			checkedSkus() {
+				// 拿到现在的sku组成字符串(会自动监听)与后端传过来的进行对比
+				let checkedSkus = this.selects.map(v => {
+					return v.list[v.selected].name
+				})
+				console.log(checkedSkus);
+				return checkedSkus.join(',')
+			},
+			// 选择skus的索引 与后端传过来的进行对比价格
+			checkedSkusIndex() {
+				let index = this.detail.goodsSkus.findIndex(item => {
+					return item.skusText === this.checkedSkus
+				})
+				return index
+			},
+			// 显示价格
 			showPrice() {
-				return this.detail.min_price || 0.00
+				console.log(this.checkedSkus);
+				if (!this.checkedSkusIndex < 0) {
+					return this.detail.min_price || 0.00
+				}
+				// 与后端传过来的进行对比价格
+				return this.detail.goodsSkus[this.checkedSkusIndex].pprice
+
+			},
+			// 最大库存
+			maxStock() {
+				return this.detail.goodsSkus[this.checkedSkusIndex].stock || 100
 			}
 		},
 		onLoad(e) {
@@ -285,12 +314,13 @@
 						}
 						return {
 							id: v.id,
+							user_id: v.user.avatar,
 							userpic: v.user.avatar,
 							username: v.user.nickname,
-							create_time: v.create_time,
+							create_time: v.review_time,
 							goods_num: v.goods_num,
-							context: v.context,
-							imgList: imglist
+							context: v.review.data,
+							imgList: v.review.image
 						}
 					})
 					// 商品详情
@@ -313,7 +343,7 @@
 							pprice: v.min_price
 						}
 					})
-					// 商品规格
+					// 商品规格(选项部分)
 					// {
 					// 		title: "颜色",
 					// 		selected: 0,
@@ -326,7 +356,7 @@
 								name: v1.value
 							}
 						})
-				
+
 						return {
 							id: v.id,
 							title: v.name,
@@ -334,6 +364,16 @@
 							list: list
 						}
 					})
+					// 商品规格(匹配价格)
+					this.detail.goodsSkus.forEach(item => {
+						let arr = []
+
+						for (let key in item.skus) {
+							arr.push(item.skus[key].value)
+						}
+						item.skusText = arr.join(',')
+					})
+					console.log(JSON.stringify(this.detail.goodsSkus))
 
 				})
 			},

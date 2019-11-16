@@ -43,6 +43,13 @@
 				if (+newVal !== +oldVal) {
 					this.$emit('change', newVal)
 				}
+			},
+			// 最大库存的一个变化
+			max(newVal,oldVal){
+				console.log(newVal)
+				if(this.inputValue > newVal){
+					this.inputValue  = newVal
+				}
 			}
 		},
 		created() {

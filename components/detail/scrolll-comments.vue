@@ -10,7 +10,7 @@
 					</image>
 					<view class="ml-2">
 						<text class="font-md line-h">{{item.username}}</text>
-						<text class="font d-block text-light-muted">{{item.create_time}}</text>
+						<text class="font d-block text-light-muted">{{item.create_time | formatTime}}</text>
 					</view>
 					<view class="iconfont icon-dianzan text-light-muted pl-1 ml-auto">{{item.goods_num}}</view>
 				</view>
@@ -29,18 +29,31 @@
 			</view>
 		</scroll-view>
 
-		<navigator url="/pages/detail-comment/detail-comment">
+		<view @tap="open">
 			<view class="d-flex j-center a-center py-2 mt-2 text-primary "
 			 hover-class="bg-light-secondary">
 				更多评论 <view class="iconfont icon-you"></view>
 			</view>
-		</navigator>
+		</view>
 	</view>
 </template>
 
 <script>
+	import $T from '@/common/lib/time.js';
 	export default {
-		props: ['comments'],
+		props: ['comments', 'goods_id'],
+		filters: {
+			formatTime(value) {
+				return $T.gettime(value)
+			}
+		},
+		methods: {
+			open() {
+				uni.navigateTo({
+					url: '/pages/detail-comment/detail-comment?id=' + this.goods_id
+				});
+			}
+		},
 	}
 </script>
 

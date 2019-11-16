@@ -38,7 +38,8 @@
     "launchwebview": {
       "id": "2",
       "kernel": "WKWebview",
-      "uni-app": "auto"
+      "uni-app": "auto",
+      "render": "always"
     },
     "statusbar": {
       "immersed": "supportedDevice",
@@ -99,7 +100,7 @@
       }
     },
     "uni-app": {
-      "compilerVersion": "2.3.6",
+      "compilerVersion": "2.3.7",
       "control": "v8",
       "nvueCompiler": "weex",
       "renderer": "auto"

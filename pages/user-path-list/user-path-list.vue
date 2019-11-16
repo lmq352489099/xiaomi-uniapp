@@ -52,6 +52,7 @@
 				switch (e.index) {
 					case 0: //修改
 						let obj = JSON.stringify({ index: value, item: this.list[value] })
+						console.log(obj);
 						setTimeout(function() {
 							uni.navigateTo({
 								url: "../user-path-edit/user-path-edit?data=" + obj
@@ -60,7 +61,7 @@
 
 						break;
 					case 1: //删除
-						console.log("删除成男公关");
+						console.log("删除成功");
 						uni.showModal({
 							content: '要删除该收货地址吗',
 							success: (res) => {
