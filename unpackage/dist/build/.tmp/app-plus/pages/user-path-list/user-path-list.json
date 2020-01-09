@@ -1,0 +1,21 @@
+{
+  "navigationBarTitleText": "收货地址",
+  "scrollIndicator": "none",
+  "bounce": "none",
+  "titleNView": {
+    "buttons": [
+      {
+        "float": "right",
+        "color": "#999999",
+        "colorPressed": "#bbbbbb",
+        "fontSize": "14px",
+        "fontSrc": "/static/font/iconfont.ttf",
+        "text": ""
+      }
+    ]
+  },
+  "usingComponents": {
+    "uni-list-item": "/components/uni-ui/uni-list-item/uni-list-item",
+    "uni-swipe-action": "/components/uni-ui/uni-swipe-action/uni-swipe-action"
+  }
+}

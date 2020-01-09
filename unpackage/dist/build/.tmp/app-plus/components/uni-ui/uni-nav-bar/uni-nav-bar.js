@@ -1,0 +1,10 @@
+(global["webpackJsonp"]=global["webpackJsonp"]||[]).push([["components/uni-ui/uni-nav-bar/uni-nav-bar"],{"0d9b":function(t,n,e){},"1e63":function(t,n,e){"use strict";e.r(n);var u=e("3449"),i=e("607e");for(var a in i)"default"!==a&&function(t){e.d(n,t,function(){return i[t]})}(a);e("becf");var o=e("2877"),r=Object(o["a"])(i["default"],u["a"],u["b"],!1,null,null,null);n["default"]=r.exports},3449:function(t,n,e){"use strict";var u=function(){var t=this,n=t.$createElement;t._self._c},i=[];e.d(n,"a",function(){return u}),e.d(n,"b",function(){return i})},"607e":function(t,n,e){"use strict";e.r(n);var u=e("b05e"),i=e.n(u);for(var a in u)"default"!==a&&function(t){e.d(n,t,function(){return u[t]})}(a);n["default"]=i.a},b05e:function(t,n,e){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.default=void 0;var u=function(){return e.e("components/uni-ui/uni-status-bar/uni-status-bar").then(e.bind(null,"a831"))},i=function(){return e.e("components/uni-ui/uni-icon/uni-icon").then(e.bind(null,"a59d"))},a={name:"UniNavBar",components:{uniStatusBar:u,uniIcon:i},props:{title:{type:String,default:""},leftText:{type:String,default:""},rightText:{type:String,default:""},leftIcon:{type:String,default:""},rightIcon:{type:String,default:""},fixed:{type:Boolean,default:!1},color:{type:String,default:"#000000"},backgroundColor:{type:String,default:"#FFFFFF"},statusBar:{type:Boolean,default:!1},shadow:{type:Boolean,default:!0},border:{type:Boolean,default:!0}},methods:{onClickLeft:function(){this.$emit("click-left")},onClickRight:function(){this.$emit("click-right")}}};n.default=a},becf:function(t,n,e){"use strict";var u=e("0d9b"),i=e.n(u);i.a}}]);
+;(global["webpackJsonp"] = global["webpackJsonp"] || []).push([
+    'components/uni-ui/uni-nav-bar/uni-nav-bar-create-component',
+    {
+        'components/uni-ui/uni-nav-bar/uni-nav-bar-create-component':(function(module, exports, __webpack_require__){
+            __webpack_require__('6e42')['createComponent'](__webpack_require__("1e63"))
+        })
+    },
+    [['components/uni-ui/uni-nav-bar/uni-nav-bar-create-component']]
+]);                

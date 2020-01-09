@@ -1,0 +1,2 @@
+setCssToHead(["@charset \x22UTF-8\x22;\n.",[1],"cate-item { background: #ffebec; color: #7b6d6c; border-color: #f4e0e1; }\n.",[1],"cate-item.",[1],"active { background: #ff6b01 !important; color: #FFFFFF !important; border-color: #De7232 !important; }\n",],undefined,{path:"./pages/detail-comment/detail-comment.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/detail-comment/detail-comment.wxml') } }));

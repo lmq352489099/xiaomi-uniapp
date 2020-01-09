@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<swiper :style="getStyle" :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" circular>
+		<swiper :style="getStyle" :indicator-dots="true" :autoplay="true" :interval="3000" :duration="200" circular>
 			<block v-for="(item, index) in resdata" :key="index">
 				<swiper-item>
 					<view @tap="event(item,index)" class="swiper-item">
@@ -18,7 +18,7 @@
 			return {};
 		},
 		props: {
-			resdata: Array,
+			resdata: [Array, Object],
 			height: {
 				type: String,
 				default: '350'
@@ -32,9 +32,16 @@
 			getStyle() {
 				return `height:${this.height}rpx`
 			},
-			getUrls() {
-				return this.resdata.map((v) => v.src)
+			// getUrls() {
+			// 	return this.resdata.map((v) => v.src)
 
+			// },
+			getUrls() {
+				var urls = []
+				for (let v in this.resdata) {
+					urls.push(this.resdata[v].src)
+				}
+				return urls
 			}
 		},
 		methods: {

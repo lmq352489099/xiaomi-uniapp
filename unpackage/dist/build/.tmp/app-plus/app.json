@@ -1,0 +1,122 @@
+{
+  "pages": [
+    "pages/detail/detail",
+    "pages/msg-list/msg-list",
+    "pages/msg-detail/msg-detail",
+    "pages/greenhand/skip/skip",
+    "pages/greenhand/greenhard",
+    "pages/detail-comment/detail-comment",
+    "pages/search-lish/search-lish",
+    "pages/class/class",
+    "pages/my/aaaaaaa/aaaaaaa",
+    "pages/my/my",
+    "pages/cart/cart",
+    "pages/ceshi/ceshi",
+    "pages/search/search",
+    "pages/user-set/user-set",
+    "pages/user-userinfo/user-userinfo",
+    "pages/user-path-list/user-path-list",
+    "pages/user-path-edit/user-path-edit",
+    "pages/order/order",
+    "pages/order-confirm/order-confirm",
+    "pages/order-invoice/order-invoice",
+    "pages/login/login",
+    "pages/pay-methods/pay-methods",
+    "pages/pay-result/pay-result",
+    "pages/order-coupon/order-coupon",
+    "pages/order-detail/order-detail",
+    "pages/logistics-detail/logistics-detail",
+    "pages/after-sale/after-sale",
+    "pages/about/about"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#FFFFFF"
+  },
+  "tabBar": {
+    "color": "#b1b1b1",
+    "selectedColor": "#FD6801",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/tabbar/index.png",
+        "selectedIconPath": "static/tabbar/indexSelected.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/class/class",
+        "iconPath": "static/tabbar/class.png",
+        "selectedIconPath": "static/tabbar/classSelected.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "iconPath": "static/tabbar/cart.png",
+        "selectedIconPath": "static/tabbar/cartSelected.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "static/tabbar/my.png",
+        "selectedIconPath": "static/tabbar/mySelected.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "nvue": {
+    "pages": {
+      "pages/index/index.html": {
+        "window": {
+          "usingComponents": {},
+          "navigationBarTitleText": "uni-app",
+          "scrollIndicator": "none",
+          "titleNView": {
+            "searchInput": {
+              "align": "left",
+              "backgroundColor": "#f7f7f7",
+              "borderRadius": "4px",
+              "disabled": true,
+              "placeholder": "智能积木,越野四驱车",
+              "placeholderColor": "#cccccc"
+            },
+            "buttons": [
+              {
+                "color": "#989898",
+                "colorPressed": "#fd6801",
+                "float": "left",
+                "fontSize": "22px",
+                "fontSrc": "/static/font/iconfont.ttf",
+                "text": ""
+              },
+              {
+                "color": "#989898",
+                "colorPressed": "#fd6801",
+                "float": "right",
+                "fontSize": "22px",
+                "fontSrc": "/static/font/iconfont.ttf",
+                "text": ""
+              }
+            ]
+          }
+        },
+        "nvue": true
+      }
+    },
+    "entryPagePath": "pages/index/index"
+  },
+  "nvueCompiler": "weex",
+  "renderer": "auto",
+  "splashscreen": {
+    "alwaysShowBeforeRender": true,
+    "autoclose": false
+  },
+  "appname": "uniapp-xiaomi",
+  "compilerVersion": "2.4.2",
+  "usingComponents": {
+    "divider": "/components/common/divider",
+    "loading": "/components/common/loading"
+  }
+}

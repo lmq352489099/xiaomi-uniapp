@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "price": "/components/common/price"
+  },
+  "component": true
+}

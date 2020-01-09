@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "divider": "/components/common/divider",
+    "common-button": "/components/common/common-button"
+  }
+}

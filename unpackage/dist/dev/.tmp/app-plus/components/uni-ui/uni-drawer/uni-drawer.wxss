@@ -16,7 +16,6 @@
 	left: auto;
 	right: 0;
 	-webkit-transform: translatex(100%);
-	    -ms-transform: translatex(100%);
 	        transform: translatex(100%)
 }
 .uni-drawer.uni-drawer--visible {
@@ -24,7 +23,6 @@
 }
 .uni-drawer.uni-drawer--visible .uni-drawer__content {
 	-webkit-transform: translatex(0);
-	    -ms-transform: translatex(0);
 	        transform: translatex(0)
 }
 .uni-drawer.uni-drawer--visible .uni-drawer__mask {
@@ -41,7 +39,6 @@
 	height: 100%;
 	background: rgba(0, 0, 0, .4);
 	-webkit-transition: opacity .3s;
-	-o-transition: opacity .3s;
 	transition: opacity .3s
 }
 .uni-drawer__content {
@@ -53,10 +50,8 @@
 	height: 100%;
 	background: #fff;
 	-webkit-transition: all .3s ease-out;
-	-o-transition: all .3s ease-out;
 	transition: all .3s ease-out;
 	-webkit-transform: translatex(-100%);
-	    -ms-transform: translatex(-100%);
 	        transform: translatex(-100%)
 }
 

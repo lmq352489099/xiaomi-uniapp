@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "发票",
+  "usingComponents": {
+    "card": "/components/common/card",
+    "zcmradi-group": "/components/common/radio-group"
+  }
+}

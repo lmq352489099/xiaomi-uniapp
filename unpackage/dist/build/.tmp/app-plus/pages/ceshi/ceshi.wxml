@@ -1,0 +1,1 @@
+<view><button type="primary" data-event-opts="{{[['tap',[['ceshi',['$event']]]]]}}" bindtap="__e">修改首页数据</button></view>

@@ -1,0 +1,2 @@
+setCssToHead(["@charset \x22UTF-8\x22;\n.",[1],"tabactive { border-bottom: ",[0,5]," solid #FD6801; color: #FD6801; margin-bottom: ",[0,-2],"; }\n",],undefined,{path:"./pages/order-coupon/order-coupon.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/order-coupon/order-coupon.wxml') } }));

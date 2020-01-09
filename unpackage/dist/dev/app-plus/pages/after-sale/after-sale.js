@@ -1,0 +1,2 @@
+setCssToHead(["body { background: #EEEEEE; }\n",],undefined,{path:"./pages/after-sale/after-sale.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/after-sale/after-sale.wxml') } }));

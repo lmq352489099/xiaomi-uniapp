@@ -1,13 +1,35 @@
 {
   "pages": [
     "pages/detail/detail",
+    "pages/msg-list/msg-list",
+    "pages/msg-detail/msg-detail",
+    "pages/greenhand/skip/skip",
+    "pages/greenhand/greenhard",
+    "pages/detail-comment/detail-comment",
+    "pages/search-lish/search-lish",
+    "pages/class/class",
     "pages/my/aaaaaaa/aaaaaaa",
     "pages/my/my",
-    "pages/class/class",
     "pages/cart/cart",
     "pages/ceshi/ceshi",
     "pages/search/search",
-    "pages/search-lish/search-lish"
+    "pages/user-set/user-set",
+    "pages/user-userinfo/user-userinfo",
+    "pages/user-path-list/user-path-list",
+    "pages/user-path-edit/user-path-edit",
+    "pages/order/order",
+    "pages/order-confirm/order-confirm",
+    "pages/order-invoice/order-invoice",
+    "pages/login/login",
+    "pages/pay-methods/pay-methods",
+    "pages/pay-result/pay-result",
+    "pages/order-coupon/order-coupon",
+    "pages/order-detail/order-detail",
+    "pages/logistics-detail/logistics-detail",
+    "pages/after-sale/after-sale",
+    "pages/about/about",
+    "pages/coupon/coupon",
+    "pages/order-refund/order-refund"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -84,7 +106,8 @@
         },
         "nvue": true
       }
-    }
+    },
+    "entryPagePath": "pages/index/index"
   },
   "nvueCompiler": "weex",
   "renderer": "auto",
@@ -93,7 +116,7 @@
     "autoclose": false
   },
   "appname": "uniapp-xiaomi",
-  "compilerVersion": "2.2.2",
+  "compilerVersion": "2.4.6",
   "usingComponents": {
     "divider": "/components/common/divider",
     "loading": "/components/common/loading"

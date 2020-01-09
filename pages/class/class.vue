@@ -23,8 +23,9 @@
 		 style="flex: 3.5;height: 100%;" :scroll-with-animation="true" :scroll-top="rightScrollTop">
 			<view>
 				<view class="row right-scroll-item" v-for="(item,index) in list" :key='index'>
-					<view class="span24-8 text-center py-2" v-for="(item2,index2) in item.list" :key='index2'>
-						<image :src="item2.src"
+					<view class="span24-8 text-center py-2" v-for="(item2,index2) in item.list" :key='index2'
+					 @click="openDetail(item2)">
+						<image :src="item2.cover"
 						 style="width: 120upx; height: 120upx;"></image>
 						<text class="d-block">{{item2.name}}</text>
 					</view>
@@ -58,32 +59,6 @@
 			// console.log(this.list);
 		},
 		onReady() {
-			// 左右边的每个top
-			this.getElInfo({
-				all: 'left',
-				size: true,
-				rect: true
-			}).then(data => {
-				this.leftDomsTop = data.map(v => {
-
-					this.cateItemHeight = v.height
-					return v.top
-				})
-				console.log("this.leftDomsTop ", this.leftDomsTop);
-			})
-
-
-			this.getElInfo({
-				all: 'right',
-				size: false,
-				rect: true
-			}).then(data => {
-				this.rightDomsTop = data.map(v => {
-					return v.top
-				})
-				console.log("this.rightDomsTop", this.rightDomsTop);
-			})
-
 
 		},
 		watch: {
@@ -131,28 +106,80 @@
 				})
 			},
 			getData() {
-				for (var i = 0; i < 20; i++) {
-					this.cate.push({
-						name: "分类" + i
+
+				this.$H.get('/category/app_category').then(res => {
+					console.log(res);
+					var cate = []
+					var list = []
+					res.forEach(v => {
+						cate.push({
+							id: v.id,
+							name: v.name,
+						})
+						list.push({
+							list: v.app_category_items
+						})
+
+						this.cate = cate
+						this.list = list
+
 					})
-					this.list.push({
-						list: []
-					})
-				}
-				for (let i = 0; i < this.list.length; i++) {
-					for (let j = 0; j < 24; j++) {
-						this.list[i].list.push({
-							src: '/static/images/demo/cate_01.png',
-							name: `分类${i}-商品${j}`
-						}, )
-					}
 
 
-				}
-				this.$nextTick(function(){
-							this.showLoading = false
+					this.$nextTick(function() {
+						// 左右边的每个top
+						this.getElInfo({
+							all: 'left',
+							size: true,
+							rect: true
+						}).then(data => {
+							this.leftDomsTop = data.map(v => {
+
+								this.cateItemHeight = v.height
+								return v.top
+							})
+							console.log("this.leftDomsTop ", this.leftDomsTop);
+						})
+
+
+						this.getElInfo({
+							all: 'right',
+							size: false,
+							rect: true
+						}).then(data => {
+							this.rightDomsTop = data.map(v => {
+								return v.top
+							})
+							console.log("this.rightDomsTop", this.rightDomsTop);
+						})
+
+
+						this.showLoading = false
+					})
 				})
-		
+
+
+				return
+				// for (var i = 0; i < 20; i++) {
+				// 	this.cate.push({
+				// 		name: "分类" + i
+				// 	})
+				// 	this.list.push({
+				// 		list: []
+				// 	})
+				// }
+				// for (let i = 0; i < this.list.length; i++) {
+				// 	for (let j = 0; j < 24; j++) {
+				// 		this.list[i].list.push({
+				// 			src: '/static/images/demo/cate_01.png',
+				// 			name: `分类${i}-商品${j}`
+				// 		}, )
+				// 	}
+				// }
+				this.$nextTick(function() {
+					this.showLoading = false
+				})
+
 			},
 			// 点击左边分类
 			changeCate(index) {
@@ -170,11 +197,17 @@
 				// 如果右边的滚动距离大于 右边的每个DOOM节点的固定TOP
 				//就重新复制index,使左边动态改变
 				this.rightDomsTop.forEach((v, k) => {
-					if (v < e.detail.scrollTop) {
+					if (v < e.detail.scrollTop + 3) {
 						this.activeIndex = k
 						return false
 					}
 
+				})
+			},
+			// 打开详情页
+			openDetail(item) {
+				uni.navigateTo({
+					url: '../detail/detail?detail=' + JSON.stringify({ id: item.goods_id, title: item.name })
 				})
 			}
 		},
