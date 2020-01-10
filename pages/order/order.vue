@@ -92,8 +92,12 @@
 				hotList: []
 			};
 		},
-		onLoad() {
-			this.getHotList()
+		onLoad(e) {
+	
+			if (e.tabIndex) {
+				this.tabIndex = parseInt(e.tabIndex)
+			}
+					this.getHotList()
 		},
 		onShow() {
 			this.getOrderList()
@@ -113,7 +117,7 @@
 				let index = this.tabIndex
 				this.$H.post('/order/' + this.key, {}, { token: true }).then(res => {
 					console.log(res);
-				this.tabBars[index].list =	res.map(item => {
+					this.tabBars[index].list = res.map(item => {
 						let order_items = item.order_items.map(v => {
 							let attrs = []
 							if (v.skus_type == 1 && v.goods_skus && v.goods_skus.skus) {

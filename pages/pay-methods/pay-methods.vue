@@ -94,8 +94,8 @@
 								fail: () => {},
 								complete: () => {}
 							});
-							
-				
+
+
 							console.log('success:' + JSON.stringify(res));
 						},
 						fail: err => {
@@ -103,7 +103,7 @@
 								title: '提示',
 								content: '支付失败',
 								showCancel: false,
-		
+
 							});
 							console.log('fail:' + JSON.stringify(err));
 						},
@@ -119,11 +119,11 @@
 					})
 				})
 
-			
+
 			},
 			// 切换支付方式
 			change(e) {
-
+				this.payMethod = e.value
 			}
 		},
 	}

@@ -106,7 +106,14 @@
 					});
 				}
 			},
-			
+			openOrder(item) {
+				if (item.index) {
+					this.navigateTo({
+						url: "../order/order?tabIndex=" + item.index
+					})
+				}
+
+			}
 		},
 	}
 </script>
