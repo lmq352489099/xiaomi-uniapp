@@ -18,6 +18,7 @@ Vue.component("loading", loading)
 import $H from '@/common/lib/request.js';
 Vue.prototype.$H = $H
 
+<<<<<<< HEAD
 // 权限跳转
 
 Vue.prototype.navigateTo = (options) => {
@@ -40,6 +41,9 @@ Vue.prototype.navigateTo = (options) => {
 import $U from './common/lib/util.js';
 // 更新tabbat角标
 Vue.prototype.$U = $U
+=======
+
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 
 
 App.mpType = 'app'

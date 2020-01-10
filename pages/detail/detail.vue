@@ -10,19 +10,26 @@
 		<!-- 属性选择 -->
 		<view class="p-2">
 			<view class="rounded border bg-light-secondary">
+<<<<<<< HEAD
 				<uni-list-item @click="show('attr')"
 				 v-if="detail.sku_type == 1">
+=======
+				<uni-list-item @click="show('attr')">
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 					<view class="d-flex">
 						<text class="mr-2 text-muted">已选</text>
 						<text>{{checkedSkus}}</text>
 					</view>
 				</uni-list-item>
+<<<<<<< HEAD
 				<uni-list-item @click='goToCoupon'>
 					<view class="d-flex">
 						<text class="mr-2 text-muted">优惠券</text>
 						<text class="main-text-color">马上领取</text>
 					</view>
 				</uni-list-item>
+=======
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 				<uni-list-item @click="show('express')">
 					<view class="d-flex">
 						<text class="mr-2 text-muted">配送</text>
@@ -58,7 +65,11 @@
 		<!-- 特闷推荐 -->
 		<card headTitle="热门推荐" :headBorderBottom="false" :headTitleWeight="false">
 			<view class="row j-sb">
+<<<<<<< HEAD
 				<common-list type="redirectTo" v-for="(item,index) in hotList" :item="item" :key='index'></common-list>
+=======
+				<common-list v-for="(item,index) in hotList" :item="item" :key='index'></common-list>
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 			</view>
 		</card>
 
@@ -96,10 +107,16 @@
 			<!-- anniu 100rpx -->
 			<view class="main-bg-color text-white font-md d-flex a-center j-center "
 			 @tap.stop="addCart"
+<<<<<<< HEAD
 			 :hover-class="maxStock !== 0 ? 'main-bg-hover-color' : ''"
 			 style="height: 100rpx;margin: 0 -30rpx;"
 			 :class="maxStock == 0 ? 'bg-secondary' : 'main-bg-color'">
 				{{maxStock == 0 ?'暂无库存':"加入购物车"}}
+=======
+			 hover-class="main-bg-hover-color"
+			 style="height: 100rpx;margin: 0 -30rpx;">
+				加入购物车
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 			</view>
 		</commonPopup>
 
@@ -227,18 +244,28 @@
 			},
 			// 选择skus的索引 与后端传过来的进行对比价格
 			checkedSkusIndex() {
+<<<<<<< HEAD
 				if (!Array.isArray(this.detail.goodsSkus)) return -1
 
+=======
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 				let index = this.detail.goodsSkus.findIndex(item => {
 					return item.skusText === this.checkedSkus
 				})
 				return index
 			},
+<<<<<<< HEAD
 	
 			// 显示价格
 			showPrice() {
 				console.log(this.checkedSkus);
 				if (this.checkedSkusIndex < 0) {
+=======
+			// 显示价格
+			showPrice() {
+				console.log(this.checkedSkus);
+				if (!this.checkedSkusIndex < 0) {
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 					return this.detail.min_price || 0.00
 				}
 				// 与后端传过来的进行对比价格
@@ -247,6 +274,7 @@
 			},
 			// 最大库存
 			maxStock() {
+<<<<<<< HEAD
 
 
 
@@ -260,6 +288,12 @@
 		},
 		onLoad(e) {
 			console.log(e);
+=======
+				return this.detail.goodsSkus[this.checkedSkusIndex].stock || 100
+			}
+		},
+		onLoad(e) {
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 			if (e.detail) {
 
 				this.__init(JSON.parse(e.detail))
@@ -306,9 +340,14 @@
 					})
 					// 初始化基本信息
 					this.detail = res
+<<<<<<< HEAD
 					this.detail.num = 1
 
 					// 标题
+=======
+
+					// b标题
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 					uni.setNavigationBarTitle({
 						title: res.title
 					})
@@ -364,6 +403,7 @@
 							pprice: v.min_price
 						}
 					})
+<<<<<<< HEAD
 
 					// 是多规格才显示
 					if (this.detail.sku_type == 1) {
@@ -402,6 +442,39 @@
 					}
 
 
+=======
+					// 商品规格(选项部分)
+					// {
+					// 		title: "颜色",
+					// 		selected: 0,
+					// 		list: [{ name: "黄色" }, { name: "黑色" }, { name: "黄色" }]
+					// 	},
+					this.selects = res.goodsSkusCard.map(v => {
+						let list = v.goodsSkusCardValue.map(v1 => {
+							return {
+								id: v1.id,
+								name: v1.value
+							}
+						})
+
+						return {
+							id: v.id,
+							title: v.name,
+							selected: 0,
+							list: list
+						}
+					})
+					// 商品规格(匹配价格)
+					this.detail.goodsSkus.forEach(item => {
+						let arr = []
+
+						for (let key in item.skus) {
+							arr.push(item.skus[key].value)
+						}
+						item.skusText = arr.join(',')
+					})
+					console.log(JSON.stringify(this.detail.goodsSkus))
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 
 				})
 			},
@@ -413,6 +486,7 @@
 			},
 			// 加入购物车
 			addCart() {
+<<<<<<< HEAD
 				// 没有库存
 				if (this.maxStock == 0) return
 
@@ -443,6 +517,20 @@
 				// this.addGoodsToCart(goods)
 
 
+=======
+				let goods = this.detail
+				goods['checked'] = false
+				goods['attrs'] = this.selects
+				// 加入购物车
+				this.addGoodsToCart(goods)
+
+				// 隐藏筛选框
+				this.hide('attr')
+				// 成功提示
+				uni.showToast({
+					title: '加入成功'
+				})
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 			},
 			hide(key) {
 				this.popup[key] = 'hide'
@@ -465,6 +553,7 @@
 					content: "点击链接为：" + href,
 					showCancel: false
 				})
+<<<<<<< HEAD
 			},
 			// 进入领取优惠券页面
 			goToCoupon() {
@@ -473,6 +562,8 @@
 				this.navigateTo({
 					url: "../coupon/coupon"
 				})
+=======
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 			}
 		}
 	}

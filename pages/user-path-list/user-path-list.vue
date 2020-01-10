@@ -6,16 +6,26 @@
 				<uniListItem @click="choose(item)">
 					<view class="text-secondary">
 						<view class="d-flex a-center">
+<<<<<<< HEAD
 							<text class="main-text-color">{{item.name}}</text>
 							{{item.phone}}
 							<text class="main-text-color" v-if="index == 0 && item.last_used_time !== null">[默认]</text>
 						</view>
 						<view>{{item.province}}{{item.city}}{{item.district}}</view>
 						<view>{{item.address}}</view>
+=======
+							<text>{{item.name}}</text>
+							{{item.phone}}
+							<text class="main-text-color" v-if="item.isdefault">[默认]</text>
+						</view>
+						<view>{{item.path}}</view>
+						<view>{{item.detailPath}}</view>
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 					</view>
 				</uniListItem>
 			</uniSwipeAction>
 		</block>
+<<<<<<< HEAD
 		<nothing msg="空空如也" v-if="list.length === 0"></nothing>
 		<!-- 上拉加载更多 -->
 		<divider />
@@ -24,17 +34,23 @@
 			{{loadtext }}
 		</view>
 
+=======
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 	</view>
 </template>
 
 <script>
 	import uniListItem from "@/components/uni-ui/uni-list-item/uni-list-item.vue"
 	import uniSwipeAction from '@/components/uni-ui/uni-swipe-action/uni-swipe-action.vue'
+<<<<<<< HEAD
 	import nothing from "../../components/common/no-thing.vue"
+=======
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 	import { mapState, mapMutations } from "vuex"
 	export default {
 
 		components: {
+<<<<<<< HEAD
 			nothing,
 			uniListItem,
 			uniSwipeAction
@@ -54,6 +70,11 @@
 			})
 
 		},
+=======
+			uniListItem,
+			uniSwipeAction
+		},
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 		computed: {
 			...mapState({ list: state => state.path.list })
 		},
@@ -65,6 +86,7 @@
 				})
 			}
 		},
+<<<<<<< HEAD
 		onPullDownRefresh() {
 			this.page = 1
 			this.getData(() => {
@@ -110,6 +132,10 @@
 
 				})
 			},
+=======
+		methods: {
+			...mapMutations(['delPath']),
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 			bindClick(e, value) {
 				console.log(e, value);
 				// uni.showToast({
@@ -119,6 +145,7 @@
 				console.log("哈哈哈");
 				switch (e.index) {
 					case 0: //修改
+<<<<<<< HEAD
 						let obj = { index: value, item: this.list[value] }
 						console.log(obj);
 
@@ -127,6 +154,13 @@
 						setTimeout(function() {
 							uni.navigateTo({
 								url: "../user-path-edit/user-path-edit?data=" + JSON.stringify(obj)
+=======
+						let obj = JSON.stringify({ index: value, item: this.list[value] })
+						console.log(obj);
+						setTimeout(function() {
+							uni.navigateTo({
+								url: "../user-path-edit/user-path-edit?data=" + obj
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 							})
 						}, 50);
 
@@ -137,6 +171,7 @@
 							content: '要删除该收货地址吗',
 							success: (res) => {
 								if (res.confirm) {
+<<<<<<< HEAD
 
 									this.$H.del('/useraddresses/' + this.list[value].id, {}, { token: true }).then(res => {
 										this.delPath(value)
@@ -146,6 +181,12 @@
 									})
 
 
+=======
+									this.delPath(value)
+									uni.showToast({
+										title: "删除成功"
+									})
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 								} else if (res.cancel) {
 
 								}
@@ -172,9 +213,13 @@
 		},
 		data() {
 			return {
+<<<<<<< HEAD
 				loadtext: "上啦加载更多",
 				isChoose: false,
 				page: 1,
+=======
+				isChoose: false,
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 				options: [{
 					text: '修改',
 					style: {
@@ -190,6 +235,7 @@
 		},
 		onLoad(e) {
 			console.log(e);
+<<<<<<< HEAD
 			this.getData()
 			if (e.type === "choose") {
 				this.isChoose = true
@@ -203,6 +249,12 @@
 		onUnload() {
 			uni.$off("uPLodateUserPathLIST")
 		},
+=======
+			if (e.type === "choose") {
+				this.isChoose = true
+			}
+		}
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 	}
 </script>
 

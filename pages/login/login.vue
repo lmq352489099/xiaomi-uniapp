@@ -36,7 +36,10 @@
 
 <script>
 	import uniStatusBar from "../../components/uni-ui/uni-status-bar/uni-status-bar.vue"
+<<<<<<< HEAD
 	import { mapState, mapMutations } from "vuex"
+=======
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 	export default {
 		components: {
 			uniStatusBar
@@ -67,16 +70,22 @@
 
 			}
 		},
+<<<<<<< HEAD
 		// computed: {
 		// 	..mapState() {
 		// 		loginStatus:s
 		// 	}
 		// },
+=======
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 		onLoad() {
 			console.log(this.focus.username);
 		},
 		methods: {
+<<<<<<< HEAD
 			...mapMutations(["login"]),
+=======
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 			// 表单验证
 			validate(key) {
 				var check = true
@@ -103,13 +112,21 @@
 				}
 
 				// 验证码用户名
+<<<<<<< HEAD
 				// if (!this.validate('username')) return
 
 				// if (!this.validate('password')) return/
+=======
+				if (!this.validate('username')) return
+
+				if (!this.validate('password')) return
+
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 				uni.showLoading({
 					title: '登录中...',
 					mask: true
 				})
+<<<<<<< HEAD
 				this.$H.post('/login', {
 					username: this.username,
 					password: this.password
@@ -136,6 +153,17 @@
 			},
 			goback() {
 			
+=======
+				
+				setTimeout(function() {
+					uni.hideLoading()
+					uni.navigateBack({
+						
+					})
+				}, 3000);
+			},
+			goback() {
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 				uni.navigateBack({
 
 				})

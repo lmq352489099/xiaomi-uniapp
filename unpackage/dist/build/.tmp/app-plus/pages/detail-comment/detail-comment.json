@@ -1,7 +1,10 @@
 {
   "navigationBarTextStyle": "black",
   "navigationBarTitleText": "商品评价",
+<<<<<<< HEAD
   "enablePullDownRefresh": true,
+=======
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
   "scrollIndicator": "none",
   "bounce": "none",
   "usingComponents": {

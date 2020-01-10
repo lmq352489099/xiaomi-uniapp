@@ -68,6 +68,7 @@
 		},
 		{
 			"path": "pages/greenhand/greenhard",
+<<<<<<< HEAD
 			"style": {
 				// "navigationBarTitleText": "hello",
 				// "app-plus": {
@@ -148,6 +149,89 @@
 				}
 
 
+=======
+			"style": {
+				// "navigationBarTitleText": "hello",
+				// "app-plus": {
+				//   "titleNView": false
+				// }
+			}
+		},
+
+		// {
+		// 	"path": "pages/search-lish/search-lish",
+		// 	"style": {
+
+		// 		"navigationBarTitleText": "uni-app",
+		// 		"app-plus": {
+		// 			"scrollIndicator": "none",
+		// 			"titleNView": {
+		// 				"searchInput": {
+		// 					"align": "left",
+		// 					"backgroundColor": "#f7f7f7",
+		// 					"borderRadius": "4px",
+		// 					"disabled": false,
+		// 					"placeholder": "智能积木,越野四驱车",
+		// 					"placeholderColor": "#cccccc"
+		// 				},
+		// 				"buttons": [{
+		// 					"color": "#989898",
+		// 					"colorPressed": "#fd6801",
+		// 					"float": "right",
+		// 					"fontSize": "16px",
+		// 					"text": "搜索"
+		// 				}]
+		// 			}
+		// 		}
+
+
+		// 	}
+		// },
+
+
+
+
+		{
+			"path": "pages/detail-comment/detail-comment",
+			"style": {
+				"navigationBarTextStyle": "black",
+				"navigationBarTitleText": "商品评价",
+				"enablePullDownRefresh": true,
+				"app-plus": {
+					"scrollIndicator": "none",
+					"bounce": "none"
+				}
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
+			}
+		},
+
+		{
+			"path": "pages/search-lish/search-lish",
+			"style": {
+
+				"navigationBarTitleText": "uni-app",
+				"app-plus": {
+					"scrollIndicator": "none",
+					"titleNView": {
+						"searchInput": {
+							"align": "left",
+							"backgroundColor": "#f7f7f7",
+							"borderRadius": "4px",
+							"disabled": false,
+							"placeholder": "智能积木,越野四驱车",
+							"placeholderColor": "#cccccc"
+						},
+						"buttons": [{
+							"color": "#989898",
+							"colorPressed": "#fd6801",
+							"float": "right",
+							"fontSize": "16px",
+							"text": "搜索"
+						}]
+					}
+				}
+
+
 			}
 		},
 
@@ -200,7 +284,10 @@
 		{
 			"path": "pages/cart/cart",
 			"style": {
+<<<<<<< HEAD
 				"enablePullDownRefresh": true,
+=======
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 				"app-plus": {
 					"titleNView": false,
 					"scrollIndicator": "none",
@@ -257,7 +344,10 @@
 			"style": {
 
 				"navigationBarTitleText": "收货地址",
+<<<<<<< HEAD
 				"enablePullDownRefresh": true,
+=======
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 				"app-plus": {
 					"scrollIndicator": "none",
 					"bounce": "none",
@@ -368,6 +458,7 @@
 			"path": "pages/about/about",
 			"style": {
 				"navigationBarTitleText": "关于xxx商城"
+<<<<<<< HEAD
 			}
 		}, {
 			"path": "pages/coupon/coupon",
@@ -380,6 +471,8 @@
 			"path": "pages/order-refund/order-refund",
 			"style": {
 				"navigationBarTitleText": "申请退款"
+=======
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 			}
 		}
 	],

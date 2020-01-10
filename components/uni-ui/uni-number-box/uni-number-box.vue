@@ -50,9 +50,12 @@
 				if(this.inputValue > newVal){
 					this.inputValue  = newVal
 				}
+<<<<<<< HEAD
 				if(this.inputValue ==0 && newVal > 0){
 					this.inputValue  = 1
 				}
+=======
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 			}
 		},
 		created() {

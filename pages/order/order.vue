@@ -19,14 +19,22 @@
 
 				<template v-if="tab.list.length > 0">
 					<block v-for="(item,index) in tab.list" :key="index">
+<<<<<<< HEAD
 						<order-list @update="getOrderList" :item="item" :index="index"></order-list>
+=======
+						<order-list :item="item" :index="index"></order-list>
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 					</block>
 				</template>
 
 				<!-- 默认无 -->
 				<template v-else>
 					<!-- <view class="position-relative border" style="height: 400rpx;"> -->
+<<<<<<< HEAD
 					<no-thing :icon="tab.no_thing" :msg="tab.msg"></no-thing>
+=======
+						<no-thing :icon="tab.no_thing" :msg="tab.msg"></no-thing>
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 					<!-- </view> -->
 				</template>
 
@@ -82,6 +90,7 @@
 						name: "全部",
 						no_thing: 'no_pay',
 						msg: "你还没订单",
+<<<<<<< HEAD
 						key: "all",
 						list: [],
 					},
@@ -168,6 +177,64 @@
 						}
 					})
 				})
+=======
+						list: [{
+							create_time: "2019-09-10 10:20",
+							status: "已发货",
+							order_items: [{ cover: '/static/images/demo/demo6.jpg', title: "小米8", pprice: "1999.00", attrs: '金色 标配', num: '1' }],
+							total_num: 3,
+							total_price: 299.00
+						}, {
+							create_time: "2019-09-10 10:20",
+							status: "已发货",
+							order_items: [{ cover: '/static/images/demo/demo6.jpg', title: "小米8", pprice: "1999.00", attrs: '金色 标配', num: '1' }],
+							total_num: 3,
+							total_price: 299.00
+						}, {
+							create_time: "2019-09-10 10:20",
+							status: "已发货",
+							order_items: [{ cover: '/static/images/demo/demo6.jpg', title: "小米8", pprice: "1999.00", attrs: '金色 标配', num: '1' }],
+							total_num: 3,
+							total_price: 299.00
+						}],
+					},
+					{ name: "代付款", no_thing: 'no_pay', list: [], msg: "你还没待付款订单" },
+					{ name: "待收货", no_thing: 'no_receiving', list: [], msg: "你还没待收货收货" },
+					{ name: "待评价", no_thing: 'no_comment', list: [], msg: "你还没待评价" }
+				],
+				hotList: [{
+						cover: "/static/images/demo/list/1.jpg",
+						title: "米家空调",
+						oprice: "2699",
+						desc: "1.5匹变频",
+						pprice: "1399"
+					},
+					{
+						cover: "/static/images/demo/list/1.jpg",
+						title: "米家空调",
+						oprice: "2699",
+						desc: "1.5匹变频",
+						pprice: "1399"
+					}, {
+						cover: "/static/images/demo/list/1.jpg",
+						title: "米家空调",
+						oprice: "2699",
+						desc: "1.5匹变频",
+						pprice: "1399"
+					}, {
+						cover: "/static/images/demo/list/1.jpg",
+						title: "米家空调",
+						oprice: "2699",
+						desc: "1.5匹变频",
+						pprice: "1399"
+					},
+				]
+			};
+		},
+		methods: {
+			changTab(e) {
+				this.tabIndex = e
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 			}
 		},
 	}

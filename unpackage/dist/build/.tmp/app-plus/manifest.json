@@ -11,7 +11,11 @@
     "code": "100"
   },
   "description": "",
+<<<<<<< HEAD
   "launch_path": "__uniappview.html",
+=======
+  "launch_path": "__uniapptabbar.html",
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
   "developer": {
     "name": "",
     "email": "",
@@ -25,7 +29,11 @@
   },
   "plus": {
     "useragent": {
+<<<<<<< HEAD
       "value": "uni-app",
+=======
+      "value": "uni-app appservice",
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
       "concatenate": true
     },
     "splashscreen": {
@@ -35,18 +43,25 @@
       "delay": 0
     },
     "popGesture": "close",
+<<<<<<< HEAD
     "launchwebview": {
       "id": "2",
       "kernel": "WKWebview",
       "uni-app": "auto",
       "render": "always"
     },
+=======
+    "launchwebview": {},
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
     "statusbar": {
       "immersed": "supportedDevice",
       "style": "dark",
       "background": "#FFFFFF"
     },
+<<<<<<< HEAD
     "nvueCompiler": "weex",
+=======
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
     "usingComponents": true,
     "distribute": {
       "google": {
@@ -101,11 +116,16 @@
       }
     },
     "uni-app": {
+<<<<<<< HEAD
       "compilerVersion": "2.4.2",
+=======
+      "compilerVersion": "2.3.3",
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
       "control": "v8",
       "nvueCompiler": "weex",
       "renderer": "auto"
     },
+<<<<<<< HEAD
     "tabBar": {
       "color": "#b1b1b1",
       "selectedColor": "#FD6801",
@@ -137,6 +157,12 @@
         }
       ],
       "height": "50px"
+=======
+    "secondwebview": {
+      "id": "1",
+      "launch_path": "__uniappview.html",
+      "kernel": "WKWebview"
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
     }
   }
 }

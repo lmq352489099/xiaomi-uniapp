@@ -2,18 +2,31 @@
 	<view>
 		<view class="main-bg-color text-white p-4 d-flex a-end j-sb" style="height: 300rpx;">
 			<view class="mb-3">
+<<<<<<< HEAD
 				<view class="font-lg">{{status}}</view>
 				<view class="font">{{timeDownText}}</view>
+=======
+				<view class="font-lg">卖家已发货</view>
+				<view class="font">还差7天10时自动确认</view>
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 			</view>
 			<view class="iconfont icon-daishouhuo line-h mb-3" style="font-size: 100rpx;"></view>
 		</view>
 		<view class="p-3 bg-white">
 			<view class="text-light-muted font-md">
+<<<<<<< HEAD
 				<text class="font-lg text-dark mr-2"> {{address.name}}</text>
 				{{address.phone}}
 			</view>
 			<view class="text-light-muted font-md">
 				{{path}}
+=======
+				<text class="font-lg text-dark mr-2">楚绵</text>
+				135****123
+			</view>
+			<view class="text-light-muted font-md">
+				广东省 广州市 白云区 帝莎编程学院实战基地
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 			</view>
 		</view>
 		<divider></divider>
@@ -28,14 +41,22 @@
 			<text class="font-md text-light-muted">商品总价</text>
 
 			<view slot="right" class="font-md text-light-muted">
+<<<<<<< HEAD
 				{{price}}
+=======
+				¥123.01
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 			</view>
 		</uni-list-item>
 		<uni-list-item>
 			<text class="font-md text-light-muted">快递</text>
 
 			<view slot="right" class="font-md text-light-muted">
+<<<<<<< HEAD
 				包邮
+=======
+				¥10.00
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 			</view>
 		</uni-list-item>
 
@@ -43,7 +64,11 @@
 			<text class="font-md text-light-muted">优惠券</text>
 
 			<view slot="right" class="font-md text-light-muted">
+<<<<<<< HEAD
 				{{coupon}}
+=======
+				- ¥20.01
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 			</view>
 		</uni-list-item>
 
@@ -51,7 +76,11 @@
 			<text class="font-md main-text-color">实际付款</text>
 
 			<view slot="right" class="font-md text-light-muted">
+<<<<<<< HEAD
 				<price>{{total_price}}</price>
+=======
+				<price>110.00</price>
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 			</view>
 		</uni-list-item>
 		<divider></divider>
@@ -59,11 +88,16 @@
 			<uni-list-item title="订单标号">
 
 				<view slot="right" class="font-md text-light-muted">
+<<<<<<< HEAD
 					{{no}}
+=======
+					11321
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 				</view>
 			</uni-list-item>
 
 		</card>
+<<<<<<< HEAD
 		<card v-if="extra" headTitle="退款相关">
 			<uni-list-item title="申请退款">
 				<view slot="right" class="font-md text-light-muted">
@@ -90,23 +124,36 @@
 				<common-button @click="received">确认收货</common-button>
 			</template>
 		</view>
+=======
+
+
+
+
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 	</view>
 </template>
 
 <script>
+<<<<<<< HEAD
 	let timer = null
+=======
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 	import orderListItem from "@/components/order/order-list-item.vue"
 	import uniListItem from "../../components/uni-ui/uni-list-item/uni-list-item.vue"
 	import price from "../../components/common/price.vue"
 	import card from "../../components/common/card.vue"
+<<<<<<< HEAD
 	import $T from "@/common/lib/time.js"
 	// import commonButton from "@/common/common-button.vue"
 	import commonButton from "@/components/common/common-button.vue"
+=======
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 	export default {
 		components: {
 			orderListItem,
 			uniListItem,
 			price,
+<<<<<<< HEAD
 			card,
 			commonButton
 		},
@@ -378,6 +425,26 @@
 				// });
 			},
 
+=======
+			card
+		},
+		data() {
+			return {
+				create_time: "2019-09-10 10:20",
+				status: "已发货",
+				order_items: [{
+					cover: "/static/images/demo/demo6.jpg",
+					title: "小米8",
+					pprice: 1999.00,
+					attrs: "金色 标配",
+					num: 1
+				}],
+				total_num: 3,
+				total_price: 299.00
+			}
+		},
+		methods: {
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 
 		}
 	}

@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 <view class="card" style="{{(carStyle)}}"><block wx:if="{{showHead}}"><view class="{{['p-2 d-flex a-center j-sb',getHeadClass]}}"><block wx:if="{{$slots.title}}"><slot name="title"></slot></block><block wx:else><block wx:if="{{headTitle}}"><text class="{{['font-md',headTitleWeight?'font-weight':'']}}">{{headTitle}}</text></block></block><slot name="right"></slot></view></block><view class="{{[getBodyClass]}}" style="{{(bodyStyle)}}"><block wx:if="{{bodyCover}}"><image src="{{bodyCover}}" mode="widthFix"></image></block><slot></slot></view></view>
+=======
+<view class="card"><block wx:if="{{showHead}}"><view class="{{['p-2',getHeadClass]}}"><block wx:if="{{$slots.title}}"><slot name="title"></slot></block><block wx:else><block wx:if="{{headTitle}}"><text class="{{['font-md',headTitleWeight?'font-weight':'']}}">{{headTitle}}</text></block></block></view></block><view class="{{[getBodyClass]}}"><block wx:if="{{bodyCover}}"><image src="{{bodyCover}}" mode="widthFix"></image></block><slot></slot></view></view>
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0

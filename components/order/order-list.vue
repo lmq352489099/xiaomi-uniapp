@@ -1,6 +1,10 @@
 <template>
 	<view class="bg-white" @click.stop="openDetail">
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 		<divider></divider>
 		<!-- 头部 -->
 		<view class="d-flex a-center p-2 border-bottom border-light-secondary">
@@ -28,6 +32,7 @@
 		<view class="d-flex a-center p-2">
 
 			<text class="text-dark font-md ml-auto">
+<<<<<<< HEAD
 				共{{item.order_items.length}}件商品,合计: ¥{{item.total_price}}
 			</text>
 		</view>
@@ -47,11 +52,36 @@
 			<template v-else>
 				<common-button @click="openDetail">查看详情</common-button>
 			</template>
+=======
+				共{{item.total_num}}件商品,合计: ¥{{item.total_price}}
+			</text>
+		</view>
+		<view class="d-flex j-end p-2">
+			
+			<view class="  border border-light-secondary py-1 px-2 text-secondary"
+			 hover-class="bg-light-secondary"
+			 @click.stop="openAfterSale"
+			 >
+			申请售后
+			</view>
+			
+			<view class="ml-2  border border-light-secondary py-1 px-2 text-secondary"
+			 hover-class="bg-light-secondary"
+			 @click.stop="openLogistics"
+			 >
+				查看物流
+			</view>
+			<view class="ml-2  border border-light-secondary py-1 px-2 text-secondary"
+			 hover-class="bg-light-secondary">
+				确认收货
+			</view>
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 		</view>
 	</view>
 </template>
 
 <script>
+<<<<<<< HEAD
 	import commonButton from "../common/common-button.vue"
 	export default {
 		components: {
@@ -151,6 +181,31 @@
 			},
 
 
+=======
+	export default {
+		props: {
+			item: Object,
+			index:Number
+		},
+		methods:{
+			openDetail(){
+				uni.navigateTo({
+					url:'../../pages/order-detail/order-detail'
+				})
+			},
+			openLogistics(){
+				uni.navigateTo({
+					url: '../../pages/logistics-detail/logistics-detail',
+				
+				});
+			},
+			openAfterSale(){
+				uni.navigateTo({
+					url: '../../pages/after-sale/after-sale',
+				
+				});
+			}
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 		}
 	}
 </script>

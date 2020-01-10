@@ -27,9 +27,13 @@
     "pages/order-detail/order-detail",
     "pages/logistics-detail/logistics-detail",
     "pages/after-sale/after-sale",
+<<<<<<< HEAD
     "pages/about/about",
     "pages/coupon/coupon",
     "pages/order-refund/order-refund"
+=======
+    "pages/about/about"
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -116,7 +120,11 @@
     "autoclose": false
   },
   "appname": "uniapp-xiaomi",
+<<<<<<< HEAD
   "compilerVersion": "2.4.6",
+=======
+  "compilerVersion": "2.3.7",
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
   "usingComponents": {
     "divider": "/components/common/divider",
     "loading": "/components/common/loading"

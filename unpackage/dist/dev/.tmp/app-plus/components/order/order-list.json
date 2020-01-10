@@ -1,7 +1,11 @@
 {
   "component": true,
   "usingComponents": {
+<<<<<<< HEAD
     "divider": "/components/common/divider",
     "common-button": "/components/common/common-button"
+=======
+    "divider": "/components/common/divider"
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
   }
 }

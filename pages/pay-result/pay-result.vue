@@ -7,11 +7,19 @@
 			<text class="text-dark font-lg line-h-sm">支付成功</text>
 		</view>
 		<view class="px-5"></view>
+<<<<<<< HEAD
 		<view @tap="openDetai" class="rounded main-bg-color text-white font-md w-100 py-2 mt-3 text-center" hover-class="main-bg-hover-color">
 			查看订单
 		</view>
 		<view @tap="openIndex" class="rounded  border font-md w-100 py-2 mt-3 text-center"
 		 hover-class="bg-light">
+=======
+		<view class="rounded main-bg-color text-white font-md w-100 py-2 mt-3 text-center" hover-class="main-bg-hover-color">
+			查看订单
+		</view>
+		<view class="rounded  border font-md w-100 py-2 mt-3 text-center" 
+		hover-class="bg-light">
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 			返回首页
 		</view>
 	</view>
@@ -19,6 +27,7 @@
 
 <script>
 	export default {
+<<<<<<< HEAD
 		onLoad(e) {
 		
 		},
@@ -39,6 +48,13 @@
 				});
 			}
 		},
+=======
+		data() {
+			return {
+
+			};
+		}
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 	}
 </script>
 

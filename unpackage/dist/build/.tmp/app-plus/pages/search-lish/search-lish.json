@@ -1,5 +1,8 @@
 {
+<<<<<<< HEAD
   "enablePullDownRefresh": true,
+=======
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
   "navigationBarTitleText": "uni-app",
   "scrollIndicator": "none",
   "titleNView": {
@@ -22,11 +25,17 @@
     ]
   },
   "usingComponents": {
+<<<<<<< HEAD
     "divider": "/components/common/divider",
     "uni-drawer": "/components/uni-ui/uni-drawer/uni-drawer",
     "card": "/components/common/card",
     "zcmadio-group": "/components/common/radio-group",
     "nothing": "/components/common/no-thing",
+=======
+    "uni-drawer": "/components/uni-ui/uni-drawer/uni-drawer",
+    "card": "/components/common/card",
+    "zcmadio-group": "/components/common/radio-group",
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
     "search-list": "/components/search-list/search-list"
   }
 }

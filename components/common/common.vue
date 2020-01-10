@@ -25,6 +25,7 @@ export default {
   },
   props: {
     item: Object,
+<<<<<<< HEAD
     index: Number,
 		type:{
 			type:String,
@@ -35,6 +36,15 @@ export default {
     openDetail() {
       uni[this.type]({
       	  url: '/pages/detail/detail?detail=' + JSON.stringify(this.item)
+=======
+    index: Number
+  },
+  methods: {
+    openDetail() {
+
+      uni.navigateTo({
+        url: '/pages/detail/detail?detail=' + JSON.stringify(this.item)
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
       })
 
     }

@@ -1,6 +1,10 @@
 {
   "usingComponents": {
+<<<<<<< HEAD
     "uni-icons": "/components/uni-ui/uni-icon/uni-icon",
+=======
+    "uni-icon": "/components/uni-ui/uni-icon/uni-icon",
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
     "uni-badge": "/components/uni-ui/uni-badge/uni-badge"
   },
   "component": true

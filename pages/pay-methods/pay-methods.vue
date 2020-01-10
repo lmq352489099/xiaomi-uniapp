@@ -2,6 +2,7 @@
 	<view>
 		<view class="d-flex flex-column a-center j-center py-5 my-3">
 			<text class="text-light-muted font-md">支付金额</text>
+<<<<<<< HEAD
 			<price priceSize="font-lg" unitSize="font-md">{{detail.price}}</price>
 		</view>
 		<view class="px-5">
@@ -25,6 +26,32 @@
 			 class="rounded  text-white font-md w-100 py-2 mt-3 text-center" hover-class="main-bg-hover-color">
 				确认支付
 				{{loading ? '支付中...' : '确认支付'}}
+=======
+			<price priceSize="font-lg" unitSize="font-md">38.00</price>
+		</view>
+		<view class="px-5">
+			<label for="">
+				<uniListItem leftIcon="icon-zhifubao text-primary"
+				 showExtraIcon
+				 leftIconStyle="font-size:60rpx;"
+				 title="支付宝支付" note="推荐使用支付宝支付">
+					<radio slot="right" value="1" color="#FD6801"></radio>
+
+				</uniListItem>
+			</label>
+			<label for="">
+				<uniListItem leftIcon="icon-weixinzhifu text-success"
+				 showExtraIcon
+				 leftIconStyle="font-size:60rpx;"
+				 title="微信支付">
+					<radio slot="right" value="3" color="#FD6801"></radio>
+
+				</uniListItem>
+			</label>
+			
+			<view @tap="submit" class="rounded main-bg-color text-white font-md w-100 py-2 mt-3 text-center" hover-class="main-bg-hover-color">
+				确认支付
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 			</view>
 		</view>
 	</view>
@@ -39,6 +66,7 @@
 			price,
 			uniListItem
 		},
+<<<<<<< HEAD
 		onLoad(e) {
 			if (!e.detail) {
 				return uni.showToast({
@@ -124,6 +152,19 @@
 			// 切换支付方式
 			change(e) {
 				this.payMethod = e.value
+=======
+		data() {
+			return {
+
+			};
+		},
+		methods: {
+			submit() {
+				uni.navigateTo({
+					url: '../pay-result/pay-result',
+		
+				});
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 			}
 		},
 	}

@@ -8,6 +8,7 @@
 			<view class="font-md text-secondary mr-1 flex-shrink">手机号码:</view>
 			<input type="text" v-model="form.phone" class="px-1 fong-md flex-1" />
 		</view>
+<<<<<<< HEAD
 		<view class="p-2  d-flex a-center bg-white">
 			<view class="font-md text-secondary mr-1 flex-shrink">邮编:</view>
 			<input type="text" v-model="form.zip" class="px-1 fong-md flex-1" />
@@ -17,18 +18,32 @@
 			<view class="font-md text-secondary mr-1 flex-shrink">所在地区:</view>
 			<input type="text" :value="path" placeholder="请选择所在地区" disabled="true"
 			 @click="showMulLinkageThreePicker"
+=======
+		<divider></divider>
+		<view class="p-2 border-bottom d-flex a-center bg-white">
+			<view class="font-md text-secondary mr-1 flex-shrink">所在地区:</view>
+			<input type="text" :value="form.path" placeholder="请选择所在地区" disabled="true" @click="showMulLinkageThreePicker"
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 			 class="px-1 fong-md flex-1" />
 			<mpvue-city-picker :themeColor="themeColor" ref="mpvueCityPicker" :pickerValueDefault="pickerValue"
 			 @onConfirm="onConfirm"></mpvue-city-picker>
 		</view>
 		<view class="p-2 border-bottom d-flex a-center bg-white">
 			<view class="font-md text-secondary mr-1 flex-shrink">详细地址:</view>
+<<<<<<< HEAD
 			<input type="text" v-model="form.address" class="px-1 fong-md flex-1" />
+=======
+			<input type="text" v-model="form.detailPath" class="px-1 fong-md flex-1" />
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 		</view>
 		<divider></divider>
 		<view class="p-2 border-bottom d-flex a-center bg-white">
 			<view class="font-md text-secondary mr-1 flex-shrink">设为默认地址:</view>
+<<<<<<< HEAD
 			<switch :checked="form.default" color="#FD6801" class="ml-auto" @change="form.default = $event.detail.value ? 1 : 0" />
+=======
+			<switch :checked="form.isdefault" color="#FD6801" class="ml-auto" @change="form.isdefault = $event.detail.value" />
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 		</view>
 		<view class="p-3">
 			<view class="text-center w-100 main-bg-color text-white font-md rounded py-2"
@@ -46,6 +61,7 @@
 			mpvueCityPicker
 
 		},
+<<<<<<< HEAD
 		computed: {
 			path() {
 				if (this.form.province) {
@@ -53,6 +69,8 @@
 				}
 			}
 		},
+=======
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 		data() {
 			return {
 				isedit: false,
@@ -60,6 +78,7 @@
 				index: -1,
 				themeColor: '#007AFF',
 				form: {
+<<<<<<< HEAD
 					zip: "",
 					province: "",
 					city: "",
@@ -68,6 +87,13 @@
 					name: "",
 					phone: "",
 					default: 0
+=======
+					path: '',
+					name: "",
+					phone: "",
+					detailPath: '',
+					isdefault: false
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 				}
 
 			};
@@ -108,6 +134,7 @@
 
 				// 修改
 				if (this.isedit) {
+<<<<<<< HEAD
 
 
 					console.log("修改的");
@@ -129,11 +156,26 @@
 						uni.$emit("uPLodateUserPathLIST")
 					})
 
+=======
+					// this.updatePath({
+					// 	index: this.index,
+					// 	item:this.form
+					// })
+					this.updatePathAction({
+						index: this.index,
+						item: this.form
+					})
+					uni.showToast({
+						title: '修改成功'
+					});
+					uni.navigateBack()
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 					return
 				}
 
 				// 创建
 				// this.createPath(this.form)
+<<<<<<< HEAD
 
 				this.$H.post("/useraddresses", this.form, {
 					token: true
@@ -147,15 +189,25 @@
 					uni.navigateBack({ delta: 1 })
 				})
 
+=======
+				this.createPathAction(this.form)
+				uni.showToast({
+					title: '创建成功'
+				});
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 			},
 			// 三级联动确定
 			onConfirm(e) {
 				console.log(e)
+<<<<<<< HEAD
 				// this.form.path = e.label
 				let arr = e.label.split('-')
 				this.form.province = arr[0]
 				this.form.city = arr[1]
 				this.form.district = arr[2]
+=======
+				this.form.path = e.label
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 				this.pickerValue = e.value
 
 			},

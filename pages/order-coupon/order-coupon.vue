@@ -19,6 +19,7 @@
 					<template v-if="tab.list.length > 0">
 						<view class="p-3">
 
+<<<<<<< HEAD
 							<coupon @click="choosecoupon(item)" v-for="(item,index) in tab.list" :key="index"
 							 :item="item" :index="index">
 								<text v-if="item.disable">已使用</text>
@@ -26,6 +27,10 @@
 
 
 							</coupon>
+=======
+							<coupon v-for="(item,index) in tab.list" :key="index"
+							 :item="item" :index="index"></coupon>
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 
 						</view>
 					</template>
@@ -52,6 +57,7 @@
 			noThing,
 			coupon
 		},
+<<<<<<< HEAD
 		onLoad(e) {
 			if (e.detail) { this.price = JSON.parse(e.detail).price }
 			this.getData()
@@ -155,6 +161,107 @@
 				uni.navigateBack({
 
 				})
+=======
+		data() {
+			return {
+				tabIndex: 0,
+				tabBars: [{
+						name: "可用",
+						no_thing: 'no_receiving',
+						list: [{
+								title: "第三季防微信100元券",
+								start_time: "	2019-10-01",
+								end_time: "2019-11-01",
+								price: 100,
+								desc: "满300元使用",
+								status: true,
+								disable: false
+							},
+							{
+								title: "第三季防微信100元券",
+								start_time: "	2019-10-01",
+								end_time: "2019-11-01",
+								price: 100,
+								desc: "满300元使用",
+								status: true,
+								disable: true
+							},
+							{
+								title: "第三季防微信100元券",
+								start_time: "	2019-10-01",
+								end_time: "2019-11-01",
+								price: 100,
+								desc: "满300元使用",
+								status: true,
+								disable: true
+							},	{
+								title: "第三季防微信100元券",
+								start_time: "	2019-10-01",
+								end_time: "2019-11-01",
+								price: 100,
+								desc: "满300元使用",
+								status: true,
+								disable: true
+							},	{
+								title: "第三季防微信100元券",
+								start_time: "	2019-10-01",
+								end_time: "2019-11-01",
+								price: 100,
+								desc: "满300元使用",
+								status: true,
+								disable: true
+							},	{
+								title: "第三季防微信100元券",
+								start_time: "	2019-10-01",
+								end_time: "2019-11-01",
+								price: 100,
+								desc: "满300元使用",
+								status: true,
+								disable: true
+							},	{
+								title: "第三季防微信100元券",
+								start_time: "	2019-10-01",
+								end_time: "2019-11-01",
+								price: 100,
+								desc: "满300元使用",
+								status: true,
+								disable: true
+							},	{
+								title: "第三季防微信100元券",
+								start_time: "	2019-10-01",
+								end_time: "2019-11-01",
+								price: 100,
+								desc: "满300元使用",
+								status: true,
+								disable: true
+							},	{
+								title: "第三季防微信100元券",
+								start_time: "	2019-10-01",
+								end_time: "2019-11-01",
+								price: 100,
+								desc: "满300元使用",
+								status: true,
+								disable: true
+							},	{
+								title: "第三季防微信100元券",
+								start_time: "	2019-10-01",
+								end_time: "2019-11-01",
+								price: 100,
+								desc: "满300元使用",
+								status: true,
+								disable: true
+							}
+						],
+						msg: "你还没有可用的优惠券"
+					},
+					{ name: "已失效", no_thing: 'no_comment', list: [], msg: "你还没有优惠券" }
+				],
+			};
+		},
+		methods: {
+			changTab(e) {
+				this.tabIndex = e
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 			}
 		}
 	}

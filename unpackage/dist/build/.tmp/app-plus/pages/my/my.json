@@ -1,9 +1,13 @@
 {
   "titleNView": false,
   "bounce": "none",
+<<<<<<< HEAD
   "usingComponents": {
     "divider": "/components/common/divider",
     "card": "/components/common/card",
     "uni-list-item": "/components/uni-ui/uni-list-item/uni-list-item"
   }
+=======
+  "usingComponents": {}
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 }

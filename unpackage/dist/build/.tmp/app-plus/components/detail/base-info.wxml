@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 <view class="p-2"><view class="font-lg">{{detail.title}}</view><view class="font text-light-muted mb-3 line-h-sm">{{''+detail.desc+''}}</view><price vue-id="1" priceSize="font-lg" unitSize="font" bind:__l="__l" vue-slots="{{['default']}}">{{showPrice}}</price></view>
+=======
+<view class="p-2"><view class="font-lg">{{detail.title}}</view><view class="font text-light-muted mb-3 line-h-sm">{{''+detail.desc+''}}</view><price vue-id="1" priceSize="font-lg" unitSize="font" bind:__l="__l" vue-slots="{{['default']}}">{{detail.pprice}}</price></view>
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0

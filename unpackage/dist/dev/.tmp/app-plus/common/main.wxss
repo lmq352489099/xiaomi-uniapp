@@ -5191,7 +5191,13 @@ page{
 /* //不能解压 */
 .j-start{ -webkit-box-pack: start; -webkit-justify-content: flex-start; justify-content: flex-start;
 }
+<<<<<<< HEAD
 .j-center{ -webkit-box-pack: center; -webkit-justify-content: center; justify-content: center;
+=======
+.flex-shrink{-webkit-flex-shrink: 0;-ms-flex-negative: 0;flex-shrink: 0;}
+/* //不能解压 */
+.j-start{ -webkit-box-pack: start; -webkit-justify-content: flex-start; -ms-flex-pack: start; justify-content: flex-start;
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 }
 .j-end{ -webkit-box-pack: end; -webkit-justify-content: flex-end; justify-content: flex-end;
 }
@@ -5213,7 +5219,16 @@ page{
   -webkit-align-self: center;
           align-self: center;
 }
+<<<<<<< HEAD
 .a-self-end{ -webkit-align-self: flex-end; align-self: flex-end;
+=======
+.a-self-center {
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+}
+.a-self-end{ -webkit-align-self: flex-end; -ms-flex-item-align: end; align-self: flex-end;
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 }
 .a-self-stretch{ -webkit-align-self:stretch; align-self:stretch;
 }

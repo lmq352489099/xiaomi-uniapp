@@ -42,17 +42,29 @@
   position: fixed;
   bottom: -1035rpx;
   width: 92%;
+<<<<<<< HEAD
   z-index: 12003;
+=======
+  z-index: 2003;
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
   padding: 0 4%;
   height: 1035rpx;
   border-radius: 20rpx 20rpx 0 0;
   background: #FFFFFF;
   display: -webkit-box;
   display: -webkit-flex;
+<<<<<<< HEAD
+=======
+  display: -ms-flexbox;
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
+<<<<<<< HEAD
+=======
+      -ms-flex-direction: column;
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
           flex-direction: column;
 }
 ._popup.show.data-v-602f26ba {

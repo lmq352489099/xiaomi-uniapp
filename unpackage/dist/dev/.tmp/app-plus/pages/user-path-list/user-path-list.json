@@ -1,6 +1,9 @@
 {
   "navigationBarTitleText": "收货地址",
+<<<<<<< HEAD
   "enablePullDownRefresh": true,
+=======
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
   "scrollIndicator": "none",
   "bounce": "none",
   "titleNView": {
@@ -16,8 +19,11 @@
     ]
   },
   "usingComponents": {
+<<<<<<< HEAD
     "divider": "/components/common/divider",
     "nothing": "/components/common/no-thing",
+=======
+>>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
     "uni-list-item": "/components/uni-ui/uni-list-item/uni-list-item",
     "uni-swipe-action": "/components/uni-ui/uni-swipe-action/uni-swipe-action"
   }
