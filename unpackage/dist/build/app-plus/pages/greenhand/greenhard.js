@@ -1,2 +1,0 @@
-setCssToHead(["@charset \x22UTF-8\x22;\n.",[1],"status_bar.",[1],"data-v-201976e0 { height: var(--status-bar-height); width: 100%; background: white; }\n",],undefined,{path:"./pages/greenhand/greenhard.wxss"})();
-document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/greenhand/greenhard.wxml') } }));

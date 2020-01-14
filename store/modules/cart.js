@@ -1,15 +1,9 @@
-<<<<<<< HEAD
 import $H from "@/common/lib/request.js"
 
 import $U from '@/common/lib/util.js';
 /*
 *
 *{
-=======
-export default {
-	state: {
-		list: [{
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 				checked: false,
 				id: 11,
 				title: "商品标题111",
@@ -84,7 +78,6 @@ export default {
 				num: 1,
 				minnum: 1,
 				maxnum: 10, // 该商品最大商品数，跟库存有关
-<<<<<<< HEAD
 			}, 
 * 
 * 
@@ -99,14 +92,6 @@ export default {
 		popupShow: 'none',
 		popupIndex: -1,
 		popupData: {}
-=======
-			},
-		],
-		// 选中列表 (存放选中的id)
-		selectedList: [],
-		popupShow: 'none',
-		popupIndex: -1
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 	},
 	getters: {
 		// 判断是否全选
@@ -128,7 +113,6 @@ export default {
 			return state.list.length === 0
 		},
 		// 拿到当前需要修改属性的商品
-<<<<<<< HEAD
 		// popupData: (state) => {
 		// 	// 取到当前的商品规格
 		// 	return state.popupIndex > -1 ? state.list[state.popupIndex] : {}
@@ -149,14 +133,6 @@ export default {
 			$U.updaCaartBadge(state.list.length)
 		},
 
-=======
-		popupData: (state) => {
-			// 取到当前的商品规格
-			return state.popupIndex > -1 ? state.list[state.popupIndex] : {}
-		}
-	},
-	mutations: {
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 		// 选中/取消选中某个商品
 		selectItem(state, index) {
 			// 当前索引的id
@@ -198,17 +174,13 @@ export default {
 			state.list = state.list.filter(v => {
 				return state.selectedList.indexOf(v.id) == -1
 			})
-<<<<<<< HEAD
 
 			$U.updaCaartBadge(state.list.length)
-=======
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 		},
 		// 初始化 popupIndex
 		initPopupIndex(state, index) {
 			state.popupIndex = index
 		},
-<<<<<<< HEAD
 		addGoodsToCart(state, goods) {
 			state.list.unshift(goods)
 			console.log(state.list.length);
@@ -258,25 +230,6 @@ export default {
 			setTimeout(() => {
 				state.popupShow = 'none'
 				commit('initPopupIndex', -1)
-=======
-		addGoodsToCart(state,goods){
-			state.list.unshift(goods)
-			}
-		
-	},
-	actions: {
-		// 显示pop
-		doShowPopup({ state, commit }, index) {
-			commit('initPopupIndex', index)
-			state.popupShow = 'show'
-		},
-		// 隐藏 pop
-		doHidePopup({ state,commit }) {
-			state.popupShow = 'hide'
-			setTimeout(() => {
-				state.popupShow = 'none'
-					commit('initPopupIndex', -1)
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 			}, 200)
 		},
 
@@ -286,7 +239,6 @@ export default {
 
 			getters.checkedAll ? commit('unSelectAll') : commit('selectAll')
 		},
-<<<<<<< HEAD
 		doDelGoods({ commit, state }) {
 
 			if (state.selectedList.length == 0) {
@@ -296,14 +248,10 @@ export default {
 				});
 			}
 
-=======
-		doDelGoods({ commit }) {
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 			uni.showModal({
 				content: "是否删除选中",
 				success(res) {
 					if (res.confirm) {
-<<<<<<< HEAD
 
 						$H.post('/cart/delete', {
 							shop_ids: state.selectedList.join(",")
@@ -316,12 +264,6 @@ export default {
 						})
 
 
-=======
-						commit('delGoods')
-						uni.showToast({
-							title: "删除成功"
-						})
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 					}
 				}
 			})

@@ -30,19 +30,12 @@
 					<!-- 规格属性 -->
 					<view class="d-flex text-light-muted mb-1 "
 					 :class="isedit ? 'p1 bg-light-secondary mb-2' : ''"
-<<<<<<< HEAD
 					 v-if="item.skus_type ==1"
 					 @tap.stop="showPopup(index,item)">
 						<!-- 		<text class="mr-1" v-for="(attr,attrIndex) in item.attrs" :key="attrIndex">
 							{{attr.list[attr.selected].name}}
 						</text> -->
 						{{item.skusText}}
-=======
-					 @tap.stop="doShowPopup(index)">
-						<text class="mr-1" v-for="(attr,attrIndex) in item.attrs" :key="attrIndex">
-							{{attr.list[attr.selected].name}}
-						</text>
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 						<view v-if="isedit" class="iconfont icon-bottom font ml-auto"></view>
 					</view>
 					<view class="mt-auto d-flex j-sb">
@@ -106,43 +99,7 @@
 
 
 		<!-- 弹出框 -->
-<<<<<<< HEAD
 		<skuPopup></skuPopup>
-=======
-		<commonPopup :popupClass="popupShow" @hide="doHidePopup">
-
-			<view class="d-flex a-center" style="height: 275rpx;">
-				<image src="../../static/images/demo/list/1.jpg"
-				 style="height: 180rpx;width: 180rpx;" mode="widthFix" class="border rounded"></image>
-				<view class="pl-2">
-					<price priceSize="font-lg" unitSize="font">2365</price>
-					<view class="d-block">
-						<text class="mr-1" v-for="(attr,attrIndex) in popupData.attrs" :key="attrIndex">
-							{{attr.list[attr.selected].name}}
-						</text>
-					</view>
-				</view>
-			</view>
-			<!-- 表单部分 660rpx -->
-			<scroll-view scroll-y class="w-100" style="height: 660rpx;">
-				<card :headTitle="item.title" v-for="(item,index) in popupData.attrs" :key="index" :headBorderBottom="false"
-				 :headTitleWeight="false">
-					<zcmRradioGroup :label="item" :selected111.sync='item.selected'></zcmRradioGroup>
-				</card>
-				<view class="d-flex j-sb a-center p-2 border-top border-light-secondary">
-					<text>购买数量</text>
-					<numberBox :min='1' @change="popupData.num = $event" :value="popupData.num"></numberBox>
-				</view>
-			</scroll-view>
-			<!-- anniu 100rpx -->
-			<view class="main-bg-color text-white font-md d-flex a-center j-center "
-			 @tap.stop="doHidePopup"
-			 hover-class="main-bg-hover-color"
-			 style="height: 100rpx;margin: 0 -30rpx;">
-				确定
-			</view>
-		</commonPopup>
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 
 	</view>
 </template>
@@ -152,14 +109,8 @@
 	import price from "@/components/common/price.vue"
 	import uniNavBar from '@/components/uni-ui/uni-nav-bar/uni-nav-bar.vue';
 	import numberBox from "@/components/uni-ui/uni-number-box/uni-number-box.vue"
-<<<<<<< HEAD
 	import skuPopup from "../../components/cart/sku-popup.vue"
 
-=======
-	import card from '@/components/common/card.vue';
-	import zcmRradioGroup from '@/components/common/radio-group.vue';
-	import commonPopup from "@/components/common/common-popup.vue"
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 	import commonList from "@/components/common/common.vue"
 	export default {
 		components: {
@@ -167,18 +118,11 @@
 			uniNavBar,
 			price,
 			numberBox,
-<<<<<<< HEAD
 			skuPopup
-=======
-			card,
-			zcmRradioGroup,
-			commonPopup
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 		},
 		data() {
 			return {
 				isedit: false,
-<<<<<<< HEAD
 				hotList: []
 
 			};
@@ -326,65 +270,11 @@
 			...mapState({
 				list: state => state.cart.list,
 				selectedList: state => state.cart.selectedList
-=======
-				hotList: [{
-						cover: "/static/images/demo/list/1.jpg",
-						title: "米家空调",
-						oprice: "2699",
-						desc: "1.5匹变频",
-						pprice: "1399"
-					},
-					{
-						cover: "/static/images/demo/list/1.jpg",
-						title: "米家空调",
-						oprice: "2699",
-						desc: "1.5匹变频",
-						pprice: "1399"
-					}, {
-						cover: "/static/images/demo/list/1.jpg",
-						title: "米家空调",
-						oprice: "2699",
-						desc: "1.5匹变频",
-						pprice: "1399"
-					}, {
-						cover: "/static/images/demo/list/1.jpg",
-						title: "米家空调",
-						oprice: "2699",
-						desc: "1.5匹变频",
-						pprice: "1399"
-					},
-				]
-
-			};
-		},
-		methods: {
-			...mapActions(['doSelectAll', 'doDelGoods', 'doShowPopup', 'doHidePopup']),
-			...mapMutations(['selectItem']),
-			changeNum(e, item) {
-				item.num = e
-			},
-			// 订单结算
-			orderConfirm(){
-				uni.navigateTo({
-					url:"../order-confirm/order-confirm"
-				})
-			}
-		},
-		onLoad() {},
-		computed: {
-			...mapState({
-				list: state => state.cart.list,
-				popupShow: state => state.cart.popupShow
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 			}),
 			...mapGetters([
 				'checkedAll',
 				'totalPrice',
 				'disableSelectAll',
-<<<<<<< HEAD
-=======
-				'popupData'
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 			])
 		}
 	}

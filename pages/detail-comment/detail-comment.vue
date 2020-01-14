@@ -46,7 +46,6 @@
 					</view>
 				</view>
 				<!-- 客服回复 -->
-<<<<<<< HEAD
 				<view class="bg-light-secondary rounded p-2 d-flex flex-wrap a-center mt-1"
 				v-for="(item2,index2) in item.extra" :key="index2"
 				>
@@ -54,13 +53,6 @@
 		{{item2.data}}
 					<view class="iconfont icon-dianzan text-light-muted line-h-md font ml-2">
 						<text class="text-muted pl-1">赞客服 {{item2.good_num}} </text>
-=======
-				<view class="bg-light-secondary rounded p-2 d-flex flex-wrap a-center mt-1">
-					<text class="main-text-color">官方回复:</text>
-					官府回复,哈哈哈哈
-					<view class="iconfont icon-dianzan text-light-muted line-h-md font ml-2">
-						<text class="text-muted pl-1">赞客服 120 </text>
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 					</view>
 				</view>
 			</view>

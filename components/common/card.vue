@@ -3,11 +3,7 @@
 		<!-- 标题 -->
 		<view v-if="showHead"
 		 :class="getHeadClass"
-<<<<<<< HEAD
 		 class="p-2 d-flex a-center j-sb">
-=======
-		 class="p-2">
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 		 <!-- //有插槽,里面消失,没插槽,默认里面显示 -->
 			<slot name="title">  
 				<text v-if="headTitle" class="font-md" 

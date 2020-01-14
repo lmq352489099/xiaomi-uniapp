@@ -2,7 +2,6 @@
 	<view>
 		<!-- 头部 -->
 		<view class="position-relative d-flex a-center" style="height: 320rpx;">
-<<<<<<< HEAD
 			<view @tap="navigate('msg-list',true)" class="iconfont icon-xiaoxi position-absolute text-white" style="font-size: 50rpx;top: 75rpx;right: 20rpx;z-index: 100;"></view>
 			<image src="../../static/images/bg.jpg" style="height: 320rpx; width: 100%;" mode=""></image>
 			<view class="d-flex a-center position-absolute left-0 right-0" style="bottom: 50rpx;">
@@ -15,51 +14,24 @@
 				<view class="d-flex a-center j-center a-self-end ml-auto px-2" style="height: 70rpx;background: #ffd43f;color: #cc4a00;border-top-left-radius: 40rpx;border-bottom-left-radius: 40rpx;">
 					<view class="line-h iconfont icon-huangguan mr-1"></view>
 					会员积分 0.00
-=======
-			<view @tap="navigate('msg-list')" class="iconfont icon-xiaoxi position-absolute text-white" style="font-size: 50rpx;top: 75rpx;right: 20rpx;z-index: 100;"></view>
-			<image src="../../static/images/bg.jpg" style="height: 320rpx; width: 100%;" mode=""></image>
-			<view class="d-flex a-center position-absolute left-0 right-0" style="bottom: 50rpx;">
-				<image src="../../static/images/demo/demo6.jpg" style="height: 145rpx;width: 145rpx;border: 5rpx:solid; " class="rounded-circle border-light ml-4"
-				 mode=""></image>
-				<navigator url="../login/login">
-					<view class="ml-2 text-white font-md"> 测试昵称</view>
-
-				</navigator>
-
-				<view class="d-flex a-center j-center a-self-end ml-auto px-2" style="height: 70rpx;background: #ffd43f;color: #cc4a00;border-top-left-radius: 40rpx;border-bottom-left-radius: 40rpx;">
-					<view class="line-h iconfont icon-huangguan mr-1"></view>
-					会员积分 1.99
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 
 				</view>
 			</view>
 		</view>
 		<!-- 图片分类 -->
 		<card>
-<<<<<<< HEAD
 			<view slot="title" class="d-flex a-center j-sb w-100">
 				<text class="font-md font-weight">我的订单</text>
 				<view class="text-secondary font" @tap="navigate('order',true)">
-=======
-			<view slot="title" class="d-flex a-center j-sb">
-				<text class="font-md font-weight">我的订单</text>
-				<view class="text-secondary font" @tap="navigate('order')">
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 					全部订单 <text class="iconfont icon-you"></text>
 				</view>
 			</view>
 			<view class="d-flex a-center py-2">
-<<<<<<< HEAD
 				<view class="flex-1 d-flex flex-column a-center j-center px-3"
 				 @click="openOrder(item)"
 				 hover-class="bg-light-secondary" v-for="(item,index) in orders" :key="index">
 					<view :class="item.icon" class="iconfont  font-lg line-h"></view>
 					<view>{{item.name}}</view>
-=======
-				<view class="flex-1 d-flex flex-column a-center j-center px-3" hover-class="bg-light-secondary" v-for="i in 4" :key="i">
-					<view class="iconfont icon-cpu font-lg line-h"></view>
-					<view>代付款</view>
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 				</view>
 
 			</view>
@@ -80,11 +52,7 @@
 <script>
 	import card from '@/components/common/card.vue'
 	import uniListItem from "@/components/uni-ui/uni-list-item/uni-list-item.vue"
-<<<<<<< HEAD
 	import { mapState, mapMutations } from "vuex"
-=======
-
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 	export default {
 		data() {
 			return {
@@ -106,22 +74,18 @@
 				}]
 			};
 		},
-<<<<<<< HEAD
 		computed: {
 			...mapState({
 				loginStatus: state => state.user.loginStatus,
 				userInfo: state => state.user.userInfo
 			})
 		},
-=======
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 		components: {
 			card,
 			uniListItem
 		},
 		onLoad() {
 			// this.getFirstTime()
-<<<<<<< HEAD
 
 		},
 		methods: {
@@ -149,15 +113,6 @@
 					})
 				}
 
-=======
-		},
-		methods: {
-			navigate(path) {
-				if (!path) return
-				uni.navigateTo({
-					url: `/pages/${path}/${path}`
-				})
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 			}
 		},
 	}

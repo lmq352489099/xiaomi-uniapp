@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-<view class="{{['d-flex  line-h',priceSize+' '+color]}}"><text class="{{['a-self-start',unitSize]}}">¥</text><slot></slot></view>
-=======
-<view class="{{['d-flex main-text-color line-h',priceSize]}}"><text class="{{['a-self-start',unitSize]}}">¥</text><slot></slot></view>
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0

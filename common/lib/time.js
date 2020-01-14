@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 export default {
 	// 计算当前日期星座
 	getHoroscope(date) {
@@ -30,44 +29,10 @@ export default {
 		v1 = v1.toString().length < 13 ? v1 * 1000 : v1;
 		v2 = v2.toString().length < 13 ? v2 * 1000 : v2;
 		if (((parseInt(v1) - parseInt(v2)) / 1000) > 300) {
-=======
-export default{
-	// 计算当前日期星座
-	getHoroscope(date) {
-	  let c = ['摩羯','水瓶','双鱼','白羊','金牛','双子','巨蟹','狮子','处女','天秤','天蝎','射手','摩羯']
-	  date=new Date(date);
-	  let month = date.getMonth() + 1;
-	  let day = date.getDate();
-	  let startMonth = month - (day - 14 < '865778999988'.charAt(month));
-	  return c[startMonth]+'座';
-	},
-	// 计算指定时间与当前的时间差
-	sumAge(data){
-		let dateBegin = new Date(data.replace(/-/g, "/"));
-		let dateEnd = new Date();//获取当前时间
-		let dateDiff = dateEnd.getTime() - dateBegin.getTime();//时间差的毫秒数
-		let dayDiff = Math.floor(dateDiff / (24 * 3600 * 1000));//计算出相差天数
-		let leave1=dateDiff%(24*3600*1000)    //计算天数后剩余的毫秒数
-		let hours=Math.floor(leave1/(3600*1000))//计算出小时数
-		//计算相差分钟数
-		let leave2=leave1%(3600*1000)    //计算小时数后剩余的毫秒数
-		let minutes=Math.floor(leave2/(60*1000))//计算相差分钟数
-		//计算相差秒数
-		let leave3=leave2%(60*1000)      //计算分钟数后剩余的毫秒数
-		let seconds=Math.round(leave3/1000)
-		return dayDiff+"天 "+hours+"小时 ";
-	},
-	// 获取聊天时间（相差300s内的信息不会显示时间）
-	getChatTime(v1,v2){
-		v1=v1.toString().length<13 ? v1*1000 : v1;
-		v2=v2.toString().length<13 ? v2*1000 : v2;
-		if(((parseInt(v1)-parseInt(v2))/1000) > 300){
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 			return this.gettime(v1);
 		}
 	},
 	// 人性化时间格式
-<<<<<<< HEAD
 	gettime(shorttime) {
 		shorttime = shorttime.toString().length < 13 ? shorttime * 1000 : shorttime;
 		let now = (new Date()).getTime();
@@ -89,38 +54,10 @@ export default{
 		return num < 10 ? "0" + num : num;
 	},
 
-=======
-	gettime(shorttime){
-		shorttime=shorttime.toString().length<13 ? shorttime*1000 : shorttime;
-		let now = (new Date()).getTime();
-		let cha = (now-parseInt(shorttime))/1000;
-		
-		if (cha < 43200) {
-			// 当天
-			return this.dateFormat(new Date(shorttime),"{A} {t}:{ii}");
-		} else if(cha < 518400){
-			// 隔天 显示日期+时间
-			return this.dateFormat(new Date(shorttime),"{Mon}月{DD}日 {A} {t}:{ii}");
-		} else {
-			// 隔年 显示完整日期+时间
-			return this.dateFormat(new Date(shorttime),"{Y}-{MM}-{DD} {A} {t}:{ii}");
-		}
-	},
-	
-	parseNumber(num) {
-		return num < 10 ? "0" + num : num;
-	},
-	 
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 	dateFormat(date, formatStr) {
 		let dateObj = {},
 			rStr = /\{([^}]+)\}/,
 			mons = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
-<<<<<<< HEAD
-
-=======
-		 
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 		dateObj["Y"] = date.getFullYear();
 		dateObj["M"] = date.getMonth() + 1;
 		dateObj["MM"] = this.parseNumber(dateObj["M"]);
@@ -136,19 +73,13 @@ export default{
 		dateObj["ii"] = this.parseNumber(dateObj["i"]);
 		dateObj["s"] = date.getSeconds();
 		dateObj["ss"] = this.parseNumber(dateObj["s"]);
-<<<<<<< HEAD
 
 		while (rStr.test(formatStr)) {
-=======
-	 
-		while(rStr.test(formatStr)) {
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 			formatStr = formatStr.replace(rStr, dateObj[RegExp.$1]);
 		}
 		return formatStr;
 	},
 	// 获取年龄
-<<<<<<< HEAD
 	getAgeByBirthday(data) {
 		let birthday = new Date(data.replace(/-/g, "\/"));
 		let d = new Date();
@@ -175,11 +106,3 @@ export default{
 		return `${days}天 ${hours}小时 ${minutes}分 ${seconds}秒`
 	}
 }
-=======
-	getAgeByBirthday(data){
-		let birthday=new Date(data.replace(/-/g, "\/")); 
-		let d=new Date(); 
-		return d.getFullYear()-birthday.getFullYear()-((d.getMonth()<birthday.getMonth()|| d.getMonth()==birthday.getMonth() && d.getDate()<birthday.getDate())?1:0);
-	}
-}
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0

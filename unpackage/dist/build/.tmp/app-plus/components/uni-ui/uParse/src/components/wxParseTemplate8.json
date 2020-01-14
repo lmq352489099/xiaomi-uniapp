@@ -1,9 +1,0 @@
-{
-  "usingComponents": {
-    "weixin-parse-template": "/components/uni-ui/uParse/src/components/wxParseTemplate9",
-    "weixin-parse-img": "/components/uni-ui/uParse/src/components/wxParseImg",
-    "weixin-parse-video": "/components/uni-ui/uParse/src/components/wxParseVideo",
-    "weixin-parse-audio": "/components/uni-ui/uParse/src/components/wxParseAudio"
-  },
-  "component": true
-}

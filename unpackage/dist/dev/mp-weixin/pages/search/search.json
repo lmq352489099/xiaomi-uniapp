@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "uni-app",
-  "usingComponents": {
-    "card": "/components/common/card",
-    "color-tag": "/components/search/color-tag",
-    "uni-list-item": "/components/uni-ui/uni-list-item/uni-list-item"
-  }
-}

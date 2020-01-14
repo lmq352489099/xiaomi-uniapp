@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 import $store from '@/store/index.js';
-=======
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 export default {
 	// 全局配置
 	common: {
@@ -23,7 +20,6 @@ export default {
 		options.data = options.data || this.common.data
 		options.method = options.method || this.common.method
 		options.dataType = options.dataType || this.common.dataType
-<<<<<<< HEAD
 		//token
 		if (options.token) {
 			options.header.token = $store.state.user.token
@@ -41,8 +37,6 @@ export default {
 			}
 		}
 
-=======
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 
 		// 请求
 		return new Promise((res, rej) => {
@@ -58,7 +52,6 @@ export default {
 				// header,dataType
 				...options,
 				success: result => {
-<<<<<<< HEAD
         //返回原始数据
 					if (options.native) {
 						return res(result)
@@ -77,15 +70,6 @@ export default {
 
 
 						return rej(result.data)
-=======
-					// 服务端失败
-					if (result.statusCode !== 200) {
-						return uni.showToast({
-							title: result.data.msg || '服务端失败',
-							icon: "none"
-						})
-						return rej()
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 					}
 					// 成功
 					let data = result.data.data
@@ -94,10 +78,6 @@ export default {
 
 				},
 				fail: (error) => {
-<<<<<<< HEAD
-
-=======
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 					uni.showToast({
 						title: error.errMsg || '请求失败',
 						icon: "none"
@@ -114,10 +94,6 @@ export default {
 		options.url = url
 		options.data = data
 		options.method = "GET"
-<<<<<<< HEAD
-
-=======
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 		return this.request(options)
 	},
 	// POST 请求
@@ -126,7 +102,6 @@ export default {
 		options.data = data
 		options.method = "POST"
 		return this.request(options)
-<<<<<<< HEAD
 	},
 	// delete 请求
 	del(url, data = {}, options = {}) {
@@ -134,8 +109,6 @@ export default {
 		options.data = data
 		options.method = "DELETE"
 		return this.request(options)
-=======
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 	}
 
 }

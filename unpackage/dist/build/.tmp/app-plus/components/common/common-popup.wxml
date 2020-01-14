@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-<view class="{{['_popup data-v-5a9adfd2',popupClass]}}"><view data-event-opts="{{[['touchmove',[['move',['$event']]]],['tap',[['$emit',['hide']]]]]}}" class="_mask data-v-5a9adfd2" catchtouchmove="__e" catchtap="__e"></view><view class="_body data-v-5a9adfd2"><slot></slot></view></view>
-=======
-<view data-event-opts="{{[['touchmove',[['',['$event']]]]]}}" class="{{['_popup data-v-4782ad39',popupClass]}}" catchtouchmove="__e"><view data-event-opts="{{[['tap',[['$emit',['hide']]]]]}}" class="_mask data-v-4782ad39" catchtap="__e"></view><view class="_body data-v-4782ad39"><slot></slot></view></view>
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0

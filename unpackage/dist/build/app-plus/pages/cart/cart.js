@@ -1,2 +1,0 @@
-setCssToHead(["@charset \x22UTF-8\x22;\n",],undefined,{path:"./pages/cart/cart.wxss"})();
-document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/cart/cart.wxml') } }));

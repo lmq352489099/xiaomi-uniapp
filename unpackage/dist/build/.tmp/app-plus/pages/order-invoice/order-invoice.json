@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "发票",
-  "usingComponents": {
-    "divider": "/components/common/divider",
-    "card": "/components/common/card",
-    "zcmradi-group": "/components/common/radio-group"
-  }
-}

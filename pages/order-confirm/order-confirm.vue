@@ -13,11 +13,7 @@
 						 v-if="path.isdefault">默认</view>
 					</view>
 					<view class="font">
-<<<<<<< HEAD
 						{{path.province}}{{path.city}}{{path.district}} {{path.address}}
-=======
-						{{path.pth}}{{path.detailPath}}
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 					</view>
 				</template>
 
@@ -37,7 +33,6 @@
 
 				<uniListItem showArrow>
 					<view class="d-flex a-center">
-<<<<<<< HEAD
 						<image v-for="(item,index) in goodsList" :key="index" style="width: 100rpx;height: 100rpx;"
 						 class="rounded mr-2"
 						 :src="item.cover" mode=""></image>
@@ -48,23 +43,6 @@
 				<uniListItem title="商品总结" :showArrowIcon="false">
 					<view slot="rightContent">
 						<price color="text-dark">{{totalPrice}}</price>
-=======
-						<image style="width: 100rpx;height: 100rpx;"
-						 class="rounded mr-2"
-						 src="../../static/ceshitupian/images/demo/demo6.jpg" mode=""></image>
-						<image style="width: 100rpx;height: 100rpx;"
-						 class="rounded mr-2"
-						 src="../../static/ceshitupian/images/demo/demo6.jpg" mode=""></image>
-						<image style="width: 100rpx;height: 100rpx;"
-						 class="rounded mr-2"
-						 src="../../static/ceshitupian/images/demo/demo6.jpg" mode=""></image>
-					</view>
-					<view slot="rightContent">共三件</view>
-				</uniListItem>
-				<uniListItem title="商品总结" :showArrowIcon="false">
-					<view slot="rightContent">
-						<price color="text-dark">20.00</price>
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 					</view>
 				</uniListItem>
 				<uniListItem title="运费" :showArrowIcon="false">
@@ -72,7 +50,6 @@
 						包邮
 					</view>
 				</uniListItem>
-<<<<<<< HEAD
 				<uniListItem title="优惠券" @click="openCoupon">
 					<view slot="rightContent" :class="couponCount > 0 ? 'main-text-color' : 'text-light-muted'" class="">
 						<text v-if="coupon.id > 0">{{coupon.type == 0 ? '-' + coupon.value + '元' : coupon.value + '折'}} </text>
@@ -84,29 +61,12 @@
 					<text class="main-text-color">小计</text>
 					<view slot="rightContent">
 						<price>{{price}}</price>
-=======
-				<navigator url="../order-coupon/order-coupon">
-				<uniListItem title="优惠券">
-					<view slot="rightContent" class="text-light-muted">
-						<text color="text-dark">无可用</text>
-					</view>
-				</uniListItem>
-				</navigator>
-				<uniListItem title="" :showArrowIcon="false">
-					<text class="main-text-color">小计</text>
-					<view slot="rightContent">
-						<price>20.00</price>
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 					</view>
 				</uniListItem>
 				<divider></divider>
 				<uniListItem title="发票">
 					<view slot="rightContent" extraWidth="40%"
-<<<<<<< HEAD
 					 @click="openOrderInvoice">
-=======
-					@click="openOrderInvoice">
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 						电子发票
 					</view>
 				</uniListItem>
@@ -116,7 +76,6 @@
 		<view class="position-fixed d-flex border a-center j-end bottom-0 left-0 right-0 bg-white p-2 fong-md">
 			合计:
 			<view class="ml-2">
-<<<<<<< HEAD
 				<price>{{price}}</price>
 			</view>
 
@@ -124,13 +83,6 @@
 			 :class="loading ? 'bg-secondary' : 'main-bg-color'"
 			 hover-class="main-bg-hover-color">
 				{{loading ? '加载中'  : '去支付'}}
-=======
-				<price>24.00</price>
-			</view>
-
-			<view @click="openPayMethods" style="border-radius: 80rpx;" class="px-2 py-1 ml-2  main-bg-color text-white" hover-class="main-bg-hover-color">
-				去支付
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 			</view>
 		</view>
 
@@ -142,18 +94,13 @@
 	import uniListItem from "@/components/uni-ui/uni-list-item/uni-list-item.vue"
 	import price from "../../components/common/price.vue"
 
-<<<<<<< HEAD
 	import { mapGetters, mapState } from "vuex"
-=======
-	import { mapGetters } from "vuex"
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 	export default {
 		components: {
 			uniListItem,
 			price
 		},
 		computed: {
-<<<<<<< HEAD
 			...mapState({ list: state => state.cart.list }),
 			...mapGetters(['defaultPath', 'totalPrice']),
 			// 商品列表
@@ -202,12 +149,6 @@
 			console.log(e.detail);
 
 			console.log(this.goodsList);
-=======
-
-			...mapGetters(['defaultPath'])
-		},
-		onLoad(e) {
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 
 			if (this.defaultPath.length) this.path = this.defaultPath[0]
 			console.log(this.path);
@@ -216,7 +157,6 @@
 				this.path = res
 				console.log("接收到参数", res);
 			})
-<<<<<<< HEAD
 			// 开启监听优惠券
 			uni.$on('couponUser', (res) => {
 				this.coupon = res
@@ -224,13 +164,10 @@
 			})
 			// 计算当前价格有多少可用的优惠券
 			this.getCouponCount()
-=======
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 		},
 		onUnload() {
 			// 关闭监听
 			uni.$off("choosePath", () => console.log("关闭监听收货地址"))
-<<<<<<< HEAD
 			uni.$off("couponUser", () => console.log("关闭监听couponUser"))
 		},
 		data() {
@@ -302,27 +239,12 @@
 				})
 
 
-=======
-		},
-		data() {
-			return {
-				path: false
-			};
-		},
-		methods: {
-			openPayMethods(){
-				uni.navigateTo({
-					url: '../pay-methods/pay-methods',
-				
-				});
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 			},
 			openPathList() {
 				uni.navigateTo({
 					url: "../user-path-list/user-path-list?type=choose"
 				})
 			},
-<<<<<<< HEAD
 			openOrderInvoice() {
 				console.log("4534");
 				uni.navigateTo({
@@ -337,12 +259,6 @@
 					this.couponCount = res
 				}).catch(res => {
 					console.log(res);
-=======
-			openOrderInvoice(){
-				console.log("4534");
-				uni.navigateTo({
-					url:'../order-invoice/order-invoice'
->>>>>>> 71002b7df0f0182c8acc60d01ec0dda756b003d0
 				})
 			}
 		},

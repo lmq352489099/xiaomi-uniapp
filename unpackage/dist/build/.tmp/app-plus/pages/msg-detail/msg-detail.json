@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "消息列表详情",
-  "usingComponents": {
-    "u-parse": "/components/uni-ui/uParse/src/wxParse"
-  }
-}
