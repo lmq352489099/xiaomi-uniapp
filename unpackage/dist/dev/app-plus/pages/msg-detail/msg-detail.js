@@ -1,0 +1,2 @@
+setCssToHead(["body { overflow-x: hidden; }\n",],undefined,{path:"./pages/msg-detail/msg-detail.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/msg-detail/msg-detail.wxml') } }));

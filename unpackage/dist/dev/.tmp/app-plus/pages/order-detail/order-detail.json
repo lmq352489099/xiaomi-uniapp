@@ -1,0 +1,13 @@
+{
+  "titleNView": {
+    "type": "transparent"
+  },
+  "usingComponents": {
+    "divider": "/components/common/divider",
+    "order-list-item": "/components/order/order-list-item",
+    "uni-list-item": "/components/uni-ui/uni-list-item/uni-list-item",
+    "price": "/components/common/price",
+    "card": "/components/common/card",
+    "common-button": "/components/common/common-button"
+  }
+}

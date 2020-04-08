@@ -1,0 +1,1 @@
+<view class="ml-2  border border-light-secondary py-1 px-2 text-secondary" hover-class="bg-light-secondary" data-event-opts="{{[['tap',[['$emit',['click']]]]]}}" catchtap="__e"><slot></slot></view>

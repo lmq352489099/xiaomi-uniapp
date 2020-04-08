@@ -1,0 +1,1 @@
+<view><view class="font-lg text-dark my-3 px-2">{{detail.title}}</view><u-parse vue-id="1" className="uparse" content="{{context}}" data-event-opts="{{[['^preview',[['preview']]],['^navigate',[['navigate']]]]}}" bind:preview="__e" bind:navigate="__e" bind:__l="__l"></u-parse></view>

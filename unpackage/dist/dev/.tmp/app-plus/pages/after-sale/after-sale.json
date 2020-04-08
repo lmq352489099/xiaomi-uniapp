@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "divider": "/components/common/divider",
+    "card": "/components/common/card",
+    "uni-list-item": "/components/uni-ui/uni-list-item/uni-list-item",
+    "zcmradi-group": "/components/common/radio-group"
+  }
+}
